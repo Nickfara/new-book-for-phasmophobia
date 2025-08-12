@@ -2,7 +2,7 @@
     <meta charset="UTF-8">
     <title>Unofficial Phasmophobia Cheat Sheet (Printable!)</title>
     
-    <link rel="icon" type="image/x-icon" href="http://localhost:8000/phasmophobia/static/imgs/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="http://nickfara.github.io/new-book-for-phasmophobia/phasmophobia/static/imgs/favicon.ico">
     <meta name="Description" content="The Unofficial Phasmo Cheat Sheet (Printable!) is a compressed version of the Unofficial Phasmo Cheat Sheet that simply has the ghost data and none of the fluff." />
     <meta name="keywords" content="phasmphobia, phasmo, phasmophobia cheat sheet, phasmo cheat sheet, phasmophobia info, phasmo info, phasmophobia guide, phasmo guide, phasmophobia help, phasmo help, phasmophobia tool, phasmo tools, phasmophobia tools, phasmo tools, phasmophobia github, phasmo github, phasmo ghosts, phasmophobia ghosts, phasmophobia 0 evidence, phasmo 0 evidence, phasmo ghost tests, phasmophobia ghost tests, phasmo tests, phasmophobia tests, phasmo maps, phasmophobia maps, phasmo github, phasmophobia github, zero network" />
     <meta name="viewport" content="user-scalable=0,initial-scale=1.0">
@@ -33,7 +33,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background-image: radial-gradient(circle, rgba(0,0,0,0.75), rgba(0,0,0,1)), url('http://localhost:8000/phasmophobia/static/imgs/background.jpg');
+            background-image: radial-gradient(circle, rgba(0,0,0,0.75), rgba(0,0,0,1)), url('http://nickfara.github.io/new-book-for-phasmophobia/phasmophobia/static/imgs/background.jpg');
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-position: center;
@@ -400,7 +400,7 @@
                 "Spirit Box":"../imgs/spirit-box-icon.png"
             }
 
-            fetch(`http://localhost:8000/phasmophobia/data/ghosts.json?lang=en`, {cache: 'default', signal: AbortSignal.timeout(10000)})
+            fetch(`http://nickfara.github.io/new-book-for-phasmophobia/phasmophobia/data/ghosts.json?lang=en`, {cache: 'default', signal: AbortSignal.timeout(10000)})
             .then(data => data.json())
             .then(data => {
 

@@ -192,7 +192,7 @@
     "{{non_definitive}}": "불확실함",
     "{{mark_ghost}}": "유령 표시",
     "{{use_bpm_finder}}": "- <a href=\"javascript:void(0);\" onclick=\"highLightBPMFinder()\">BPM 탐색기</a> 를 사용하여 유령 속도를 추적하세요 -",
-    "{{use_map_explorer}}": "- <a href=\"http://localhost:8000/phasmo-cheat-sheet/map-explorer/\" target=\"_blank\">지도 탐색기</a> 를 사용하여 범위/거리를 확인하세요 -",
+    "{{use_map_explorer}}": "- <a href=\"http://nickfara.github.io/new-book-for-phasmophobia/phasmo-cheat-sheet/map-explorer/\" target=\"_blank\">지도 탐색기</a> 를 사용하여 범위/거리를 확인하세요 -",
     "{{mimic_disclaimer}}": "미믹은 다른 유령의 능력과 행동을 복사할 수 있으므로, (거의) 모든 확인 테스트가 미믹일 수 있습니다.",
     "{{copy_share_link}}": "공유 링크 복사",
     "{{empty_data_link}}": "Click a ghost to see its tells and behaviors\n(Use ' [ ' and ' ] ' to cycle through ghosts)",

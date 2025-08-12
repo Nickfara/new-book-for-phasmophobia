@@ -18,7 +18,7 @@ function getLink(){
             document.getElementById("discord_login_button").innerText = lang_data['{{discord_link_b3}}']
             $("#discord_unlink_button").removeClass("hidden")
             document.getElementById("reset").innerHTML = `${lang_data['{{save_and_reset}}']}<div class='reset_note'>(${lang_data['{{right_click_for_more}}']})</div>`
-            fetch(`http://localhost:8000/zn/${znid}/${discord_user['id']}`, {signal: AbortSignal.timeout(6000)})
+            fetch(`http://nickfara.github.io/new-book-for-phasmophobia/zn/${znid}/${discord_user['id']}`, {signal: AbortSignal.timeout(6000)})
             .then(data => data.json())
             .then(data => {
                 var stats_info = `<strong>${lang_data['{{discord_link_h3}}']}</strong> ${data.total_games}<hr><div class="discord-breakdown" style="display:grid; grid-template-columns: auto;">`
@@ -40,13 +40,13 @@ function getLink(){
                 stats_info += '</div>'
 
                 document.getElementById("discord_stats").innerHTML = stats_info
-                document.getElementById("discord-stats-link").href = `http://localhost:8000/phasmo-stats/?discord-id=${discord_user['id']}-${discord_user['avatar']}&username=${discord_user['username']}`
+                document.getElementById("discord-stats-link").href = `http://nickfara.github.io/new-book-for-phasmophobia/phasmo-stats/?discord-id=${discord_user['id']}-${discord_user['avatar']}&username=${discord_user['username']}`
                 document.getElementById("discord_link_status").className = "connected"
 
                 if($("#num_evidence option[value='sep3']").length === 0){
                     var cust_settings = JSON.parse(getCookie("settings"))
 
-                    fetch(`http://localhost:8000/zn/difficulties/${discord_user['id']}?cheatsheet=true`, {signal: AbortSignal.timeout(6000)})
+                    fetch(`http://nickfara.github.io/new-book-for-phasmophobia/zn/difficulties/${discord_user['id']}?cheatsheet=true`, {signal: AbortSignal.timeout(6000)})
                     .then(data => data.json())
                     .then(data => {
                         custom_difficulties = data

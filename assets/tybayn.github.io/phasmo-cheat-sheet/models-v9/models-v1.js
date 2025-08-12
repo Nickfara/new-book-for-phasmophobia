@@ -1,5 +1,5 @@
 $(window).on('load', function() {
-    fetch("http://localhost:8000/phasmophobia/data/3d-models.json", {signal: AbortSignal.timeout(6000)})
+    fetch("http://nickfara.github.io/new-book-for-phasmophobia/phasmophobia/data/3d-models.json", {signal: AbortSignal.timeout(6000)})
     .then(data => data.json())
     .then(data => {
 

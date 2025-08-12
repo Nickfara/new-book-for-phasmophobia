@@ -94,7 +94,7 @@ function hide_conflict(){
 }
 
 function load_custom(){
-    fetch("http://localhost:8000/phasmo-cheat-sheet/difficulty-builder/data/settings.json")
+    fetch("http://nickfara.github.io/new-book-for-phasmophobia/phasmo-cheat-sheet/difficulty-builder/data/settings.json")
     .then(data => data.json())
     .then(data => {
         all_settings = data
@@ -858,7 +858,7 @@ function build_url(){
         encoded_data += `${option.id}.${option.value},`
     })
 
-    fetch(`http://localhost:8000/zn/shorten/${encoded_data.slice(0,-1)}`, {signal: AbortSignal.timeout(6000)})
+    fetch(`http://nickfara.github.io/new-book-for-phasmophobia/zn/shorten/${encoded_data.slice(0,-1)}`, {signal: AbortSignal.timeout(6000)})
     .then(data => data.json())
     .then(data => {
         share_url += data['data']
@@ -905,7 +905,7 @@ function parse_url(){
     if (params.get("share") || short_url){
         short_url = params.get('share') ? params.get('share') : short_url
         setCookie("custom-id",short_url,30)
-        fetch(`http://localhost:8000/zn/lookup/${short_url}`, {signal: AbortSignal.timeout(6000)})
+        fetch(`http://nickfara.github.io/new-book-for-phasmophobia/zn/lookup/${short_url}`, {signal: AbortSignal.timeout(6000)})
         .then(data => data.json())
         .then(data => {
             let encoded_data = data['data']
@@ -1008,7 +1008,7 @@ function close_delete(){
 function run_delete(){
     let discord_id = discord_user.id
     let url_id = document.getElementById("saved-ids").value
-    fetch(`http://localhost:8000/zn/difficulties/${discord_id}/${url_id}`, {method:"DELETE",signal: AbortSignal.timeout(6000)})
+    fetch(`http://nickfara.github.io/new-book-for-phasmophobia/zn/difficulties/${discord_id}/${url_id}`, {method:"DELETE",signal: AbortSignal.timeout(6000)})
     .then(data => {
         $(`#saved-ids option[value='${url_id}']`).remove();
         url_id = "3296-6279-3676"

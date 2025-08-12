@@ -199,7 +199,7 @@
     "{{non_definitive}}": "非决定性特征",
     "{{mark_ghost}}": "标记鬼魂",
     "{{use_bpm_finder}}": "- 使用 <a href=\"javascript:void(0);\" onclick=\"highLightBPMFinder()\">BPM查找器</a> 追踪鬼魂移速 -",
-    "{{use_map_explorer}}": "- 使用 <a href=\"http://localhost:8000/phasmo-cheat-sheet/map-explorer/\" target=\"_blank\">地图探索器</a> 查看距离/范围 -",
+    "{{use_map_explorer}}": "- 使用 <a href=\"http://nickfara.github.io/new-book-for-phasmophobia/phasmo-cheat-sheet/map-explorer/\" target=\"_blank\">地图探索器</a> 查看距离/范围 -",
     "{{mimic_disclaimer}}": "拟魂能模仿其他鬼魂的能力和行为特征，这意味着（几乎）任何确认性测试都可能是拟魂",
     "{{copy_share_link}}": "复制分享链接",
     "{{empty_data_link}}": "点击鬼魂查看其关键征兆与行为特征\n（使用 [ 和 ] 键切换鬼魂）",

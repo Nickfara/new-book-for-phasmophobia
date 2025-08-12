@@ -2,7 +2,7 @@ let feed_recent_date = null
 let feed_interactions = {}
 
 let load_feed = new Promise((resolve, reject) => {
-    fetch("http://localhost:8000/phasmophobia/data/feed.json", {signal: AbortSignal.timeout(6000)})
+    fetch("http://nickfara.github.io/new-book-for-phasmophobia/phasmophobia/data/feed.json", {signal: AbortSignal.timeout(6000)})
     .then(data => data.json())
     .then(data => {
         let feed_found = false
@@ -120,7 +120,7 @@ function interact_post(title, sentiment, value){
         "value":value
     }
 
-    fetch("http://localhost:8000/phasmophobia/data/feed/interact",{
+    fetch("http://nickfara.github.io/new-book-for-phasmophobia/phasmophobia/data/feed/interact",{
         method:"POST",
         headers:{
             'Content-Type':'application/json'

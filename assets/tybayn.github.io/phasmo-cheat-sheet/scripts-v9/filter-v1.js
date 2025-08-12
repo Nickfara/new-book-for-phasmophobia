@@ -2062,10 +2062,10 @@ function checkDifficulty(){
         document.getElementById("num_evidence").value = "-1"
         if(Object.keys(discord_user).length > 0){
             let url_params = new URLSearchParams(discord_user).toString()
-            window.open(`http://localhost:8000/phasmo-cheat-sheet/difficulty-builder/?${url_params}`, '_blank').focus();
+            window.open(`http://nickfara.github.io/new-book-for-phasmophobia/phasmo-cheat-sheet/difficulty-builder/?${url_params}`, '_blank').focus();
         }
         else{
-            window.open("http://localhost:8000/phasmo-cheat-sheet/difficulty-builder", '_blank').focus();
+            window.open("http://nickfara.github.io/new-book-for-phasmophobia/phasmo-cheat-sheet/difficulty-builder", '_blank').focus();
         }
     }
 
@@ -2144,9 +2144,9 @@ function changeMap(elem,map,ignore_link=false){
 
     var room_id = document.getElementById("room_id").value
     if(room_id != '')
-        document.getElementById("map-explorer-link-2").href = `http://localhost:8000/phasmo-cheat-sheet/map-explorer/?jlid=${room_id}&pos=${my_pos}&share=${elem.id}`
+        document.getElementById("map-explorer-link-2").href = `http://nickfara.github.io/new-book-for-phasmophobia/phasmo-cheat-sheet/map-explorer/?jlid=${room_id}&pos=${my_pos}&share=${elem.id}`
     else
-        $("#map-explorer-link-2").attr("href",`http://localhost:8000/phasmo-cheat-sheet/map-explorer/?share=${elem.id}`)
+        $("#map-explorer-link-2").attr("href",`http://nickfara.github.io/new-book-for-phasmophobia/phasmo-cheat-sheet/map-explorer/?share=${elem.id}`)
 
     state['map'] = elem.id
     state['map_size'] = elem.querySelector(".map_size").innerText
@@ -2349,7 +2349,7 @@ function reset(skip_continue_session=false){
         state['settings'] = JSON.stringify(user_settings)
         saveSettings(true)
 
-        fetch("http://localhost:8000/zn/"+znid+"/end",{method:"POST",body:JSON.stringify(state),signal: AbortSignal.timeout(2000)})
+        fetch("http://nickfara.github.io/new-book-for-phasmophobia/zn/"+znid+"/end",{method:"POST",body:JSON.stringify(state),signal: AbortSignal.timeout(2000)})
         .then((response) => {
             setCookie("znid",znid,-1)
             setCookie("prev-znid",znid,30)

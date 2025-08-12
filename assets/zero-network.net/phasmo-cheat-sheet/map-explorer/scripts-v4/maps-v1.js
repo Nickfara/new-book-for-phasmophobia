@@ -4,7 +4,7 @@ function setCookie(e,t,i){let n=new Date;n.setTime(n.getTime()+864e5*i);let o="e
 var ppm = 22.5;
 var prev_ratio = 0;
 var circles = []
-var share_data = {"map":"tanglewood","url":"http://localhost:8000/phasmophobia/static/imgs/maps/tanglewood.png","circles":[]}
+var share_data = {"map":"tanglewood","url":"http://nickfara.github.io/new-book-for-phasmophobia/phasmophobia/static/imgs/maps/tanglewood.png","circles":[]}
 var selected_ranges = []
 var nodes = []
 var cur_selected = ""

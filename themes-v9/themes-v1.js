@@ -92,13 +92,13 @@ function changeTheme(name = null){
         if(!document.getElementById("disable_particles").checked){
             bloodMoonInterval = setInterval(createBMParticle, 80);
         }
-        document.body.style.backgroundImage = "radial-gradient(circle, rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url('http://localhost:8000/phasmophobia/static/imgs/bm-background.jpg')"
+        document.body.style.backgroundImage = "radial-gradient(circle, rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url('http://nickfara.github.io/new-book-for-phasmophobia/phasmophobia/static/imgs/bm-background.jpg')"
     }
     else if(themes[theme_name] == "theme-snow-particle"){
         if(!document.getElementById("disable_particles").checked){
             snowInterval = setInterval(createSnowParticle, 200);
         }
-        document.body.style.backgroundImage = "radial-gradient(circle, rgba(0,0,0,0.75), rgba(0,0,0,1)), url('http://localhost:8000/phasmophobia/static/imgs/background.jpg')"
+        document.body.style.backgroundImage = "radial-gradient(circle, rgba(0,0,0,0.75), rgba(0,0,0,1)), url('http://nickfara.github.io/new-book-for-phasmophobia/phasmophobia/static/imgs/background.jpg')"
     }
     else if(themes[theme_name] == "theme-cozy"){
         if(!document.getElementById("disable_particles").checked){
@@ -106,10 +106,10 @@ function changeTheme(name = null){
             createCandles()
             createGhostSpacer()
         }
-        document.body.style.backgroundImage = "radial-gradient(circle, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('http://localhost:8000/phasmophobia/static/imgs/background-cozy.png')"
+        document.body.style.backgroundImage = "radial-gradient(circle, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('http://nickfara.github.io/new-book-for-phasmophobia/phasmophobia/static/imgs/background-cozy.png')"
     }
     else{
-        document.body.style.backgroundImage = "radial-gradient(circle, rgba(0,0,0,0.75), rgba(0,0,0,1)), url('http://localhost:8000/phasmophobia/static/imgs/background.jpg')"
+        document.body.style.backgroundImage = "radial-gradient(circle, rgba(0,0,0,0.75), rgba(0,0,0,1)), url('http://nickfara.github.io/new-book-for-phasmophobia/phasmophobia/static/imgs/background.jpg')"
     }
 
     changeObjects.forEach((item) => {

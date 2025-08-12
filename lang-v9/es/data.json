@@ -188,7 +188,7 @@
     "{{non_definitive}}": "No-Definitiva",
     "{{mark_ghost}}": "Marcar fantasma",
     "{{use_bpm_finder}}": "- Usa <a href=\"javascript:void(0);\" onclick=\"highLightBPMFinder()\">BPM Finder</a> para rastrear la velocidad del fantasma -",
-    "{{use_map_explorer}}": "- Usa <a href=\"http://localhost:8000/phasmo-cheat-sheet/map-explorer/\" target=\"_blank\">Map Explorer</a> para ver los rangos y distancias -",
+    "{{use_map_explorer}}": "- Usa <a href=\"http://nickfara.github.io/new-book-for-phasmophobia/phasmo-cheat-sheet/map-explorer/\" target=\"_blank\">Map Explorer</a> para ver los rangos y distancias -",
     "{{mimic_disclaimer}}": "El Mímico copia las habilidades y comportamientos de otros fantasma, lo que significa que (casi) todas las pruebas de confirmación pueden significar que también sea un Mímico",
     "{{copy_share_link}}": "Copiar el Enlace Compartido",
     "{{empty_data_link}}": "Clickea un un fantasma para ver sus dichos y comportamientos\n(Usa ' [ ' y ' ] ' para recorrer a los fantasmas)",

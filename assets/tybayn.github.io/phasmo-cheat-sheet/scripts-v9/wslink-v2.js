@@ -195,7 +195,7 @@ function create_room(){
             "ghost_modifier":parseInt(document.getElementById("ghost_modifier_speed").value)
         }
     }
-    fetch(`http://localhost:8000/znlink/create-room/${znid}`,{method:"POST",Accept:"application/json",body:JSON.stringify(outgoing_state),signal: AbortSignal.timeout(6000)})
+    fetch(`http://nickfara.github.io/new-book-for-phasmophobia/znlink/create-room/${znid}`,{method:"POST",Accept:"application/json",body:JSON.stringify(outgoing_state),signal: AbortSignal.timeout(6000)})
     .then(response => response.json())
     .then(data => {
         var room_id = data['room_id']
@@ -215,7 +215,7 @@ function create_link(auto_link = false){
     relink_live = false
     relink_interval = null
     relink_timeout = null
-    fetch(`http://localhost:8000/znlink/create-link/${znid}`,{method:"POST",Accept:"application/json",signal: AbortSignal.timeout(6000)})
+    fetch(`http://nickfara.github.io/new-book-for-phasmophobia/znlink/create-link/${znid}`,{method:"POST",Accept:"application/json",signal: AbortSignal.timeout(6000)})
     .then(response => response.json())
     .then(data => {
         var link_id = data['link_id']
@@ -254,7 +254,7 @@ function link_room(){
         document.getElementById("room_id_note").innerText = `${lang_data['{{error}}']}: ${lang_data['{{could_not_connect}}']}`
         document.getElementById("settings_status").className = "error"
         setCookie("room_id","",-1)
-        document.getElementById("map-explorer-link-2").href = `http://localhost:8000/phasmo-cheat-sheet/map-explorer/`
+        document.getElementById("map-explorer-link-2").href = `http://nickfara.github.io/new-book-for-phasmophobia/phasmo-cheat-sheet/map-explorer/`
     }
     ws.onmessage = function(event) {
         try {
@@ -275,7 +275,7 @@ function link_room(){
                 pos_elem.style.backgroundColor = `#${pos_colors[my_pos]}44`
                 $(pos_elem).show()
                 var lmap = document.getElementsByClassName("selected_map")[0].id
-                document.getElementById("map-explorer-link-2").href = `http://localhost:8000/phasmo-cheat-sheet/map-explorer/?jlid=${room_id}&pos=${my_pos}&share=${lmap}`
+                document.getElementById("map-explorer-link-2").href = `http://nickfara.github.io/new-book-for-phasmophobia/phasmo-cheat-sheet/map-explorer/?jlid=${room_id}&pos=${my_pos}&share=${lmap}`
                 if($(".guessed").length > 0){
                     send_guess($(".guessed")[0].id)
                 }
@@ -903,7 +903,7 @@ function disconnect_room(reset=false,has_status=false){
     try { document.getElementById(`guess_pos_3`).remove()} catch (error) {} 
     try { document.getElementById(`guess_pos_4`).remove()} catch (error) {} 
     var lmap = document.getElementsByClassName("selected_map")[0].id
-    document.getElementById("map-explorer-link-2").href = `http://localhost:8000/phasmo-cheat-sheet/map-explorer/?share=${lmap}`
+    document.getElementById("map-explorer-link-2").href = `http://nickfara.github.io/new-book-for-phasmophobia/phasmo-cheat-sheet/map-explorer/?share=${lmap}`
     if (Object.keys(discord_user).length == 0)
         $('.card_icon_guess').hide()
     clearInterval(ws_ping)
