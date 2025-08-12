@@ -191,7 +191,7 @@
     "{{non_definitive}}": "Kesin Olmayan",
     "{{mark_ghost}}": "Hayaleti İşaretle",
     "{{use_bpm_finder}}": "- Hayalet hızlarını takip etmek için <a href=\"javascript:void(0);\" onclick=\"highLightBPMFinder()\">BPM Bulucu</a>'yu kullanın -",
-    "{{use_map_explorer}}": "- Menzilleri/mesafeleri görmek için <a href=\"http://nickfara.github.io/new-book-for-phasmophobia/phasmo-cheat-sheet/map-explorer/\" target=\"_blank\">Harita Gezgini</a>'ni kullanın -",
+    "{{use_map_explorer}}": "- Menzilleri/mesafeleri görmek için <a href=\"https://nickfara.github.io/new-book-for-phasmophobia/phasmo-cheat-sheet/map-explorer/\" target=\"_blank\">Harita Gezgini</a>'ni kullanın -",
     "{{mimic_disclaimer}}": "Taklitçi diğer hayaletlerin yeteneklerini ve davranışlarını kopyalayabilir, bu da (neredeyse) herhangi bir onaylama testinin aynı zamanda bir Taklitçi olabileceği anlamına gelir",
     "{{copy_share_link}}": "Paylaşım Bağlantısını Kopyala",
     "{{empty_data_link}}": "İpuçlarını ve davranışlarını görmek için bir hayalete tıklayın\n(Hayaletler arasında gezinmek için ' [ ' ve ' ] ' tuşlarını kullanın)",

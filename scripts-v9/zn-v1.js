@@ -38,7 +38,7 @@ function checkLink(){
             znid = getCookie("znid")
 
             setCookie("discord_link",JSON.stringify(discord_link),30)
-            fetch(`http://nickfara.github.io/new-book-for-phasmophobia/zn/${znid}/attach/${discord_link['id']}`, {method:"POST",signal: AbortSignal.timeout(6000)})
+            fetch(`https://nickfara.github.io/new-book-for-phasmophobia/zn/${znid}/attach/${discord_link['id']}`, {method:"POST",signal: AbortSignal.timeout(6000)})
             .then(data => {
                 window.location.href = window.location.href.split("?")[0]
             })
@@ -71,7 +71,7 @@ function checkLink(){
 function heartbeat(){
     if(znid != "no-connection-to-server"){
         state['settings'] = JSON.stringify(user_settings)
-        fetch("http://nickfara.github.io/new-book-for-phasmophobia/zn/"+znid,{method:"POST",Accept:"application/json",body:JSON.stringify(state),signal: AbortSignal.timeout(10000)})
+        fetch("https://nickfara.github.io/new-book-for-phasmophobia/zn/"+znid,{method:"POST",Accept:"application/json",body:JSON.stringify(state),signal: AbortSignal.timeout(10000)})
         .then(response => response.json())
         .then(data => {
             $("#active-users-label").text(lang_data['{{active_users}}']+ ": " + data['active_num_users'])
@@ -118,7 +118,7 @@ function loadAllAndConnect(){
             } catch(Error) {
                 id = false;
             }
-            fetch(`http://nickfara.github.io/new-book-for-phasmophobia/zn/?lang=${lang}${id ? '&discord_id='+id : ''}`,{headers:{Accept:"application/json"}, signal: AbortSignal.timeout(10000)})
+            fetch(`https://nickfara.github.io/new-book-for-phasmophobia/zn/?lang=${lang}${id ? '&discord_id='+id : ''}`,{headers:{Accept:"application/json"}, signal: AbortSignal.timeout(10000)})
             .then(e=>e.json())
             .then(e => {
                 znid = e.znid
@@ -161,7 +161,7 @@ function loadAllAndConnect(){
             lang = 'en'
         }
         try{
-            fetch(`http://nickfara.github.io/new-book-for-phasmophobia/phasmophobia/data/ghosts.json?lang=${lang}`, {cache: 'default', signal: AbortSignal.timeout(10000)})
+            fetch(`https://nickfara.github.io/new-book-for-phasmophobia/phasmophobia/data/ghosts.json?lang=${lang}`, {cache: 'default', signal: AbortSignal.timeout(10000)})
             .then(data => data.json())
             .then(data => {
 
@@ -291,7 +291,7 @@ function loadAllAndConnect(){
     })
 
     let loadMaps = new Promise((resolve, reject) => {
-        fetch("http://nickfara.github.io/new-book-for-phasmophobia/phasmophobia/data/maps", {cache: 'default', signal: AbortSignal.timeout(12000)})
+        fetch("https://nickfara.github.io/new-book-for-phasmophobia/phasmophobia/data/maps", {cache: 'default', signal: AbortSignal.timeout(12000)})
         .then(data => data.json())
         .then(data => {
             var map_html = ""
@@ -326,7 +326,7 @@ function loadAllAndConnect(){
     })
 
     let loadWeekly = new Promise((resolve, reject) => {
-        fetch("http://nickfara.github.io/new-book-for-phasmophobia/phasmophobia/data/weekly.json", {cache: 'default', signal: AbortSignal.timeout(10000)})
+        fetch("https://nickfara.github.io/new-book-for-phasmophobia/phasmophobia/data/weekly.json", {cache: 'default', signal: AbortSignal.timeout(10000)})
         .then(data => data.json())
         .then(data => {
             weekly_data = {
@@ -366,7 +366,7 @@ function loadAllAndConnect(){
 
             document.getElementById("weekly_title").innerText += ` (${getCurrentWeekUTC()})`
             document.getElementById("weekly_info_box").innerHTML = weekly_html
-            document.getElementById("weekly_footer").innerHTML = `<b>{{weekly_difficulty_settings}}</b>: <a href="http://nickfara.github.io/new-book-for-phasmophobia/phasmo-cheat-sheet/difficulty-builder/?share=${weekly_data.difficulty_id}" target="_blank">${weekly_data.difficulty_id}</a>`
+            document.getElementById("weekly_footer").innerHTML = `<b>{{weekly_difficulty_settings}}</b>: <a href="https://nickfara.github.io/new-book-for-phasmophobia/phasmo-cheat-sheet/difficulty-builder/?share=${weekly_data.difficulty_id}" target="_blank">${weekly_data.difficulty_id}</a>`
 
             resolve("Weekly data loaded")
         })
@@ -377,7 +377,7 @@ function loadAllAndConnect(){
     })
 
     let loadLanguages = new Promise((resolve, reject) => {
-        fetch("http://nickfara.github.io/new-book-for-phasmophobia/phasmophobia/languages", {cache: 'default', signal: AbortSignal.timeout(10000)})
+        fetch("https://nickfara.github.io/new-book-for-phasmophobia/phasmophobia/languages", {cache: 'default', signal: AbortSignal.timeout(10000)})
         .then(data => data.json())
         .then(data => {
             var lang_html = ""

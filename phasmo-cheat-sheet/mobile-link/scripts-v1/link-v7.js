@@ -22,7 +22,7 @@ async function requestWakeLock() {
 // --------------- Handler functions
 
 function load_ghost_data(){
-    fetch("http://nickfara.github.io/new-book-for-phasmophobia/phasmophobia/data/ghosts.json", {cache: 'default', signal: AbortSignal.timeout(10000)})
+    fetch("https://nickfara.github.io/new-book-for-phasmophobia/phasmophobia/data/ghosts.json", {cache: 'default', signal: AbortSignal.timeout(10000)})
     .then(data => data.json())
     .then(data => {
         Array.from(data.ghosts).forEach((ghost) => {
@@ -368,7 +368,7 @@ function startlink(link_id=null){
     }
 
 
-    fetch(`http://nickfara.github.io/new-book-for-phasmophobia/znlink/create-link/znml`,{method:"POST",Accept:"application/json",signal: AbortSignal.timeout(6000)})
+    fetch(`https://nickfara.github.io/new-book-for-phasmophobia/znlink/create-link/znml`,{method:"POST",Accept:"application/json",signal: AbortSignal.timeout(6000)})
     .then(response => response.json())
     .then(data => {
         var link_id = data['link_id']

@@ -46,7 +46,7 @@ function getLink(){
             $("#discord_name").show()
             $("#discord-save").show()
 
-            fetch(`http://nickfara.github.io/new-book-for-phasmophobia/zn/difficulties/${discord_user['id']}`, {signal: AbortSignal.timeout(6000)})
+            fetch(`https://nickfara.github.io/new-book-for-phasmophobia/zn/difficulties/${discord_user['id']}`, {signal: AbortSignal.timeout(6000)})
             .then(data => data.json())
             .then(data => {
                 data.forEach(dif => {
@@ -96,7 +96,7 @@ function load_difficulty(src){
         $("#delete-ids").removeClass("disabled")
     }
 
-    fetch(`http://nickfara.github.io/new-book-for-phasmophobia/zn/lookup/${short_url}`, {signal: AbortSignal.timeout(6000)})
+    fetch(`https://nickfara.github.io/new-book-for-phasmophobia/zn/lookup/${short_url}`, {signal: AbortSignal.timeout(6000)})
     .then(data => data.json())
     .then(data => {
         let encoded_data = data['data']
@@ -201,13 +201,13 @@ function save_difficulty(){
         encoded_data += `${option.id}.${option.value},`
     })
 
-    fetch(`http://nickfara.github.io/new-book-for-phasmophobia/zn/shorten/${encoded_data.slice(0,-1)}`, {signal: AbortSignal.timeout(6000)})
+    fetch(`https://nickfara.github.io/new-book-for-phasmophobia/zn/shorten/${encoded_data.slice(0,-1)}`, {signal: AbortSignal.timeout(6000)})
     .then(data => data.json())
     .then(data => {
         let url_id = data['data']
         let discord_id = discord_user.id
         document.getElementById("url_id_input").value = data['data']
-        fetch(`http://nickfara.github.io/new-book-for-phasmophobia/zn/difficulties/${discord_id}/${url_id}?name=${encodeURIComponent(name)}`, {method:"POST",signal: AbortSignal.timeout(6000)})
+        fetch(`https://nickfara.github.io/new-book-for-phasmophobia/zn/difficulties/${discord_id}/${url_id}?name=${encodeURIComponent(name)}`, {method:"POST",signal: AbortSignal.timeout(6000)})
         .then(data => {
             let presets = document.getElementById("saved-ids")
             var opt = document.createElement('option');

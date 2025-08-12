@@ -9,7 +9,7 @@
         border: 0;
         margin: 0;
         overflow: auto;
-        background-image: radial-gradient(circle, rgba(0,0,0,0.75), rgba(0,0,0,1)), url('http://nickfara.github.io/new-book-for-phasmophobia/phasmophobia/static/imgs/background.jpg');
+        background-image: radial-gradient(circle, rgba(0,0,0,0.75), rgba(0,0,0,1)), url('https://nickfara.github.io/new-book-for-phasmophobia/phasmophobia/static/imgs/background.jpg');
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-position: center;

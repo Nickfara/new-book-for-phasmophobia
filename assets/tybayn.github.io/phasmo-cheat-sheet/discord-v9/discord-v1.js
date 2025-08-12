@@ -40,13 +40,13 @@ function getLink(){
                 stats_info += '</div>'
 
                 document.getElementById("discord_stats").innerHTML = stats_info
-                document.getElementById("discord-stats-link").href = `http://nickfara.github.io/new-book-for-phasmophobia/phasmo-stats/?discord-id=${discord_user['id']}-${discord_user['avatar']}&username=${discord_user['username']}`
+                document.getElementById("discord-stats-link").href = `https://nickfara.github.io/new-book-for-phasmophobia/phasmo-stats/?discord-id=${discord_user['id']}-${discord_user['avatar']}&username=${discord_user['username']}`
                 document.getElementById("discord_link_status").className = "connected"
 
                 if($("#num_evidence option[value='sep3']").length === 0){
                     var cust_settings = JSON.parse(getCookie("settings"))
 
-                    fetch(`http://nickfara.github.io/new-book-for-phasmophobia/zn/difficulties/${discord_user['id']}?cheatsheet=true`, {signal: AbortSignal.timeout(6000)})
+                    fetch(`https://nickfara.github.io/new-book-for-phasmophobia/zn/difficulties/${discord_user['id']}?cheatsheet=true`, {signal: AbortSignal.timeout(6000)})
                     .then(data => data.json())
                     .then(data => {
                         custom_difficulties = data
