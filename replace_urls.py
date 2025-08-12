@@ -45,8 +45,8 @@ if __name__ == '__main__':
     logger = setup_logger()
 
     root_directory = './'  # Путь к корню проекта, поменяй при необходимости
-    old = '/assets/'
-    new = '/new-book-for-phasmophobia/assets/'
+    old = 'http://'
+    new = 'https://'
 
     logger.info(f'Starting URL replacement: "{old}" -> "{new}" in directory: "{root_directory}"')
     replace_url_in_files(root_directory, old, new, logger=logger)
