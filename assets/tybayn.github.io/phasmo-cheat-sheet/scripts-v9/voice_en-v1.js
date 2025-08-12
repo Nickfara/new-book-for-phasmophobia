@@ -1,0 +1,102 @@
+const ZNLANG = {
+    "overall":{
+        "evidence":["evident","providence","eminems","eminem's","eminent"],
+        "evidence emf5":["evan ncma 5"],
+        "journal":["channel"],
+        "sanity":["saturday","insanity","unsanity","sandy"],
+        "hantu":["haunt to","haunt too"],
+        "hunt":["hunts","aunt"],
+        "ghost ":["go ","goes ","just ","gross "],
+        "remove":["removes","removed","or move"],
+        "select":["like"],
+        "ghost remove":["coaster move","coaster movie"],
+        "ghost moroi":["ghostman roy"],
+        "ghost shade":["goshen"],
+        "ghost obake":["coastal bouquet"],
+        "ghost not the mimic":["does not mimic"],
+        "select obake":[
+            "selecto bouquet","selecto bucket","selector buckeye","selector blocker",
+            "selectos bucket","selective walker","selecto bakke","selectos barque",
+            "selectos bouquet"
+        ],
+        "select jinn":["selection"],
+        "select oni":["selectone"],
+        "not mare":["nightmare"],
+        "not obake":["and auto body"],
+        "not thaye":["knife"],
+        "remove obake":["removal vodka","removal bouquet","removal bakay"],
+        "sanity late":["huntsman elite","trinity lake"],
+        "monkey paw":["monkeypad","monkeypod","monkey pot","monkey pox","monkeypox","funky pop","funky paw"],
+        "guess":["guest","gas","gets","gust","guys","cast","guesss","kiss"],
+        "ghost guess":["ghost ghost", "ghostbusters", "girl scout", "goska", "ghostface"],
+        "guess jinn":["question"],
+        "guess oni":["ghazwan","guesscony","guesstoni"],
+        "guess goryo":["guessor oil"],
+        "guess myling":["guy smiling"],
+        "guess obake":[
+            "castle bake a","castle rocky","castle bouquet","guessso bakke","castle bait",
+            "guessle bouquet","guessle bake","guessle bucket","guessle vodka","guessle bait","guessle rocky",
+            "guessle bakke"
+        ],
+        "guess thaye":["guessing"],
+        "timer start":["thermostat"],
+        "hunt duration":["punctuation"],
+        "hunt start":["don't start","can't start","on start"],
+        "hunt stop":["don't stop","can't stop","on stop"],
+        "start":["stat"],
+        "timer":["i'm a","im a"],
+        "cooldown":["pull down"],
+        "domo":["demo"]
+    },
+    "ghosts":{
+        "spirit":["strip"],
+        "wraith":["straight","race","reef","raise"],
+        "phantom":[],
+        "poltergeist":[],
+        "banshee":[],
+        "jinn":["gym","gin"],
+        "mare":["mayor","mirror"],
+        "revenant":[],
+        "shade":[],
+        "demon":[],
+        "yurei":["your a","your ray","your way","you're a","erie","array","urie","trey","ouray","theory","urine"],
+        "oni":["only"],
+        "yokai":[],
+        "hantu":["on to","onto","on 2","haunt 2","haunt to","haunt two","honda"],
+        "goryo":["oreo","grill","gorio","goryeo"],
+        "myling":["smiling","mylink","a miley","miley"],
+        "onryo":["on rio","monroe","unreal"],
+        "the twins":["twins"],
+        "raiju":["ride you","rise you","radio","redo"],
+        "obake":["to bake","awake","oh bake","oh backy","opaque","ibaka","a bucket","obey","tobacco","obama care","obamacare","hobby","open"],
+        "the mimic":["mimic"],
+        "moroi":["mauroy"],
+        "deogen":["the ocean","deion","dion","deodorant","yeojin","geodon","children","deo","dio","digging"],
+        "thaye":["stay","say","they","fe","fae","faye","thing","day","tea"]
+    },
+    "evidence":{
+        "emf 5":["be enough","mi5"],
+        "dots":["thoughts"],
+        "ultraviolet":["fingerprints","uv","evie","tv","heavy","you be"],
+        "freezing":[],
+        "ghost orbs":["orbs","orb","forbes","ghost forbes","olives","knobs","stops"],
+        "writing":['righting',"ryhming"],
+        "spirit box":["spare box","beer box","red box","redbox","strip","strip box","spare parts","fairfax","fair fax"]
+    },
+    "speed":{
+        "slow":[],
+        "normal":[],
+        "fast":[]
+    },
+    "sanity":{
+        "late":["elite"],
+        "average":["normal"],
+        "early":[],
+        "very early":[]
+    },
+    "maps":{
+        "sunnymeadows":["sm"],
+        "brownstone":["high school"],
+        "":["restricted ","street","drive","road","farmhouse"," high school","campsite","camp","wing","chapel"]
+    }
+}

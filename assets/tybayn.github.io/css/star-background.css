@@ -1,0 +1,114 @@
+#hero, #skills, #projects {
+  background: linear-gradient(
+    217deg,
+    rgba(20, 0, 0, 1),
+    rgba(20, 0, 0, 0) 70.71%
+  ) fixed, linear-gradient(
+    127deg, 
+    rgba(0, 20, 0, 1), 
+    rgba(0, 20, 0, 0) 70.71%
+  ) fixed, linear-gradient(
+    336deg, 
+    rgba(0, 0, 20, 1), 
+    rgba(0, 0, 20, 0) 70.71%
+  ) fixed;
+  overflow: hidden;
+  z-index: -20;
+  padding-bottom: 100px;
+}
+
+#skills p{
+  margin-top: 1rem;
+  margin-bottom: 0;
+  font-weight: bold;
+}
+
+#about ion-icon {
+  padding: 30px 10px;
+  font-size: 24px;
+  color: #333;
+  z-index: 50 !important;
+}
+
+#about ion-icon:hover {
+  font-size: 24px;
+  color: #808080;
+}
+
+#about, #resume{
+  /* background-color: #222930; */
+  background-color: #d1d1d1;
+  padding-bottom: 100px;
+}
+
+.fixed{
+    position: fixed;
+}
+
+#stars {
+	content:"•";
+  background: transparent;
+  width: 1px;
+  height: 1px;
+  z-index: -10;
+  box-shadow: var(--starfield);
+  animation: animStar 50s linear infinite;
+}
+#stars:after {
+  content: " ";
+  position: absolute;
+  top: 2000px;
+  width: 1px;
+  height: 1px;
+  z-index: -10;
+  background: transparent;
+  box-shadow: var(--starfield);
+  animation: animStar 100s linear infinite;
+}
+#stars2 {
+	content:"•";
+  background: transparent;
+  width: 2px;
+  height: 2px;
+  z-index: -10;
+  box-shadow: var(--starfield2);
+  animation: animStar 100s linear infinite;
+}
+#stars2:after {
+  content: " ";
+  position: absolute;
+  top: 2000px;
+  width: 2px;
+  height: 2px;
+  z-index: -10;
+  background: transparent;
+  box-shadow: var(--starfield2);
+}
+
+#stars3 {
+  width: 2px;
+  height: 2px;
+  z-index: -10;
+  background: transparent;
+  box-shadow: var(--starfield3);
+  animation: animStar 150s linear infinite;
+}
+#stars3:after {
+  content: "• ";
+  position: absolute;
+  top: 2000px;
+  width: 2px;
+  height: 2px;
+  z-index: -10;
+  background: transparent;
+  box-shadow: var(--starfield3);
+}
+
+@keyframes animStar {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-2000px);
+  }
+}

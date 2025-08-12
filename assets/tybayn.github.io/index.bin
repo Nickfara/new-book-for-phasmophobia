@@ -1,0 +1,1088 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Unofficial Phasmophobia Cheat Sheet</title>
+    
+    <link rel="icon" type="image/x-icon" href="https://zero-network.net/phasmophobia/static/imgs/favicon.ico">
+    <meta name="Description" content="The Unofficial Phasmo Cheat Sheet is the ultimate cheat sheet for the popular horror video game Phasmophobia. It includes features such as BPM Finder, Shared Journal Link, Desktop Link, and more to help make you more successful in your ghost hunting endeavors" />
+    <meta name="keywords" content="phasmphobia, phasmo, phasmophobia cheat sheet, phasmo cheat sheet, phasmophobia info, phasmo info, phasmophobia guide, phasmo guide, phasmophobia help, phasmo help, phasmophobia tool, phasmo tools, phasmophobia tools, phasmo tools, phasmophobia github, phasmo github, phasmo ghosts, phasmophobia ghosts, phasmophobia 0 evidence, phasmo 0 evidence, phasmo ghost tests, phasmophobia ghost tests, phasmo tests, phasmophobia tests, phasmo maps, phasmophobia maps, phasmo github, phasmophobia github, zero network" />
+    <meta name="viewport" content="user-scalable=0">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tybayn.github.io/phasmo-cheat-sheet/">
+    <meta property="og:title" content="Zero-Network | Unofficial Phasmo Cheat Sheet">
+    <meta property="og:description" content="The ultimate Phasmo Cheat Sheet! Smart filters, ghost behaviors, footstep speeds, bpm finder, maps, and more!">
+    <meta property="og:image" content="https://i.imgur.com/8PJDBnm.png">
+
+    <script>
+        AbortSignal.timeout = ms => {
+            const controller = new AbortController();
+            setTimeout(() => controller.abort(), ms);
+            return controller.signal;
+        };
+    </script>
+    <script src="jquery/jquery-3.6.2.min.js"></script>
+    <script src="scripts-v9/ghost_template-v1.js"></script>
+    <link rel="stylesheet" href="styles-v9/style-v5.css"/>
+    <link rel="stylesheet" href="styles-v9/style-mobile-v5.css"/>
+    <link rel="stylesheet" href="themes-v9/themes-v1.css"/>
+    <link rel="stylesheet" href="discord-v9/discord-v1.css" >
+    <link rel="stylesheet" href="wiki-v9/wiki-v1.css" >
+    <link rel="stylesheet" href="wiki-v9/wiki-spoiler-v1.css" >
+    <link rel="stylesheet" href="events-v9/events-v1.css" >
+    <link rel="stylesheet" href="models-v9/models-v1.css" >
+    <link rel="stylesheet" href="feed-v9/feed-v1.css" >
+    <link rel="stylesheet" href="styles-v9/plugins-v1/plugins-v1.css" >
+    <link rel="stylesheet" href="styles-v9/plugins-v1/makeship-v1.css" >
+    <link rel="stylesheet" href="styles-v9/plugins-v1/musicboxstore-v1.css" >
+    <link rel="stylesheet" href="styles-v9/sparkles-v1.css" >
+</head>
+
+<body>
+    <div id="page-loading">
+        <div id="page-loading-status"></div>
+        <div class="dot-loading"></div>
+        <div class="not-loading">Page not loading? Check our <a href="https://zero-network.net/status" target="_blank">status</a> or join our <a href="https://discord.gg/afpvC7Bf7Y" target="_blank">Discord</a></div>
+    </div>
+    <div id="resetMenu" style="display: none;">
+        <button onclick="resetGhosts()">{{reset_ghosts}}</button>
+        <button onclick="resetFilters()">{{reset_filters}}</button>
+        <button onclick="resetNoSave()">{{reset_all}}</button>
+    </div>
+
+    <div id="broadcast" class="broadcast" style="display:none;">
+        <div id="broadcast-content" class="broadcast-content" onmouseenter="pause_broadcast()" onmouseleave="resume_broadcast()">
+            <img src="imgs/megaphone.png">
+            <div id="broadcast-message"></div>
+            <span class="icon" onclick="close_broadcast()"></span>
+            <div class="broadcast-timer-bar-container">
+                <div id="broadcast-timer-bar" class="broadcast-timer-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="blood-moon-effect-top"></div>
+    <div id="blood-moon-effect-bottom"></div>
+    <div id="particle-container"></div>
+
+    <div id="blackout" style="display: none;">
+        <div id="info_blockout" class="blockout-invis" style="display: none;" onclick="showInfo(event)"></div>
+        <div id="info_box">
+            <span class="icon" onclick="showInfo(event)"></span>
+
+            <h3>{{infocopy_h1}}</h3>
+            <div class="info_text">{{infocopy_p1}}</div>
+            <div class="info_text" style="padding-top: 15px;">{{infocopy_p2}}</div>
+            <h3>{{infocopy_h2}}</h3>
+            <div class="info_block">{{infocopy_p3}}<br><br>
+                {{infocopy_p4}}<br><br>
+                {{infocopy_p5}}<br>
+                <hr>
+                {{infocopy_h3}}<br><br>
+                {{infocopy_p6}}<br>
+                <hr>
+                {{infocopy_p7}}<br><br>
+            </div>
+            <h3>{{infocopy_h4}}</h3>
+            <div class="info_image_text">
+                <span class="sparkling"><img src="https://zero-network.net/phasmophobia/static/imgs/vip.png"></span>
+                <div>{{infocopy_p8}}</div>
+            </div>
+            <div class="thankyou_text">
+                {{infocopy_p9}}
+            </div>
+            <div class="thankyou_text_img">
+                <img src="https://static-cdn.jtvnw.net/jtv_user_pictures/161cdac5-6a34-4089-97cc-834aaa28058a-profile_image-70x70.png">
+                {{infocopy_p10}}
+            </div>
+            <div class="thankyou_text">
+                <strong>{{infocopy_p11}}</strong><br>
+                <p class="footer_link">
+                    <a class="inline_image_text" style="color: #5865F2;" href="https://discord.gg/afpvC7Bf7Y" target="_blank">
+                        <img src="https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a6a49cf127bf92de1e2_icon_clyde_blurple_RGB.png" width="25">
+                        <strong style="padding-left: 6px;">{{infocopy_p12}}</strong>
+                    </a>
+                </p>
+            </div>
+            <div class="copyright_text">Copyright © 2023-2025 Ty Bayn (Zero-Network)</div>
+        </div>
+    </div>
+
+    <div id="blackout_voice" style="display: none;">
+        <div id="voice_blockout" class="blockout-invis" style="display: none;" onclick="showVoiceInfo(event)"></div>
+        <div id="info_box_voice">
+            <span class="icon" onclick="showVoiceInfo(event)"></span>
+
+            <h3>Voice Commands</h3>
+            <div class="info_text">Voice commands allow you to control the cheat sheet via your voice. Once you hit enable, the cheat sheet will begin listening to your voice commands and will persist between resets until you disable it. It will by default read from your default microphone, so ensure that it is set correctly. The voice recognition will continue to work even if the page is not in focus and you are using the same microphone in-game.</div>
+            <div class="info_block" style="margin-top: 10px; overflow-y: scroll; overflow-x: hidden;">
+                <strong>Evidence:</strong>
+                <ul>
+                    <li>"difficulty &lt;difficulty&gt;" -> Set the difficulty</li>
+                    <li>"number of evidence &lt;num&gt;" -> Custom: Set number of evidence</li>
+                    <li>"hunt duration &lt;duration&gt;" -> Custom: Set hunt duration</li>
+                    <li>"evidence &lt;evidence&gt;" -> Mark as a found evidence</li>
+                    <li>"evidence not &lt;evidence&gt;" -> Mark as not an evidence</li>
+                    <li>"evidence clear &lt;evidence&gt;" -> Reset state of an evidence</li>
+                    <li>"monkey paw &lt;evidence&gt;" -> This will mark the evidence off with monkey paw logic</li>
+                </ul>
+                <hr>
+                <strong>Speed:</strong>
+                <ul>
+                    
+                    <li>"speed &lt;speed&gt;" -> Mark specified speed</li>
+                    <li>"speed clear &lt;speed&gt;" -> Reset state of specified speed</li>
+                    <li>"speed [has] line of sight" -> Mark having standard line-of-sight speed up</li>
+                    <li>"speed not line of sight" -> Mark no standard line-of-sight speed up</li>
+                    <li>"speed clear line of sight" -> Reset line-of-sight filter</li>
+                </ul>
+                <hr>
+                <strong>Hunt Sanity:</strong>
+                <ul>
+                    <li>"sanity &lt;sanity&gt;" -> Mark specified hunt sanity</li>
+                    <li>"sanity clear &lt;sanity&gt;" -> Reset state of specified hunt sanity</li>
+                </ul>
+                <hr>
+                <strong>Ghosts:</strong>
+                <ul id="ghost-commands">
+                    <li>"ghost not &lt;ghost&gt;" -> Grey out the specified ghost card</li>
+                    <li>"ghost clear &lt;ghost&gt;" -> Reset state of a ghost card (excluding hidden cards)</li>
+                    <li>"ghost select &lt;ghost&gt;" -> Select/highlight specified ghost card</li>
+                    <li>"ghost remove &lt;ghost&gt;" -> Remove the specified ghost card from the screen</li>
+                    <li class="discord_voice_commands" style="display:none;">"ghost guess &lt;ghost&gt;" -> Mark the ghost as an unconfirmed guess</li>
+                    <li class="discord_voice_commands" style="display:none;">"ghost killed by &lt;ghost&gt;" -> Select the ghost AND mark that it killed you</li>
+                    <li>"ghost show|info &lt;ghost&gt;" -> Scroll the specified ghost card into view</li>
+                    <li>"ghost tests &lt;ghost&gt;" -> Show the 0 evidence tests for the specified ghost in the guide</li>
+                </ul>
+                <hr>
+                <strong>Timer:</strong>
+                <ul>
+                    <li>"timer start" -> Start the smudge timer</li>
+                    <li>"timer stop " -> Stop the smudge timer</li>
+                    <li>"cooldown start" -> Start the cooldown timer</li>
+                    <li>"cooldown stop " -> Stop the cooldown timer</li>
+                    <li>"hunt start" -> Start the hunt timer</li>
+                    <li>"hunt stop " -> Stop the hunt timer</li>
+                </ul>
+                <hr>
+                <strong>Misc:</strong>
+                <ul>
+                    <li>"show filters" or "show tools" -> Flips the menu to show the filters/tools</li>
+                    <li>"show descriptions" or "show behaviors" -> Shows ghost behavior on the ghost cards</li>
+                    <li>"hide descriptions" or "hide behaviors" -> Hides ghost behavior on the ghost cards</li>
+                    <li>"ghost speed &lt;percent&gt;" -> Set ghost speed modifier to 50%, 75%, 100%, 125%, or 150%</li>
+                    <li>"set blood moon" -> Set Blood Moon modifier</li>
+                    <li>"remove blood moon" -> SRemove Blood Moon modifier</li>
+                    <li>"select map &lt;map name&gt;" -> Selects the specified map</li>
+                    <li>"show map [&lt;map name&gt;]" -> Opens the map tab and displays map</li>
+                    <li>"close map" or "hide map" -> Closes the map tab</li>
+                    <li>"event maps" -> Will show event maps if available</li>
+                    <li>"standard maps" or "regular map" -> Will show standard maps</li>
+                    <li>"reset journal" or "reset cheat sheet" -> Reset the cheat sheet (will save if linked with Discord)</li>
+                    <li>"domo move" -> Toggles the side of the screen that Domo is on</li>
+                    <li>"launch desktop link" -> Launch and Connect Desktop Link</li>
+                    <li>"stop listening" -> Stop the voice recognition</li>
+                    <li>"disconnect all" -> Unlink Desktop Link, Unlink Shared Journal Link, and Stop Voice</li>
+
+                </ul>
+            </div>
+            <h3>Data Privacy</h3>
+            <div class="info_text">Voice commands are routed through the built-in Web Speech API. Although microphone access is required for this feature, your voice is never recorded or stored.</div>
+            <div class="copyright_text">Copyright © 2023-2025 Ty Bayn (Zero-Network)</div>
+            
+        </div>
+    </div>
+
+    <div id="blackout_zndl" style="display: none;">
+        <div id="zndl_blockout" class="blockout-invis" style="display: none;" onclick="showZNDLInfo(event)"></div>
+        <div id="info_box_zndl">
+            <span class="icon" onclick="showZNDLInfo(event)"></span>
+            <h2>{{zndl_title}}</h2>
+            <div class="info_text">{{zndl_p1}}</div>
+            <hr>
+            <h3>{{zndl_h1}}</h3>
+            <div class="info_text">
+                {{zndl_p2}}
+            </div>
+            <br>
+            <div class="info_text">
+                {{zndl_p3}}
+            </div>
+            <hr>
+            <h3>{{zndl_h2}}</h3>
+            <div class="info_text">{{zndl_p4}}</div>
+            <div class="info_text">{{zndl_p5}}</div>
+            <img loading="lazy" src="imgs/zndl/error.png">
+            <div class="info_text">
+                {{zndl_p6}}
+            </div>
+            <hr>
+            <h3>{{zndl_h3}}</h3>
+            <div class="info_text">{{zndl_p7}}</div>
+            <h4>{{zndl_h4}}</h4>
+            <div class="info_text">{{zndl_p8}}</div>
+            <img loading="lazy" src="imgs/zndl/settings_desktop_link.png">
+            <div class="info_text">{{zndl_p9}}</div>
+            <img loading="lazy" src="imgs/zndl/connect_desktop_link.png">
+            <h4>{{zndl_h5}}</h4>
+            <div class="info_text">{{zndl_p10}}</div>
+            <hr>
+            <h3>{{zndl_h6}}</h3>
+            <h4>{{zndl_h7}}</h4>
+            <div class="info_text">
+                {{zndl_p11}}
+            </div>
+            <img loading="lazy" src="imgs/zndl/desktop_link.png">
+            <h4>{{zndl_h8}}</h4>
+            <div class="info_text">
+                {{zndl_p12}} 
+            </div>
+            <img loading="lazy" src="imgs/zndl/desktop_link_options.png">
+            <h4>{{zndl_h9}}</h4>
+            <div class="info_text">
+                {{zndl_p13}}
+            </div>
+            <img loading="lazy" src="imgs/zndl/overlay.png">
+            <h4>{{zndl_h10}}</h4>
+            <div class="info_text">
+                {{zndl_p14}}
+            </div>
+            <img loading="lazy" src="imgs/zndl/ghost_overlay.png">
+            <h4>{{zndl_h11}}</h4>
+            <div class="info_text">
+                {{zndl_p15}}
+            </div>
+            <img loading="lazy" src="imgs/zndl/sanity_overlay.png">
+            <div class="info_text">
+                {{zndl_p16}}
+            </div>
+            <img loading="lazy" src="imgs/zndl/sanity_overlay_options.png">
+            <hr>
+            <div class="copyright_text">Copyright © 2023-2025 Ty Bayn (Zero-Network)</div>
+        </div>
+    </div>
+
+    <div id="blackout_weekly" style="display: none;">
+        <div id="weekly_blockout" class="blockout-invis" style="display: none;" onclick="showWeekly(event)"></div>
+        <div id="info_box_weekly" style="text-align: center;">
+            <span class="icon" onclick="showWeekly(event)"></span>
+            <h3 id="weekly_title">{{weekly_challenge}}</h3>
+            <div id="weekly_info_box" class="info_block"></div>
+            <div id="weekly_footer"></div>
+        </div>
+    </div>
+
+    <div id="blackout_debug" style="display: none;">
+        <div id="debug_blockout" class="blockout-invis" style="display: none;" onclick="showDebug(event)"></div>
+        <div id="info_box_debug">
+            <span class="icon" onclick="showDebug(event)"></span>
+            <textarea id="debug-console" readonly></textarea>
+            <span class="debug-copy" onclick="copy_user_settings()">Copy User Settings</span>
+        </div>
+    </div>
+
+    <div id="blackout_calibrate" style="display: none;">
+        <div id="info_box_calibrate">
+            <span class="icon" onclick="showCalibrate();toggle_calibration(false,true);"></span>
+            <h3>{{calibrate}}</h3>
+            <div id="cal_tap_intro" class="info_text" style="display:none;">{{calibrate_running}}</div>
+            <button id="calibration-tap" class="yfont" onmousedown="bpm_tap()" style="display:none;">
+                <div>{{tap}}</div>
+            </button>
+            <div id="calibration-bar" class="calibration-bar" style="display:none;">
+                <div id="calibration-progress" class="calibration-progress"></div>
+            </div>
+            <h4 id="cal_complete" style="display:none;"></h4>
+            <h1 id="new_offset" style="display:none;"></h1>
+            <div id="cal_intro" class="info_text">{{calibrate_intro}}</div>
+            <div id="cal_instructions" class="info_text">
+                <ol style="margin:10px 0px 0px 0px; padding:5px; font-size: 10px;">
+                    <li>
+                        <b>{{calibrate_1_header}}:</b><br>{{calibrate_1}}
+                    </li>
+                    <li>
+                        <b>{{calibrate_2_header}}:</b><br>{{calibrate_2}}
+                    </li>
+                    <li>
+                        <b>{{calibrate_3_header}}:</b><br>{{calibrate_3}}
+                    </li>
+                </ol>
+            </div>
+            <button id="calibration" class="yfont" onclick="toggle_calibration()">{{start}}</button>
+        </div>
+    </div>
+
+    <div id="blackout_image" style="display: none;" onclick="zoomOutImage()">
+        <img loading="lazy" id="zoom_image" src="" onclick="zoomOutImage()">
+        <div id="blackout_image_subtitle" style="display: none;"></div>
+    </div>
+
+    <div id="settings_box" style="left: -1000px;">
+        <div id="settings_tab" onclick="showSettings()">
+            <img class="settings_icon" src="imgs/settings.png">
+        </div>
+        <span class="icon" onclick="showSettings()"></span>
+
+        <div class="moving_content">
+            <div class="settings_title yfont white">{{settings}}</div>
+            <div class="title_note">( '◄' {{to_close}} )</div>
+
+            <div class="info_block">
+                <div class="modifier_volume yfont white">{{speed_offset}}</div>
+                <div id="speed_offset">
+                    <span id="minus_speed" class="speed_icon" onclick="adjustOffset(-1);setTempo();saveSettings();">-1</span>
+                    <span id="minus_speed" class="speed_icon" onclick="adjustOffset(-0.1);setTempo();saveSettings();">-.1</span>
+                    <span id="offset_value"> 0.0% </span>
+                    <span id="minus_speed" class="speed_icon" onclick="adjustOffset(0.1);setTempo();saveSettings();">+.1</span>
+                    <span id="minus_speed" class="speed_icon" onclick="adjustOffset(1);setTempo();saveSettings();">+1</span>
+                </div>
+                <button id="calibrate-button" class="yfont" onclick="showCalibrate();">{{calibrate}}</button>
+                <div class="modifier_note">({{adjust_speed}})</div>
+                <hr>
+                <div class="modifier_volume yfont white">{{speed_filter_logic}}</div>
+                <div class="speed_logic_select">
+                    <span>{{or}}</span>
+                    <label for="speed_logic_type" onchange="filter();saveSettings();">
+                        <input type="checkbox" name="" id="speed_logic_type">
+                        <div class="toggle"></div>
+                    </label>
+                    <span>{{and}}</span>
+                </div>
+                <hr>
+                <div class="modifier_volume yfont white">{{bpm_to_ms}}</div>
+                <div class="speed_logic_select">
+                    <span>{{exact}}</span>
+                    <label for="bpm_type" onchange="bpm_calc(true);saveSettings();">
+                        <input type="checkbox" name="" id="bpm_type">
+                        <div class="toggle"></div>
+                    </label>
+                    <span>{{rounded}}</span>
+                </div>    
+                <hr>
+                <div class="modifier_volume yfont white">{{volume_and_timers}}</div>
+                <input type="range" id="modifier_volume" name="volume" 
+                    min="0" max="100" step="2" default="50" onchange="setVolume();saveSettings();">
+                <div class="modifier_volume_labels">
+                    <div class="modifier_volume_label">0%</div>
+                    <div class="modifier_volume_label">25%</div>
+                    <div class="modifier_volume_label">50%</div>
+                    <div class="modifier_volume_label">75%</div>
+                    <div class="modifier_volume_label">100%</div>
+                </div>
+                <div class="modifier_option">
+                    <input type="checkbox" id="mute_broadcast" name="mute_broadcast" class="settings_check" onclick="mute_broadcast();saveSettings();"><label for="mute_broadcast">{{mute_broadcast}}</label>
+                </div>
+                <div class="modifier_option less_pad">
+                    <input type="checkbox" id="mute_timer_countdown" name="mute_timer_countdown" class="settings_check" onclick="mute('countdown');saveSettings();"><label for="mute_timer_countdown">{{mute_countdown}}</label>
+                </div>
+                <div class="modifier_option less_pad">
+                    <input type="checkbox" id="mute_timer_toggle" name="mute_timer_toggle" class="settings_check" onclick="mute('toggle');saveSettings();"><label for="mute_timer_toggle">{{mute_toggle}}</label>
+                </div>
+                <div class="modifier_option less_pad">
+                    <input type="checkbox" id="timer_count_up" name="timer_count_up" class="settings_check" onclick="toggleCountup();saveSettings();"><label for="timer_count_up">{{timer_count_up}}</label>
+                </div>
+                <div class="modifier_option less_pad">
+                    <input type="checkbox" id="timer_split" name="timer_split" class="settings_check" onclick="saveSettings();"><label for="timer_split">{{split_timer}}</label>
+                </div>  
+                <hr>
+                <div class="modifier_volume yfont white">{{ghost_cards}}</div> 
+                <div class="modifier_option less_pad">
+                    <input type="checkbox" id="adaptive_evidence" name="adaptive_evidence" class="settings_check" onclick="filter();saveSettings();"><label for="adaptive_evidence">{{adaptive_evidence}}</label>
+                </div>     
+                <div class="modifier_option less_pad">
+                    <input type="checkbox" id="hide_descriptions" name="hide_descriptions" class="settings_check" onclick="toggleDescriptions();saveSettings();"><label for="hide_descriptions">{{hide_behaviors}}</label>
+                </div>
+                <div class="modifier_option less_pad">
+                    <input type="checkbox" id="compact_cards" name="compact_cards" class="settings_check" onclick="toggleCompact();saveSettings();"><label for="compact_cards">{{compact_view}}</label>
+                </div>
+                <div class="modifier_note">{{compact_disclaimer}}</div>                
+                <hr>
+                <div class="modifier_volume yfont white">{{graphics}}</div> 
+                <div class="modifier_option less_pad">
+                    <input type="checkbox" id="disable_particles" name="disable_particles" class="settings_check" onclick="setBloodMoonParticles();changeTheme();saveSettings();"><label for="disable_particles">{{disable_particles}}</label>
+                </div>
+                <hr>
+                <div class="modifier_volume yfont white">{{misc}}</div> 
+                <div class="modifier_option less_pad">
+                    <input type="checkbox" id="persist_modes" name="persist_modes" class="settings_check" onclick="saveSettings();"><label for="persist_modes">{{persist_modes}}</label>
+                </div>    
+            </div>
+            <div id="session">C: -</div>
+            <div id="prev-session">P: -</div>
+        </div>
+    </div>
+
+    <div id="links_box" style="left: -1000px;">
+        <div id="links_tab" onclick="showLinks()">
+            <div class="tab_rotate">{{links}}</div>
+            <div id="settings_status"></div>
+            <div id="dllink_status"></div>
+            <div id="voice_recognition_status" class="pulse_animation" style="display:none; background-image: url(imgs/mic.png);"></div>
+        </div>
+        <span class="icon" onclick="showLinks()"></span>
+
+        <div class="moving_content">
+            <div class="settings_title yfont white">{{links}}</div>
+            <div class="title_note">( '◄' {{to_close}} )</div>
+            <div class="info_block">
+                <div class="vcs modifier_volume yfont white">Voice Commands</div>
+                <div class="vcs journal_link vc_link">
+                    <div class="journal_link_buttons">
+                        <button id="start_voice" class="journal_link_button" onclick="start_voice()">Enable</button>
+                        <button id="stop_voice" class="journal_link_button" onclick="stop_voice()" disabled>Disable</button>
+                    </div>
+                </div>
+                <div class="modifier_option vcs">
+                    <input type="checkbox" id="voice_prefix" name="voice_prefix" class="settings_check" onclick="toggleVoicePrefix();saveSettings();"><label for="disable_particles">Require "Hey Domo"</label>
+                </div> 
+                <div id="voice_recognition_note" class="vcs modifier_note"><div onclick="showVoiceInfo(event)" class="link_hover">Commands and Info &#187;</div></div>
+                <hr class="vcs">
+                <div class="modifier_volume yfont white">{{shared_journal_link}}</div>
+                <div class="journal_link">
+                    <input type="text" placeholder="XXXXXX" id="room_id" class="text" value="" disabled style="color:#444;">
+                    <div id="room_id_cover" class="copy_cover" style="display:none;">{{copied}}</div>
+                    <img class="clipboard_icon" src="imgs/copy.png" onclick="copy_url_code()">
+                    <div id="link_pos" style="display: none;"></div>
+                    <div class="journal_link_buttons">
+                        <button id="room_id_create" class="journal_link_button" style="display: none;" onclick="create_room()">{{create}}</button>
+                        <button id="room_id_link" class="journal_link_button" style="display: none;" onclick="link_room()">{{join}}</button>
+                        <button id="room_id_disconnect" class="journal_link_button" style="display: none;" onclick="disconnect_room()">{{disconnect}}</button>
+                    </div>
+                </div>
+                <div id="room_id_note" class="modifier_note" style="user-select: text;">({{status}}: {{not_connected}})</div>
+                <hr class="znml" style="display: none;">
+                <div class="znml modifier_volume yfont white" style="display: none;">{{mobile_link}}</div>
+                <div class="znml journal_link" style="display: none;">
+                    <div class="journal_link_buttons">
+                        <a href="https://zero-network.net/phasmo-cheat-sheet/mobile-link" target="_blank" class="journal_link_buttons" style="text-decoration: none;">
+                            <button class="journal_link_button">{{open_ml}}</button>
+                        </a>
+                    </div>
+                </div>
+                <hr>
+                <div class="modifier_volume yfont white">
+                    <img class="zndlinfo" src="imgs/question.png" onclick="showZNDLInfo(event)">
+                    {{desktop_link}}
+                    <a id="zndl-download-icon" class="download" href="assets/ZN-Desktop-Link-Installer-v5.2.1.msi" download="ZN-Desktop-Link-Installer-v5.2.1.msi" onclick="showZNDLInfo(event)"><img class="download_icon" src="imgs/download.png" alt="Download ZN-Desktop-Link"></a>
+                </div>
+                <div class="journal_link">
+                    <input type="text" placeholder="DL-XXXXX" id="link_id" class="text" value="" disabled style="color:#444;">
+                    <div id="link_id_cover" class="copy_cover" style="display:none;">{{copied}}</div>
+                    <img class="clipboard_icon" src="imgs/copy.png" onclick="copy_code()">
+                    <div class="journal_link_buttons">
+                        <button id="link_id_create" class="desktop_link_button" style="display: none;" onclick="create_link(false)">{{create}}</button>
+                        <button id="link_id_create_launch" class="desktop_link_button" style="display: none;" onclick="create_link(true)">{{create_and_launch}}</button>
+                        <button id="link_id_disconnect" class="desktop_link_button" style="display: none;" onclick="disconnect_link()">{{disconnect}}</button>
+                    </div>
+                </div>
+                <div id="link_id_note" class="modifier_note">({{status}}: {{not_linked}})</div>
+                <hr>
+                <div class="modifier_volume yfont white">{{sanity_settings}}</div>
+                <div class="modifier_note">{{for_sanity}}</div>
+                <div class="sanity_labels yfont white">{{starting_sanity}}</div>
+                <input type="range" id="cust_starting_sanity" name="cust_starting_sanity" class="option-disabled"
+                    min="0" max="100" step="25" default="50" onchange="filter();set_sanity_settings();saveSettings();" disabled>
+                <div class="modifier_volume_labels">
+                    <div class="modifier_volume_label">0%</div>
+                    <div class="modifier_volume_label">25%</div>
+                    <div class="modifier_volume_label">50%</div>
+                    <div class="modifier_volume_label">75%</div>
+                    <div class="modifier_volume_label" selected>100%</div>
+                </div>
+                <div class="sanity_labels yfont white">{{sanity_pill_rest}}</div>
+                <input type="range" id="cust_sanity_pill_rest" name="cust_sanity_pill_rest" class="option-disabled"
+                    min="0" max="11" step="1" default="7" onchange="filter();set_sanity_settings();saveSettings();" disabled>
+                <div class="modifier_volume_labels">
+                    <div class="modifier_volume_label cust_label">0%</div>
+                    <div class="modifier_volume_label cust_label">5%</div>
+                    <div class="modifier_volume_label cust_label">10%</div>
+                    <div class="modifier_volume_label cust_label">20%</div>
+                    <div class="modifier_volume_label cust_label">25%</div>
+                    <div class="modifier_volume_label cust_label" selected>30%</div>
+                    <div class="modifier_volume_label cust_label">35%</div>
+                    <div class="modifier_volume_label cust_label">40%</div>
+                    <div class="modifier_volume_label cust_label">45%</div>
+                    <div class="modifier_volume_label cust_label">50%</div>
+                    <div class="modifier_volume_label cust_label">75%</div>
+                    <div class="modifier_volume_label cust_label">100%</div>
+                </div>
+                <div class="sanity_labels yfont white">{{sanity_drain_speed}}</div>
+                <input type="range" id="cust_sanity_drain" name="cust_sanity_drain" class="option-disabled"
+                    min="0" max="200" step="50" default="100" onchange="filter();set_sanity_settings();saveSettings();" disabled>
+                <div class="modifier_volume_labels">
+                    <div class="modifier_volume_label">0%</div>
+                    <div class="modifier_volume_label">50%</div>
+                    <div class="modifier_volume_label" selected>100%</div>
+                    <div class="modifier_volume_label">150%</div>
+                    <div class="modifier_volume_label">200%</div>
+                </div>
+                <div class="sanity_labels yfont white">{{lobby_type}}</div>
+                <select name="cust_lobby_type" id="cust_lobby_type" class="cust_lobby_type" onchange="filter();set_sanity_settings();saveSettings();">
+                    <option value="solo" selected>{{singleplayer}}</option>
+                    <option value="multiplayer">{{multiplayer}}</option>
+                </select>
+            </div>
+            <div id="zndl-download-button" class="find-overlay">
+                {{looking_for_overlay}}<br>
+                <a href="assets/ZN-Desktop-Link-Installer-v5.2.1.msi" download="ZN-Desktop-Link-Installer-v5.2.1.msi" onclick="showZNDLInfo(event)" style="text-decoration: none;">
+                    <div class="button-zn"><img class="download_icon" src="imgs/download.png" style="filter: invert(1); padding-right: 5px;">ZN-Desktop-Link</div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="discord_link_box" style="left: -1000px;">
+        <div id="discord_link_tab" onclick="showDiscordLink();getLink();">
+            <div class="tab_rotate">{{discord_link}}</div>
+            <div id="discord_link_status"></div>
+        </div>
+        <span class="icon" onclick="showDiscordLink()"></span>
+
+        <div class="moving_content">
+            <div class="settings_title yfont white">{{discord_link}}</div>
+            <div class="title_note">( '◄' {{to_close}} )</div>
+            <div class="info_block">
+                <img id="discord_avatar" src="https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a6a49cf127bf92de1e2_icon_clyde_blurple_RGB.png">
+                <div id="discord_name">{{discord_link_h1}}</div>
+                <div id="discord_link_date" class="hidden"></div>
+                <div id="discord_stats" class="discord_note">{{discord_link_p1}}</div>
+                <div id="discord_instructions" class="hidden">
+                    <strong>{{discord_link_h5}}</strong>
+                    <hr>
+                    <ul>
+                        <li>
+                            <div class="discord_instructions_title">
+                                <img src="imgs/select.png"><strong>{{discord_link_h6}}</strong>
+                            </div>
+                            <div class="discord_instructions_text">
+                                {{discord_link_p4}}
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="discord_instructions_title">
+                                <img src="imgs/guess.png"><strong>{{discord_link_h7}}</strong>
+                            </div>
+                            <div class="discord_instructions_text">
+                                {{discord_link_p5}}
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="discord_instructions_title">
+                                <img src="imgs/died.png"><strong>{{discord_link_h8}}</strong>
+                            </div>
+                            <div class="discord_instructions_text">
+                                {{discord_link_p6}}
+                            </div>
+                        </li>
+                    </ul>
+                    <a id="discord-stats-link" target="_blank"><div id="phasmo-stats">{{discord_link_b1}}&#187;</div></a>
+                    <hr>
+                </div>
+                <div id="discord_note" class="discord_note grey">
+                    {{discord_link_p2}}
+                </div>
+                <div>
+                    <a id="discord_link" href="https://discord.com/api/oauth2/authorize?client_id=1077230568422510602&redirect_uri=https%3A%2F%2Fzero-network.net%2Fanalytics%2Fdiscord-connect&response_type=code&scope=identify">
+                        <div id="discord_login_button">{{discord_link_b2}}</div>
+                    </a>
+                    <div id="discord_unlink_button" class="hidden" onclick="discord_unlink()">{{discord_link_b4}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="event_box" style="left: -1000px;">
+        <div id="event_tab" onclick="showEvent()">
+            <div class="tab_rotate">{{current_event}}</div>
+        </div>
+        <span class="icon" onclick="showEvent()"></span>
+        <div class="moving_content">
+            <div class="settings_title yfont white">{{current_event}}</div>
+            <div class="title_note">( '◄' {{to_close}} )</div>
+            <div class="info_block">
+                <div id="event_title">{{current_event_title}}</div>
+                <hr>
+                <div id="event_details">
+                    {{current_event_text}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="wiki_box" style="left: -1000px;">
+        <div id="wiki_tab" onclick="showWiki()">
+            <div class="tab_rotate">{{guides}}</div>
+            <div id="guide_tab_footstep" style="display: none;"></div>
+        </div>
+        <span class="icon" onclick="showWiki();"></span>
+
+        <div class="moving_content">
+            <div class="settings_title yfont white">{{guides}}</div>
+            <div class="title_note">( '◄' {{to_close}}, 'G' {{to_toggle}})</div>
+            <div id="wiki-body" class="info_block"></div>
+
+            <div class="data-warning">
+                <img src="https://zero-network.net/phasmophobia/static/imgs/warn.png">
+                {{verification_warning}}
+            </div>
+            <div class="data-bug">
+                <img src="https://zero-network.net/phasmophobia/static/imgs/bug.png">
+                {{bug_warning}}
+            </div>
+            <div class="research-link">
+                <a href="https://www.youtube.com/@severelyzero" target="_blank">{{research_link}}</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="maps_box" style="left: -1000px;">
+        <div id="maps_tab" onclick="showMaps()">
+            <div class="tab_rotate">{{maps}}</div>
+        </div>
+        <span class="icon" onclick="showMaps()"></span>
+
+        <div class="maps_title yfont white">{{maps}}</div>
+        <div class="title_note">( '◄' {{to_close}}, 'M' {{to_toggle}})</div>
+        <div class="maps_image" onpointerenter="zoomMap(this)" onpointerleave="unZoomMap(this)" onpointermove="moveZoom(this,event)">
+            <div id="map_image" class="map_image"></div>
+            <div class="map_size_info">
+                <div id="map_size_info">{{map_size}}: {{small}}</div>
+                <div id="max_num_lights">{{max_lights}}: 9</div>
+            </div>
+            <div class="hover_zoom">+ {{hover_touch}}</div>
+        </div>
+        <div class="flex-holder-split">
+            <div class="map_event_check"><input type="checkbox" class="settings_check" id="map_event_check_box" name="map_event_check_box" onchange="changeMap(document.getElementById('maps_list').querySelector('.selected_map'),all_maps[document.getElementById('maps_list').querySelector('.selected_map').id]);send_cur_map_link();saveSettings();"><label for="map_event_check_box">{{show_event_maps}} ★</label></div>
+            <div class="maps_credit">{{map_images_belong_to}} <a href="https://www.reddit.com/user/Fantismal" target="_blank">Fantismal</a> (<a href="https://imgur.com/a/iEI0tJo" target="_blank">{{images}}</a>)</div>
+        </div>
+        <div id="maps_list" class="maps_buttons"></div>
+        <div class="flex-holder-right">
+            <a id="map-explorer-link-2" target="_blank" href="https://zero-network.net/phasmo-cheat-sheet/map-explorer/">
+                <div class="button-gray">{{map_explorer}} »</div>
+            </a>
+        </div>
+    </div>
+
+    <div id="search_box" style="right:-36px;">
+        <div id="search_tab" onclick="showSearch();">
+            <img src="imgs/search.png" width="24px"/>
+        </div>
+        <span class="icon" onclick="showSearch()"></span>
+
+        <div class="moving_content">
+            <div class="settings_title yfont white">{{search}}</div>
+            <input type="text" id="search_bar" placeholder="{{search}}..." onkeyup="search()">
+            <div class="info_block" id="search_results_block" style="min-height: 10px;">
+            </div>
+        </div>
+    </div>
+
+    <div id="news_box" style="right:-36px;">
+        <div id="news_tab" onclick="showNews();">
+            <img src="imgs/news-icon.png" width="24px" id="feed_icon_img"/>
+        </div>
+        <span class="icon" onclick="showNews()"></span>
+
+        <div class="moving_content">
+            <div class="settings_title yfont white">{{news_feed}}</div>
+            <div class="info_block" id="feed_info_block">
+            </div>
+            <a href='https://ko-fi.com/H2H7OPG9V' target='_blank' style="margin-left: calc(50% - 70px);">
+                <img height='36' style='border:0px;height:36px;margin-bottom: 20px; background-color: #ccc; border-radius: 10px;' src='https://storage.ko-fi.com/cdn/kofi6.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' />
+            </a>
+        </div>
+    </div>
+
+    <div id="lang_blockout" class="blockout" style="display: none;" onclick="showLanguage()"></div>
+    <div id="language_box" style="right:-36px;">
+        <div id="language_tab" onclick="showLanguage();">
+            <img src="imgs/langauge.png" width="24px"/>
+        </div>
+        <span class="icon" onclick="showLanguage()"></span>
+
+        <div class="moving_content">
+            <div class="settings_title yfont white">
+                <select name="language" id="language" class="language" onchange="loadLanguage();">
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div id="theme_blockout" class="blockout" style="display: none;" onclick="showTheme()"></div>
+    <div id="theme_box" style="right:-36px;">
+        <div id="theme_tab" onclick="showTheme();">
+            <img src="imgs/theme.png" width="24px"/>
+        </div>
+        <span class="icon" onclick="showTheme()"></span>
+
+        <div class="moving_content">
+            <div class="settings_title yfont white">
+                <select name="theme" id="theme" class="theme" onchange="changeTheme();saveSettings();">
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div id="z3d-box" style="right:-36px;">
+        <div id="z3d-tab" onclick="show3D();">
+            <img src="imgs/3d.png" width="24px" id="3d_icon_img"/>
+        </div>
+        <span class="icon" onclick="show3D()"></span>
+
+        <div class="moving_content"></div>
+            <div class="settings_title yfont white">{{3d_print_models}}</div>
+            <div class="info_block" id="3d_info_block">
+            </div>
+            <div id="z3d-footer">{{3d_models_disclaimer}}</div>
+        </div>
+    </div>
+
+    <a href="https://discord.gg/afpvC7Bf7Y" target="_blank" >
+        <div id="discord_tab">
+            <img src="https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a6cc3c481a15a141738_icon_clyde_white_RGB.png" width="21">
+        </div>
+    </a>
+
+    <a href="https://www.youtube.com/@severelyzero" target="_blank" >
+        <div id="youtube_tab">
+            <img src="https://zero-network.net/phasmophobia/static/imgs/yt-icon.png" width="21">
+        </div>
+    </a>
+
+    <div id="debug_tab" style="display: none;" onclick="showDebug(event)">
+        <img src="imgs/terminal.png" width="21">
+    </div>
+    
+    <div class="data">
+        <div id="menu" class="menu">
+            <div class="tools-filter-buttons">
+                <button id="show_filter_button" class="filter_tool_button filter_tool_button_live" onclick="showMenu()">{{filters}}</button>
+                <button id="show_tool_button" class="filter_tool_button filter_tool_button_back" onclick="toggleFilterTools();showMenu();">{{tools}}</button>
+            </div>
+            <div id="tools-content" class="tools-content" style="display: none;">
+                <div class="timer_title yfont white">
+                    {{timers}}
+                    <img id="blood-moon-icon-2" class="blood-moon-icon" src="imgs/moon-w.png" title="{{blood_moon_weather}}" onclick="toggleBloodMoon();bpm_calc(true);saveSettings();">
+                    <img id="forest-minion-icon-2" style="display: none;" class="forest-minion-icon" src="imgs/minion-w.png" title="{{forest_minion_weather}}" onclick="toggleForestMinion();bpm_calc(true);saveSettings();">
+                </div>
+                <div class="timers">
+                    <div class="timer_block">
+                        <div class="modifier_smudge_timer yfont white" onclick="toggle_timer();send_timer();">
+                            {{smudge}}
+                        </div>
+                        <div class="line_labels" onclick="toggle_timer();send_timer();">
+                            <div class="spirit_line_label">{{Spirit}}</div>
+                            <div class="demon_line_label">{{Demon}}</div>
+                        </div>
+                        <div id="progress" onclick="toggle_timer();send_timer();">
+                            <img src="imgs/play.png" id="play_button" class="play_button">
+                            <div id="progressBar">
+                                <div id="progressBarInner" class="bar"></div>
+                                <div class="demon_line"></div>
+                                <div class="ghost_line"></div>
+                                <div class="spirit_line"></div>
+                            </div>
+                            <div id="time_left" onclick="toggle_timer();send_timer();">
+                                <span id="minute">03</span>:<span id="second">00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="timer_block">
+                        <div class="modifier_smudge_timer yfont white" onclick="toggle_cooldown_timer();send_cooldown_timer();">
+                            {{cooldown}}
+                        </div>
+                        <div class="line_labels" onclick="toggle_cooldown_timer();send_cooldown_timer();">
+                            <div class="cooldown_demon_line_label">{{Demon}}</div>
+                        </div>
+                        <div id="cooldownProgress" onclick="toggle_cooldown_timer();send_cooldown_timer();">
+                            <img src="imgs/play.png" id="play_cooldown_button" class="play_button">
+                            <div id="cooldownProgressBar">
+                                <div id="cooldownProgressBarInner" class="bar"></div>
+                                <div class="ghost_line"></div>
+                                <div class="demon_line"></div>
+                            </div>
+                            <div id="time_left_cooldown" onclick="toggle_cooldown_timer();send_cooldown_timer();">
+                                <span id="minute_cooldown">00</span>:<span id="second_cooldown">25</span>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="timer_block">
+                        <div class="modifier_smudge_timer yfont white" onclick="toggle_hunt_timer();send_hunt_timer();">
+                            {{hunt}}
+                            <div class="hunt_size_label">{{map}}: S, {{hunt}}: L</div>
+                        </div>
+                        <div class="line_labels" onclick="toggle_hunt_timer();send_hunt_timer();">
+                            <div class="hunt_cursed_line_label">{{cursed}}</div>
+                        </div>
+                        <div id="huntProgress" onclick="toggle_hunt_timer();send_hunt_timer();">
+                            <img src="imgs/play.png" id="play_hunt_button" class="play_button">
+                            <div id="huntProgressBar">
+                                <div id="huntProgressBarInner" class="bar"></div>
+                                <div class="normal_line"></div>
+                                <div class="cursed_line"></div>
+                            </div>
+                            <div id="time_left_hunt" onclick="toggle_hunt_timer();send_hunt_timer();">
+                                <span id="minute_hunt">00</span>:<span id="second_hunt">50</span>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="timer_block">
+                        <div class="modifier_smudge_timer yfont white" onclick="toggle_sound_timer();send_sound_timer();">
+                            {{sound}}
+                        </div>
+                        <div class="line_labels" onclick="toggle_sound_timer();send_sound_timer();">
+                            <div class="sound_myling_line_label">{{Myling}}</div>
+                        </div>
+                        <div id="huntProgress" onclick="toggle_sound_timer();send_sound_timer();">
+                            <img src="imgs/play.png" id="play_sound_button" class="play_button">
+                            <div id="soundProgressBar">
+                                <div id="soundProgressBarInner" class="bar"></div>
+                                <div class="normal_line"></div>
+                                <div class="myling_line"></div>
+                            </div>
+                            <div id="time_left_sound" onclick="toggle_sound_timer();send_sound_timer();">
+                                <span id="minute_sound">01</span>:<span id="second_sound">20</span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="modifier_title yfont white">
+                    {{tools}}
+                </div>
+                <div class="modifier">
+                    <div class="modifier_ghost_speed yfont white">{{ghost_speed}}</div>
+                    <input type="range" id="ghost_modifier_speed" name="volume" 
+                        min="0" max="4" step="1" default="2" onchange="setTempo();bpm_calc(true);saveSettings();send_state();">
+                    <div class="modifier_ghost_speed_labels">
+                        <div class="modifier_ghost_speed_label">50%</div>
+                        <div class="modifier_ghost_speed_label">75%</div>
+                        <div class="modifier_ghost_speed_label">100%</div>
+                        <div class="modifier_ghost_speed_label">125%</div>
+                        <div class="modifier_ghost_speed_label">150%</div>
+                    </div>
+                    <div class="modifier_sound_select">
+                        <img src="imgs/footsteps.png">
+                        <select id="modifier_sound_type" onchange="setSoundType();saveSettings();">
+                            <option value=0 selected>{{default}}</option>
+                            <option value=1>{{asphalt}}</option>
+                            <option value=2>{{carpet}}</option>
+                            <option value=3>{{gravel}}</option>
+                            <option value=4>{{wood}}</option>
+                            <option value=5>{{metal_stairs}}</option>
+                            <option value=6>{{flesh}}</option>
+                            <option value=7>{{krampus}}</option>
+                            <option value=8>{{forest_spirit}}</option>
+                            <option value=9>{{metronome}}</option>
+                        </select>
+                    </div>
+                    <div class="modifier_note">({{click_to_hear_speed}})</div>
+                    <hr>
+                    <div class="modifier_bpm_finder yfont white">{{bpm_finder}}</div>
+                    <button id="tap" class="yfont" onmousedown="bpm_tap()">
+                        <div id="input_bpm">0<br>bpm</div>
+                        <div>{{tap}}<div class="tap_note">({{press_f}})</div></div>
+                        <div id="input_speed">0<br>m/s</div>
+                    </button>
+                    <canvas id="bpm_hist" height="85" width="150"></canvas>
+                    <div id="tap_viz"></div>
+                    <div class="legend">
+                        <div class="legend_box" style="box-shadow: 0px 0px 4px 1px #dbd994"></div>
+                        <div class="modifier_note_2">{{match_base}}</div>
+                    </div>
+                    <div class="legend">
+                        <div class="legend_box" style="box-shadow: -3px 0px 2px -1px #dbd994;"></div>
+                        <div class="modifier_note_2">{{possible_los}}</div>
+                    </div>
+                    <div class="modifier_note_2">({{press_r}})</div>
+                    <div class="modifier_note_3">{{see_los_guide}}</div>
+                </div>
+            </div>
+            <div id="filter-content" class="filter-content">
+                <div class="evidence_title yfont white">
+                    {{evidence}}
+                    <img id="blood-moon-icon" class="blood-moon-icon" src="imgs/moon-w.png" title="{{blood_moon_weather}}" onclick="toggleBloodMoon();bpm_calc(true);saveSettings();">
+                    <img id="forest-minion-icon" style="display: none;" class="forest-minion-icon" src="imgs/minion-w.png" title="{{forest_minion_weather}}" onclick="toggleForestMinion();bpm_calc(true);saveSettings();">
+                </div>
+                
+                <div class="difficulty_holder">
+                    <img id="weekly_icon" src="imgs/weekly.png" onclick="showWeekly(event)" style="display: none;">
+                    <select name="num_evidence" id="num_evidence" class="num_evidence" onchange="checkDifficulty();showCustom();set_sanity_settings();setGhostSpeedFromDifficulty(this.value);updateMapDifficulty(this.value);bpm_calc(true);saveSettings();filter();flashMode();">
+                        <option value="3A">{{amateur}} (3)</option>
+                        <option value="3I">{{intermediate}} (3)</option>
+                        <option value="3">{{professional}} (3)</option>
+                        <option value="2">{{nightmare}} (2)</option>
+                        <option value="1">{{insanity}} (1)</option>
+                        <option value="0">{{apocalypse_iii}} (0)</option>
+                        <option value="-1">{{custom}} (?)</option>
+                        <option value="sep1" disabled>----------------</option>
+                        <option value="-5">{{weekly_challenge}}</option>
+                        <option value="sep2" disabled>----------------</option>
+                        <option value="-10">{{difficulty_builder}} >></option>
+                    </select>
+                </div>
+
+                <div id="custom_options" style="display: none;">
+                    <select name="cust_num_evidence" id="cust_num_evidence" class="cust_num_evidence" style="width: calc(50% - 2px); margin-right: 2px;" onchange="filter();flashMode();saveSettings();">
+                        <option value="3">{{evi}}: 3</option>
+                        <option value="2">{{evi}}: 2</option>
+                        <option value="1">{{evi}}: 1</option>
+                        <option value="0">{{evi}}: 0</option>
+                    </select>
+                    <select name="cust_hunt_length" id="cust_hunt_length" class="cust_num_evidence"  style="width: calc(50% - 2px); margin-left: 2px;" onchange="filter();updateMapDifficulty(this.value);saveSettings();">
+                        <option value="3A">{{hunt}}: {{low}}</option>
+                        <option value="3I">{{hunt}}: {{med}}</option>
+                        <option value="3">{{hunt}}: {{high}}</option>
+                    </select>
+                </div>
+
+                <div id="game_mode" class="yfont white" style="display:none;">{{insanity}}</div>
+                <div id="evidence" class="evidence">
+                    <div class="dot-flashing"></div>
+                </div>
+
+                <div class="speed_title yfont white">
+                    {{speed}}
+                </div>
+                <div class="speed">
+                    <button id="Slow" class="tricheck white" name="speed" onclick="dualstate(this)" value="Slow">
+                        <div id="checkbox" class="neutral"><span class="icon"></span></div>
+                        <div class="label">{{slow}}</div>
+                    </button>
+                    <button id="Normal" class="tricheck white" name="speed" onclick="dualstate(this)" value="Normal">
+                        <div id="checkbox" class="neutral"><span class="icon"></span></div>
+                        <div class="label">{{speed_normal}}</div>
+                    </button>
+                    <button id="Fast" class="tricheck white" name="speed" onclick="dualstate(this)" value="Fast">
+                        <div id="checkbox" class="neutral"><span class="icon"></span></div>
+                        <div class="label">{{fast}}</div>
+                    </button>
+                    <hr>
+                    <button id="LOS" class="tricheck white" name="los" onclick="tristate(this)" value="LOS">
+                        <div id="checkbox" class="neutral"><span class="icon"></span></div>
+                        <div class="label label-font-s">{{los_speed_up}}</div>
+                    </button>
+                </div>
+                <div class="hunt_sanity_title yfont white">
+                    {{hunt_sanity}}
+                </div>
+                <div class="hunt_sanity">
+                    <button id="Late" class="tricheck white" name="hunt-sanity" onclick="dualstate(this,false,true)" value="Late">
+                        <div id="checkbox" class="neutral"><span class="icon"></span></div>
+                        <div class="label">{{late}} <span class="hunt_sanity_num">(&lt;40%)</span></div>
+                    </button>
+                    <button id="Average" class="tricheck white" name="hunt-sanity" onclick="dualstate(this,false,true)" value="Average">
+                        <div id="checkbox" class="neutral"><span class="icon"></span></div>
+                        <div class="label">{{sanity_normal}} <span class="hunt_sanity_num">(>40%)</span></div>
+                    </button>
+                    <button id="Early" class="tricheck white" name="hunt-sanity" onclick="dualstate(this,false,true)" value="Early">
+                        <div id="checkbox" class="neutral"><span class="icon"></span></div>
+                        <div class="label">{{early}} <span class="hunt_sanity_num">(>50%)</span></div>
+                    </button>
+                    <button id="VeryEarly" class="tricheck white" name="hunt-sanity" onclick="dualstate(this,false,true)" value="VeryEarly">
+                        <div id="checkbox" class="neutral"><span class="icon"></span></div>
+                        <div class="label">{{very_early}} <span class="hunt_sanity_num">(>75%)</span></div>
+                    </button>
+                </div>
+
+            </div>
+            <div id="cur_map_label" class="yfont">{{current_map}}<div class="modifier_note_2">({{click_to_change}})</div></div>
+            <button id="cur_map" class="maps_button" onclick="closeAll(true);showMaps();">
+                <div class="map_size s">S</div>
+                6 Tanglewood Drive
+            </button>
+            <button id="reset" class="yfont standard_reset" onclick="reset()" onmouseenter="checkResetButton()" onmouseleave="resetResetButton()" oncontextmenu="showResetMenu(event)">{{reset}}</button>
+            <a id="kofi" href="https://ko-fi.com/severelyzero" target="_blank"><span>Support us on</span><img src="https://zero-network.net/phasmophobia/static/imgs/kofi.png"></a>
+            <div id="active-users"><span id="current-version-label"></span> | <span id="active-users-label">{{active_users}}: -</span></div>
+            <div class="copyright" onclick="showInfo(event)">{{info_copyright}}</div>
+            <div id="close-menu-button" onclick="closeMenu()"></div>
+            
+
+        </div>
+
+        <div id="cards" class="cards"><div class="dot-flashing"></div></div>
+    </div>
+
+    <div id="domovoi" style="display: none;">
+        <div id="domovoi-text" style="display: none;">Hello! I am Domo!</div>
+        <img id="domovoi-img" src="imgs/domovoi.png" onmouseenter="domovoi_show_last()" onmouseleave="domovoi_hide_last()" ondblclick="domovoi_print_logs()">
+    </div>
+    <input type="checkbox" id="priority_sort" onchange="prioritySort();saveSettings();"><label for="priority_sort" title="{{sort_ghosts}}"><img id="sort_img" src="imgs/not-sort-icon.png"></label>
+    <div id="eye" onclick="revive()" title="{{show_manually_hidden_ghosts}}"><img src="imgs/eye.png"></div>
+
+
+    <script>
+        mquery = window.matchMedia("screen and (pointer: coarse) and (max-device-width: 600px)")
+        if(mquery.matches){
+            document.getElementById("settings_box").style.left = "-100%";
+            document.getElementById("links_box").style.left = "-100%";
+            document.getElementById("discord_link_box").style.left = "-100%";
+            document.getElementById("event_box").style.left = "-100%";
+            document.getElementById("wiki_box").style.left = "-100%";
+            document.getElementById("maps_box").style.left = "-100%";
+            document.getElementById("link_id_create_launch").style.display = "none";
+            document.getElementById("calibrate-button").style.display = "none";
+            $('.znml').show()
+        }
+        else{
+            document.getElementById("settings_box").style.left = "0px";
+            document.getElementById("links_box").style.left = "0px";
+            document.getElementById("discord_link_box").style.left = "0px";
+            document.getElementById("event_box").style.left = "0px";
+            document.getElementById("wiki_box").style.left = "0px";
+            document.getElementById("maps_box").style.left = "-388px";
+            document.getElementById("active-users").innerHTML = document.getElementById("active-users").innerHTML.replace(" | ","<br>")
+        }
+        if(!navigator.platform.toLowerCase().includes('win')){
+            document.getElementById("zndl-download-icon").style.display = "none"
+            document.getElementById("zndl-download-button").style.display = "none"
+            document.getElementById("link_id_create_launch").style.display = "none";
+        }
+        if(navigator.userAgent.includes("CriOS") && (/iPad/.test(navigator.userAgent) || (navigator.platform.toLowerCase().includes('mac') && 'ontouchend' in document)))
+            document.body.style.position = 'fixed';
+    </script>
+    <script src="scripts-v9/utils-v1.js"></script>
+    <script src="lang-v9/lang-v3.js"></script>
+    <script src="themes-v9/themes-v1.js"></script>
+    <script src="scripts-v9/audio_controller-v1.js"></script>
+    <script src="scripts-v9/metronome-v1.js"></script>
+    <script src="scripts-v9/timer-v4.js"></script>
+    <script src="discord-v9/discord-v1.js"></script>
+    <script src="wiki-v9/wiki-v2.js"></script>
+    <script src="scripts-v9/filter-v1.js"></script>
+    <script src="scripts-v9/sanity-v1.js"></script>
+    <script src="scripts-v9/wslink-v2.js"></script>
+    <script src="scripts-v9/zn-v1.js"></script>
+    <script src="scripts-v9/search-v1.js"></script>
+    <script src="events-v9/events-v1.js"></script>
+    <script src="models-v9/models-v1.js"></script>
+    <script src="feed-v9/feed-v1.js"></script>
+    <script src="scripts-v9/voice_en-v1.js"></script>
+    <script src="scripts-v9/voice_recognition-v1.js"></script>
+    <script src="scripts-v9/sparkles-v1.js"></script>
+    <script>
+        document.onclick = hideResetMenu;
+        document.addEventListener('touchstart', startSwipe, false);
+        document.addEventListener('touchend', endSwipe, false); 
+
+        $(window).on('load', function() {
+            let load_wiki = new Promise((resolve, reject) => {
+                $("#wiki-body").load("wiki-v9/wiki-v5.html",() => {
+                    resolve("Ghost data loaded")
+                })
+            })
+            Promise.all([load_wiki,load_feed,checkLink()])
+            .then(x => {
+                loadAllAndConnect()
+                if(getCookie("voice_recognition_on")){
+                    start_voice()
+                }
+            })
+        });
+    </script>
+
+</body>

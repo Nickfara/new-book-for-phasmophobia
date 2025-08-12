@@ -1,0 +1,637 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <title>ZN-Mobile-Link</title>
+    <link rel="icon" type="image/x-icon" href="http://localhost:8000/phasmophobia/static/imgs/favicon.ico">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost:8000/phasmo-cheat-sheet/map-explorer/">
+    <meta property="og:title" content="Zero-Network | ZN-Mobile-Link">
+    <meta property="og:description" content="Connect and chat with your friends from mobile!">
+    <meta property="og:image" content="https://i.imgur.com/8PJDBnm.png">
+
+    <link rel="stylesheet" href="styles-v1/styles-v11.css">
+
+    <script>
+        AbortSignal.timeout = ms => {
+            const controller = new AbortController();
+            setTimeout(() => controller.abort(), ms);
+            return controller.signal;
+        };
+    </script>
+    <script src="/assets/extern/ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <div style="display: none;" id="inst-blackout">
+        <div class="ghost-options">
+            <div class="g-title">How To</div>
+            <div class="disconnect" onclick="toggle_instructions()">X</div>
+        </div>
+        <div id="inst-data">
+            <h3>Welcome to the<br>Zero-Network Mobile Link!</h3>
+            <hr>
+            <p class="note">This app is designed to be a companion to the Unofficial Phasmo Cheat Sheet's Shared Journal Link for console players or players that cannot run the ZN Desktop Link on their computer.</p>
+            <hr>
+            <p>
+                Here is how to use the ZN Mobile Link:
+                </p><ol>
+                    <li>At least one person in your group must be using the full version of the Unofficial Phasmo Cheat Sheet. Have them create a Shared Journal Link and share the code with you.</li>
+                    <li>Enter that code into the ZN Mobile Link and join the room</li>
+                    <li>Enjoy the Features!
+                        <ul>
+                            <li>Evidence, Ghosts, and Timers are synced between everyone in the same room (you can mark evidence and start/stop timers too!)</li>
+                            <li>Click on the list of ghosts to view all the data about that ghost (its the same as what is on the ghost cards on the Cheat Sheet)</li>
+                            <li>Use the text chat to communicate with other members in your room that are also using the ZN Mobile Link or the ZN Desktop Link on PC</li>
+                        </ul>
+                    </li>
+                </ol>
+            <p></p>
+            <hr>
+            <p>If you experience any bugs, please let us know on our <a href="https://discord.gg/afpvC7Bf7Y" target="_blank">Discord</a>!</p>
+            <br><br>
+        </div>
+        <div class="footer2" style="padding-top: 10px;">Copyright © 2025 Ty Bayn (Zero-Network)</div>
+    </div>
+    <div id="blackout">
+        <div class="header">
+            <img class="question" src="imgs/q.png" onclick="toggle_instructions()">
+            <div class="discord_block">
+                <img id="discord_avatar" src="/assets/extern/assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a6a49cf127bf92de1e2_icon_clyde_blurple_RGB.png">
+                <div id="discord_name" style="display: none;">Link your Discord</div>
+                <a id="discord_login" href="https://discord.com/api/oauth2/authorize?client_id=1077230568422510602&amp;redirect_uri=https%3A%2F%2Fzero-network.net%2Fanalytics%2Fdiscord-connect-mobile-link&amp;response_type=code&amp;scope=identify">
+                    Login
+                </a>
+            </div>
+        </div>
+        <div class="main-ui">
+            <img class="jlimage" src="/assets/zero-network.net/imgs/white-icon-logo.png">
+            <div class="mbsubtitle">Unofficial Phasmo Cheat Sheet</div>
+            <div class="mbtitle">Mobile Link</div>
+            <div class="jl">
+                <div class="jltitle">Shared Journal Link ID</div>
+                <input id="journal-link-id" type="number" placeholder="XXXXXX" inputmode="numeric" onkeydown="checkstart(event)">
+                <button class="jlbutton" onclick="startlink()">Join</button>
+                <div id="error"></div>
+            </div>
+        </div>
+        <div class="footer">Copyright © 2025 Ty Bayn (Zero-Network)</div>
+    </div>
+    <div style="display: none;" id="ghost-blackout">
+        <div class="ghost-options">
+            <div class="g-title">Ghost Data</div>
+            <div class="disconnect" onclick="toggle_ghosts()">X</div>
+        </div>
+        <div id="ghost-data">
+
+        
+                <div id="Spirit" class="g-card">
+                    <div class="g-name">Spirit</div>
+                        <div class="g-evidences"><div class="g-evi">EMF 5</div><div class="g-evi">Spirit Box</div><div class="g-evi">Writing</div></div>
+                        <div class="g-hunt">
+                            <div class="g-speed">
+                                <span class="g-head">Speed:</span>
+                                1.7 <span class="ms">m/s</span>
+                            </div>
+                            <div class="g-sanity">
+                                <span class="g-head">Sanity:</span>
+                                
+                                <div>50%</div>
+                                
+                            </div>
+                        </div>
+                    <div class="g-data">
+                        <div class="ghost_behavior_item"><div class="dtitle"><i>Tells</i><div class="ddash"></div></div><ul><li>Will wait 180s after being incensed before attempting to hunt again, instead of the standard 90s</li></ul></div>
+                    </div>
+                </div>
+            
+                <div id="Wraith" class="g-card">
+                    <div class="g-name">Wraith</div>
+                        <div class="g-evidences"><div class="g-evi">EMF 5</div><div class="g-evi">Spirit Box</div><div class="g-evi">DOTs</div></div>
+                        <div class="g-hunt">
+                            <div class="g-speed">
+                                <span class="g-head">Speed:</span>
+                                1.7 <span class="ms">m/s</span>
+                            </div>
+                            <div class="g-sanity">
+                                <span class="g-head">Sanity:</span>
+                                
+                                <div>50%</div>
+                                
+                            </div>
+                        </div>
+                    <div class="g-data">
+                        <div class="ghost_behavior_item"><div class="dtitle"><i>Tells</i><div class="ddash"></div></div><ul><li>Will not touch nor interact with salt in any way</li><li>Will not be slowed down by tier 3 salt during a hunt</li></ul><div class="dtitle"><i>Abilities</i><div class="ddash"></div></div><ul><li>Can teleport to a random player, leaving EMF 2 or EMF 5 at the their new location</li></ul></div>
+                    </div>
+                </div>
+            
+                <div id="Phantom" class="g-card">
+                    <div class="g-name">Phantom</div>
+                        <div class="g-evidences"><div class="g-evi">Spirit Box</div><div class="g-evi">Ultraviolet</div><div class="g-evi">DOTs</div></div>
+                        <div class="g-hunt">
+                            <div class="g-speed">
+                                <span class="g-head">Speed:</span>
+                                1.7 <span class="ms">m/s</span>
+                            </div>
+                            <div class="g-sanity">
+                                <span class="g-head">Sanity:</span>
+                                
+                                <div>50%</div>
+                                
+                            </div>
+                        </div>
+                    <div class="g-data">
+                        <div class="ghost_behavior_item"><div class="dtitle"><i>Tells</i><div class="ddash"></div></div><ul><li>Will not appear in "Ghost" photos or "Ghost" videos (will still appear in "Translucent Ghost", "Shadow Ghost", and "DOTS Ghost" videos)</li><li>Taking a photo or video of the ghost will cause the ghost to disappear (including DOTS state)</li><li>Less visible during hunts</li><li>Player will lose 0.5% sanity /s while in heartbeat range of the ghost during hunts and events</li></ul><div class="dtitle"><i>Abilities</i><div class="ddash"></div></div><ul><li>Can roam toward a random player, leaving EMF 2 at the location where it wanders to</li></ul></div>
+                    </div>
+                </div>
+            
+                <div id="Poltergeist" class="g-card">
+                    <div class="g-name">Poltergeist</div>
+                        <div class="g-evidences"><div class="g-evi">Spirit Box</div><div class="g-evi">Ultraviolet</div><div class="g-evi">Writing</div></div>
+                        <div class="g-hunt">
+                            <div class="g-speed">
+                                <span class="g-head">Speed:</span>
+                                1.7 <span class="ms">m/s</span>
+                            </div>
+                            <div class="g-sanity">
+                                <span class="g-head">Sanity:</span>
+                                
+                                <div>50%</div>
+                                
+                            </div>
+                        </div>
+                    <div class="g-data">
+                        <div class="ghost_behavior_item"><div class="dtitle"><i>Tells</i><div class="ddash"></div></div><ul><li>During hunts, Poltergeists will throw an item every 0.5s with an increased force</li></ul><div class="dtitle"><i>Behaviors</i><div class="ddash"></div></div><ul><li>Has a higher chance to throw &amp; interact with objects</li><li>Can throw objects faster and further</li></ul><div class="dtitle"><i>Abilities</i><div class="ddash"></div></div><ul><li>Poltergeist Explosion: will throw multiple objects at the same time, decreasing nearby player sanity by 2% per item thrown. There are 4 types of poltergeist throws ()</li></ul></div>
+                    </div>
+                </div>
+            
+                <div id="Banshee" class="g-card">
+                    <div class="g-name">Banshee</div>
+                        <div class="g-evidences"><div class="g-evi">Ultraviolet</div><div class="g-evi">Ghost Orbs</div><div class="g-evi">DOTs</div></div>
+                        <div class="g-hunt">
+                            <div class="g-speed">
+                                <span class="g-head">Speed:</span>
+                                1.7 <span class="ms">m/s</span>
+                            </div>
+                            <div class="g-sanity">
+                                <span class="g-head">Sanity:</span>
+                                <div class="ghost_hunt_alt">12%</div>
+                                <div>50%</div>
+                                <div class="ghost_hunt_alt">87%</div>
+                            </div>
+                        </div>
+                    <div class="g-data">
+                        <div class="ghost_behavior_item"><div class="dtitle"><i>Tells</i><div class="ddash"></div></div><ul><li>33% chance to give 1 of 20 unique screams through the parabolic microphone / sound recorder. <i>Examples:</i><br>( |  |  | )</li><li>Hunts based on target's sanity instead of average sanity</li><li>Will only pursue its target during a hunt (if the target is inside)</li><li>Target loses 15% sanity if they touch the ghost during a singing ghost event (standard drain is 10%)</li></ul><div class="dtitle"><i>Behaviors</i><div class="ddash"></div></div><ul><li>Prefers singing ghost events</li><li>Will attempt to roam toward their target while in DOTS state</li></ul><div class="dtitle"><i>Abilities</i><div class="ddash"></div></div><ul><li>66% chance to stalk/roam to its target (if inside) without leaving EMF (cannot stalk between floors except for single room basements)</li></ul><div class="dtitle"><i>Huntsanity</i><div class="ddash"></div></div><ul><li>Hunts when target's sanity is 50% or lower (even if target is outside), meaning it can hunt as early as 87% (or as late as 12%) average sanity in certain conditions</li></ul></div>
+                    </div>
+                </div>
+            
+                <div id="Jinn" class="g-card">
+                    <div class="g-name">Jinn</div>
+                        <div class="g-evidences"><div class="g-evi">EMF 5</div><div class="g-evi">Ultraviolet</div><div class="g-evi">Freezing</div></div>
+                        <div class="g-hunt">
+                            <div class="g-speed">
+                                <span class="g-head">Speed:</span>
+                                1.7 <span class="ms">m/s</span> | 2.5 <span class="ms">m/s</span>
+                            </div>
+                            <div class="g-sanity">
+                                <span class="g-head">Sanity:</span>
+                                
+                                <div>50%</div>
+                                
+                            </div>
+                        </div>
+                    <div class="g-data">
+                        <div class="ghost_behavior_item"><div class="dtitle"><i>Tells</i><div class="ddash"></div></div><ul><li>With the breaker on, the Jinn will speed up during a hunt if a player is in LOS and further than 3m away</li></ul><div class="dtitle"><i>Behaviors</i><div class="ddash"></div></div><ul><li>The Jinn cannot directly turn off the breaker</li></ul><div class="dtitle"><i>Abilities</i><div class="ddash"></div></div><ul><li>With the breaker on, can drop a nearby player's sanity by 25%, with EMF 2 or EMF 5 at the breaker</li></ul><div class="dtitle"><i>Huntspeed</i><div class="ddash"></div></div><ul><li>2.5m/s when breaker is on, has LOS, and is further than 3m from the seen player, 1.7m/s otherwise</li></ul></div>
+                    </div>
+                </div>
+            
+                <div id="Mare" class="g-card">
+                    <div class="g-name">Mare</div>
+                        <div class="g-evidences"><div class="g-evi">Spirit Box</div><div class="g-evi">Ghost Orbs</div><div class="g-evi">Writing</div></div>
+                        <div class="g-hunt">
+                            <div class="g-speed">
+                                <span class="g-head">Speed:</span>
+                                1.7 <span class="ms">m/s</span>
+                            </div>
+                            <div class="g-sanity">
+                                <span class="g-head">Sanity:</span>
+                                <div class="ghost_hunt_alt">40%</div>
+                                <div>60%</div>
+                                
+                            </div>
+                        </div>
+                    <div class="g-data">
+                        <div class="ghost_behavior_item"><div class="dtitle"><i>Tells</i><div class="ddash"></div></div><ul><li>Won't hunt until 40% average sanity when light switch in its current room is in the on position (regardless of breaker state), 60% average sanity if light switch is in the off position or if the lights are broken (regardless of light switch state)</li></ul><div class="dtitle"><i>Behaviors</i><div class="ddash"></div></div><ul><li>Will wander more if the lights are on in its current room</li><li>Prefers turning off lights and light bursting events</li><li>Cannot turn on lights (including TVs and computers, excluding motion activated lights)</li></ul><div class="dtitle"><i>Abilities</i><div class="ddash"></div></div><ul><li>Can immediately turn off a light switch (or lamp) that a player has turned on within 4m of the ghost</li></ul><div class="dtitle"><i>Huntsanity</i><div class="ddash"></div></div><ul><li>60% when lights are off in the ghost's current room, 40% when on</li></ul></div>
+                    </div>
+                </div>
+            
+                <div id="Revenant" class="g-card">
+                    <div class="g-name">Revenant</div>
+                        <div class="g-evidences"><div class="g-evi">Ghost Orbs</div><div class="g-evi">Writing</div><div class="g-evi">Freezing</div></div>
+                        <div class="g-hunt">
+                            <div class="g-speed">
+                                <span class="g-head">Speed:</span>
+                                1.0 <span class="ms">m/s</span> | 3.0 <span class="ms">m/s</span>
+                            </div>
+                            <div class="g-sanity">
+                                <span class="g-head">Sanity:</span>
+                                
+                                <div>50%</div>
+                                
+                            </div>
+                        </div>
+                    <div class="g-data">
+                        <div class="ghost_behavior_item"><div class="dtitle"><i>Tells</i><div class="ddash"></div></div><ul><li>During a hunt, a Revenant will be slow (1.0m/s) until it detects a player (voice, active electronic equipment, or LOS) where it will immediately speed up to 3.0m/s and remain at that speed until it reaches the players last known location where it will gradually slow back down</li></ul><div class="dtitle"><i>Huntspeed</i><div class="ddash"></div></div><ul><li>3.0m/s while player is detected, 1.0m/s otherwise</li></ul></div>
+                    </div>
+                </div>
+            
+                <div id="Shade" class="g-card">
+                    <div class="g-name">Shade</div>
+                        <div class="g-evidences"><div class="g-evi">EMF 5</div><div class="g-evi">Writing</div><div class="g-evi">Freezing</div></div>
+                        <div class="g-hunt">
+                            <div class="g-speed">
+                                <span class="g-head">Speed:</span>
+                                1.7 <span class="ms">m/s</span>
+                            </div>
+                            <div class="g-sanity">
+                                <span class="g-head">Sanity:</span>
+                                
+                                <div>35%</div>
+                                
+                            </div>
+                        </div>
+                    <div class="g-data">
+                        <div class="ghost_behavior_item"><div class="dtitle"><i>Tells</i><div class="ddash"></div></div><ul><li>Only ghost that can appear as a shadow ghost model on summoning circle, music box, and monkey paw events</li><li>Cannot perform singing ghost events </li></ul><div class="dtitle"><i>Behaviors</i><div class="ddash"></div></div><ul><li>Prefers shadow ghost model during events</li><li>Will not hunt if in the same room as a player</li><li>Will not do events in the same room as a player (but can start an event outside of the room and teleport to the player)</li><li>Will not do interactions that result in EMF 2, EMF 3, or EMF 5 while in the same room as the player, including ghost writing and blowing out flames (can step just outside of the room and interact with things in the room)</li><li>Does more ghost events at a lower average sanity (cannot do ghost events at 100% sanity)</li><li>Will not blow out firelights while hunting if in the same room as the player (beware of actual or buggy room boundaries) </li></ul><div class="dtitle"><i>Huntsanity</i><div class="ddash"></div></div><ul><li>Does not hunt until 35% average sanity</li></ul></div>
+                    </div>
+                </div>
+            
+                <div id="Demon" class="g-card">
+                    <div class="g-name">Demon</div>
+                        <div class="g-evidences"><div class="g-evi">Ultraviolet</div><div class="g-evi">Writing</div><div class="g-evi">Freezing</div></div>
+                        <div class="g-hunt">
+                            <div class="g-speed">
+                                <span class="g-head">Speed:</span>
+                                1.7 <span class="ms">m/s</span>
+                            </div>
+                            <div class="g-sanity">
+                                <span class="g-head">Sanity:</span>
+                                
+                                <div>70%</div>
+                                <div class="ghost_hunt_alt">100%</div>
+                            </div>
+                        </div>
+                    <div class="g-data">
+                        <div class="ghost_behavior_item"><div class="dtitle"><i>Tells</i><div class="ddash"></div></div><ul><li>Can hunt 60s after being smudged instead of the standard 90s</li><li>Can hunt 20s after the previous hunt has ended or ghost has used a crucifix instead of the standard 25s</li></ul><div class="dtitle"><i>Behaviors</i><div class="ddash"></div></div><ul><li>Crucifix range is increased by 50% per tier (4.5m, 6m, 7.5m respectively)</li></ul><div class="dtitle"><i>Abilities</i><div class="ddash"></div></div><ul><li>Can hunt at any sanity</li></ul><div class="dtitle"><i>Huntsanity</i><div class="ddash"></div></div><ul><li>Ability to hunt at any sanity, hunts normally at 70%</li></ul></div>
+                    </div>
+                </div>
+            
+                <div id="Yurei" class="g-card">
+                    <div class="g-name">Yurei</div>
+                        <div class="g-evidences"><div class="g-evi">Ghost Orbs</div><div class="g-evi">Freezing</div><div class="g-evi">DOTs</div></div>
+                        <div class="g-hunt">
+                            <div class="g-speed">
+                                <span class="g-head">Speed:</span>
+                                1.7 <span class="ms">m/s</span>
+                            </div>
+                            <div class="g-sanity">
+                                <span class="g-head">Sanity:</span>
+                                
+                                <div>50%</div>
+                                
+                            </div>
+                        </div>
+                    <div class="g-data">
+                        <div class="ghost_behavior_item"><div class="dtitle"><i>Tells</i><div class="ddash"></div></div><ul><li>Only ghost that can close or interact with an exit door outside of a hunt/event</li><li>Must fully open / shut a door when doing door interactions (outside of a hunt)</li></ul><div class="dtitle"><i>Behaviors</i><div class="ddash"></div></div><ul><li>Incensing the ghost will force the ghost into 'favorite room state' for the duration of the incense effect (90s)</li></ul><div class="dtitle"><i>Abilities</i><div class="ddash"></div></div><ul><li>Can shut a door and drop sanity of nearby players by 15% if a door is in the room</li></ul></div>
+                    </div>
+                </div>
+            
+                <div id="Oni" class="g-card">
+                    <div class="g-name">Oni</div>
+                        <div class="g-evidences"><div class="g-evi">EMF 5</div><div class="g-evi">Freezing</div><div class="g-evi">DOTs</div></div>
+                        <div class="g-hunt">
+                            <div class="g-speed">
+                                <span class="g-head">Speed:</span>
+                                1.7 <span class="ms">m/s</span>
+                            </div>
+                            <div class="g-sanity">
+                                <span class="g-head">Sanity:</span>
+                                
+                                <div>50%</div>
+                                
+                            </div>
+                        </div>
+                    <div class="g-data">
+                        <div class="ghost_behavior_item"><div class="dtitle"><i>Tells</i><div class="ddash"></div></div><ul><li>Drains 20% sanity during events (instead of the standard 10%)</li><li>Will <i>not</i> do "Ghost Mist" event</li><li>Blinks more frequently during hunts, making them more visible</li></ul><div class="dtitle"><i>Behaviors</i><div class="ddash"></div></div><ul><li>More active around multiple people</li><li>More likely to appear as full ghost model during events</li></ul></div>
+                    </div>
+                </div>
+            
+                <div id="Yokai" class="g-card">
+                    <div class="g-name">Yokai</div>
+                        <div class="g-evidences"><div class="g-evi">Spirit Box</div><div class="g-evi">Ghost Orbs</div><div class="g-evi">DOTs</div></div>
+                        <div class="g-hunt">
+                            <div class="g-speed">
+                                <span class="g-head">Speed:</span>
+                                1.7 <span class="ms">m/s</span>
+                            </div>
+                            <div class="g-sanity">
+                                <span class="g-head">Sanity:</span>
+                                
+                                <div>50%</div>
+                                <div class="ghost_hunt_alt">80%</div>
+                            </div>
+                        </div>
+                    <div class="g-data">
+                        <div class="ghost_behavior_item"><div class="dtitle"><i>Tells</i><div class="ddash"></div></div><ul><li>Hearing/detection distance is 2.5m and less during hunts</li></ul><div class="dtitle"><i>Behaviors</i><div class="ddash"></div></div><ul><li>More active when talking near it</li></ul><div class="dtitle"><i>Abilities</i><div class="ddash"></div></div><ul><li>Talking in the same room as a Yokai can cause it to hunt up to 80% average sanity</li></ul><div class="dtitle"><i>Huntsanity</i><div class="ddash"></div></div><ul><li>Can hunt up to 80% sanity when talking in the same room as it, hunts normally at 50%</li></ul></div>
+                    </div>
+                </div>
+            
+                <div id="Hantu" class="g-card">
+                    <div class="g-name">Hantu</div>
+                        <div class="g-evidences"><div class="g-evi">Ultraviolet</div><div class="g-evi">Ghost Orbs</div><div class="g-evi">Freezing</div></div>
+                        <div class="g-hunt">
+                            <div class="g-speed">
+                                <span class="g-head">Speed:</span>
+                                1.4 <span class="ms">m/s</span> - 2.7 <span class="ms">m/s</span>
+                            </div>
+                            <div class="g-sanity">
+                                <span class="g-head">Sanity:</span>
+                                
+                                <div>50%</div>
+                                
+                            </div>
+                        </div>
+                    <div class="g-data">
+                        <div class="ghost_behavior_item"><div class="dtitle"><i>Tells</i><div class="ddash"></div></div><ul><li>Will have visible freezing breath during hunts when the breaker is off/broken</li><li>Cannot turn on the breaker</li><li>More likely to turn off the breaker</li><li>Is faster in colder rooms during hunts</li></ul><div class="dtitle"><i>Huntspeed</i><div class="ddash"></div></div><ul><li>Faster in colder temperatures</li><li><b>Does not speed up in line-of-sight</b></li></ul><div class="dtitle"><i>Evidence</i><div class="ddash"></div></div><ul><li>Guaranteed freezing on difficulties with 2 or fewer evidences given (Nightmare, Insanity, etc.)</li></ul></div>
+                    </div>
+                </div>
+            
+                <div id="Goryo" class="g-card">
+                    <div class="g-name">Goryo</div>
+                        <div class="g-evidences"><div class="g-evi">EMF 5</div><div class="g-evi">Ultraviolet</div><div class="g-evi">DOTs</div></div>
+                        <div class="g-hunt">
+                            <div class="g-speed">
+                                <span class="g-head">Speed:</span>
+                                1.7 <span class="ms">m/s</span>
+                            </div>
+                            <div class="g-sanity">
+                                <span class="g-head">Sanity:</span>
+                                
+                                <div>50%</div>
+                                
+                            </div>
+                        </div>
+                    <div class="g-data">
+                        <div class="ghost_behavior_item"><div class="dtitle"><i>Tells</i><div class="ddash"></div></div><ul><li>DOTS only appear on video camera and will not show if a player is in the same room (DOTS state can start outside of room and enter a player's room)</li></ul><div class="dtitle"><i>Behaviors</i><div class="ddash"></div></div><ul><li>Cannot change favorite rooms</li><li>Does not wander from its room often</li><li>Will enter DOTS state more frequently than other ghosts </li></ul><div class="dtitle"><i>Evidence</i><div class="ddash"></div></div><ul><li>Guaranteed DOTS on difficulties with 2 or fewer evidences given (Nightmare, Insanity, etc.)</li></ul></div>
+                    </div>
+                </div>
+            
+                <div id="Myling" class="g-card">
+                    <div class="g-name">Myling</div>
+                        <div class="g-evidences"><div class="g-evi">EMF 5</div><div class="g-evi">Ultraviolet</div><div class="g-evi">Writing</div></div>
+                        <div class="g-hunt">
+                            <div class="g-speed">
+                                <span class="g-head">Speed:</span>
+                                1.7 <span class="ms">m/s</span>
+                            </div>
+                            <div class="g-sanity">
+                                <span class="g-head">Sanity:</span>
+                                
+                                <div>50%</div>
+                                
+                            </div>
+                        </div>
+                    <div class="g-data">
+                        <div class="ghost_behavior_item"><div class="dtitle"><i>Tells</i><div class="ddash"></div></div><ul><li>Footsteps and vocals cannot be heard more than 12m away during hunts (normal is 20m)</li><li>Makes sounds through the parabolic microphone / sound recorder more frequently than other ghosts</li></ul></div>
+                    </div>
+                </div>
+            
+                <div id="Onryo" class="g-card">
+                    <div class="g-name">Onryo</div>
+                        <div class="g-evidences"><div class="g-evi">Spirit Box</div><div class="g-evi">Ghost Orbs</div><div class="g-evi">Freezing</div></div>
+                        <div class="g-hunt">
+                            <div class="g-speed">
+                                <span class="g-head">Speed:</span>
+                                1.7 <span class="ms">m/s</span>
+                            </div>
+                            <div class="g-sanity">
+                                <span class="g-head">Sanity:</span>
+                                <div class="ghost_hunt_alt">40%</div>
+                                <div>60%</div>
+                                <div class="ghost_hunt_alt">100%</div>
+                            </div>
+                        </div>
+                    <div class="g-data">
+                        <div class="ghost_behavior_item"><div class="dtitle"><i>Tells</i><div class="ddash"></div></div><ul><li>Will attempt to hunt at any sanity after extinguishing every 3rd flame</li><li>Cannot light fire sources</li></ul><div class="dtitle"><i>Behaviors</i><div class="ddash"></div></div><ul><li>Flames act like crucifixes, will blow out a flame if it tries to hunt (within 4m). Ghost prioritizes flames over crucifixes when preventing hunts</li><li>More likely to extinguish a flame, the more players that are dead</li></ul><div class="dtitle"><i>Huntsanity</i><div class="ddash"></div></div><ul><li>Can hunt at any sanity using its ability, hunts normally at 60%, can't hunt until 40% when near lit firelights</li></ul></div>
+                    </div>
+                </div>
+            
+                <div id="The Twins" class="g-card">
+                    <div class="g-name">The Twins</div>
+                        <div class="g-evidences"><div class="g-evi">EMF 5</div><div class="g-evi">Spirit Box</div><div class="g-evi">Freezing</div></div>
+                        <div class="g-hunt">
+                            <div class="g-speed">
+                                <span class="g-head">Speed:</span>
+                                1.5 <span class="ms">m/s</span> | 1.9 <span class="ms">m/s</span>
+                            </div>
+                            <div class="g-sanity">
+                                <span class="g-head">Sanity:</span>
+                                
+                                <div>50%</div>
+                                
+                            </div>
+                        </div>
+                    <div class="g-data">
+                        <div class="ghost_behavior_item"><div class="dtitle"><i>Tells</i><div class="ddash"></div></div><ul><li>Can do 2 interactions at the same time, one within its standard radius (2.12m, 4.24m on large maps) and the other within its extended radius (8.48m, 16.97m on large maps) </li><li>Ghost speed during hunts will be either 1.5m/s or 1.9m/s</li></ul><div class="dtitle"><i>Behaviors</i><div class="ddash"></div></div><ul><li>Triggering motion sensors, stepping in salt, and spirit box responses only occur at its physical location</li></ul><div class="dtitle"><i>Huntspeed</i><div class="ddash"></div></div><ul><li>1.5m/s when hunting from its standard range, 1.9m/s when hunting from its extended range</li></ul></div>
+                    </div>
+                </div>
+            
+                <div id="Raiju" class="g-card">
+                    <div class="g-name">Raiju</div>
+                        <div class="g-evidences"><div class="g-evi">EMF 5</div><div class="g-evi">Ghost Orbs</div><div class="g-evi">DOTs</div></div>
+                        <div class="g-hunt">
+                            <div class="g-speed">
+                                <span class="g-head">Speed:</span>
+                                1.7 <span class="ms">m/s</span> | 2.5 <span class="ms">m/s</span>
+                            </div>
+                            <div class="g-sanity">
+                                <span class="g-head">Sanity:</span>
+                                
+                                <div>50%</div>
+                                <div class="ghost_hunt_alt">65%</div>
+                            </div>
+                        </div>
+                    <div class="g-data">
+                        <div class="ghost_behavior_item"><div class="dtitle"><i>Tells</i><div class="ddash"></div></div><ul><li>During events and hunts, causes electronic disturbance at a 15m range instead of 10m</li><li>Increased speed near active electronic equipment while hunting</li></ul><div class="dtitle"><i>Huntsanity</i><div class="ddash"></div></div><ul><li>Can hunt at 65% sanity near active player equipment</li></ul><div class="dtitle"><i>Huntspeed</i><div class="ddash"></div></div><ul><li>2.5m/s near active player equipment, 1.7m/s otherwise</li></ul></div>
+                    </div>
+                </div>
+            
+                <div id="Obake" class="g-card">
+                    <div class="g-name">Obake</div>
+                        <div class="g-evidences"><div class="g-evi">EMF 5</div><div class="g-evi">Ultraviolet</div><div class="g-evi">Ghost Orbs</div></div>
+                        <div class="g-hunt">
+                            <div class="g-speed">
+                                <span class="g-head">Speed:</span>
+                                1.7 <span class="ms">m/s</span>
+                            </div>
+                            <div class="g-sanity">
+                                <span class="g-head">Sanity:</span>
+                                
+                                <div>50%</div>
+                                
+                            </div>
+                        </div>
+                    <div class="g-data">
+                        <div class="ghost_behavior_item"><div class="dtitle"><i>Tells</i><div class="ddash"></div></div><ul><li>Special 6 fingered fingerprints ()</li><li>Has a 25% chance to not leave ultraviolet evidence (including footprints)</li><li>Will change models for a single blink during hunts at least once per standard length hunt ()</li></ul><div class="dtitle"><i>Abilities</i><div class="ddash"></div></div><ul><li>Can make fingerprints disappear twice as fast</li></ul><div class="dtitle"><i>Evidence</i><div class="ddash"></div></div><ul><li>Guaranteed ultraviolet on difficulties with 2 or fewer evidences given (Nightmare, Insanity, etc.)</li></ul></div>
+                    </div>
+                </div>
+            
+                <div id="The Mimic" class="g-card">
+                    <div class="g-name">The Mimic</div>
+                        <div class="g-evidences"><div class="g-evi">Spirit Box</div><div class="g-evi">Ultraviolet</div><div class="g-evi">Freezing</div></div>
+                        <div class="g-hunt">
+                            <div class="g-speed">
+                                <span class="g-head">Speed:</span>
+                                1.7 <span class="ms">m/s</span>
+                            </div>
+                            <div class="g-sanity">
+                                <span class="g-head">Sanity:</span>
+                                <div class="ghost_hunt_alt">12%</div>
+                                <div>50%</div>
+                                <div class="ghost_hunt_alt">100%</div>
+                            </div>
+                        </div>
+                    <div class="g-data">
+                        <div class="ghost_behavior_item"><div class="dtitle"><i>Tells</i><div class="ddash"></div></div><ul><li>Will always show Ghost Orbs as an additional evidence, even on 0 evidence</li></ul><div class="dtitle"><i>Abilities</i><div class="ddash"></div></div><ul><li>Mimics a different ghost every 30 - 120 seconds, taking on all behaviors, tells, and abilities of that ghost (excluding evidence), leading to inconsistent behavior</li></ul><div class="dtitle"><i>Huntsanity</i><div class="ddash"></div></div><ul><li>Copies behavior of currently mimicked ghost</li></ul><div class="dtitle"><i>Huntspeed</i><div class="ddash"></div></div><ul><li>Copies speed of currently mimicked ghost</li></ul></div>
+                    </div>
+                </div>
+            
+                <div id="Moroi" class="g-card">
+                    <div class="g-name">Moroi</div>
+                        <div class="g-evidences"><div class="g-evi">Spirit Box</div><div class="g-evi">Writing</div><div class="g-evi">Freezing</div></div>
+                        <div class="g-hunt">
+                            <div class="g-speed">
+                                <span class="g-head">Speed:</span>
+                                1.5 <span class="ms">m/s</span> - 2.25 <span class="ms">m/s</span><br>(3.71 <span class="ms">m/s</span>
+                            </div>
+                            <div class="g-sanity">
+                                <span class="g-head">Sanity:</span>
+                                
+                                <div>50%</div>
+                                
+                            </div>
+                        </div>
+                    <div class="g-data">
+                        <div class="ghost_behavior_item"><div class="dtitle"><i>Tells</i><div class="ddash"></div></div><ul><li>Places a curse on player when heard through spirit box, parabolic microphone, or sound recorder, which causes sanity to passively drain twice as fast (even in a lit room)</li><li>Incense blindness duration during hunts is increased from 5s to 7s </li></ul><div class="dtitle"><i>Huntspeed</i><div class="ddash"></div></div><ul><li>Faster when average sanity is lower, can reach a speed of 3.71 m/s when in LOS</li></ul><div class="dtitle"><i>Evidence</i><div class="ddash"></div></div><ul><li>Guaranteed spirit box on difficulties with 2 or fewer evidences given (Nightmare, Insanity, etc.)</li></ul></div>
+                    </div>
+                </div>
+            
+                <div id="Deogen" class="g-card">
+                    <div class="g-name">Deogen</div>
+                        <div class="g-evidences"><div class="g-evi">Spirit Box</div><div class="g-evi">Writing</div><div class="g-evi">DOTs</div></div>
+                        <div class="g-hunt">
+                            <div class="g-speed">
+                                <span class="g-head">Speed:</span>
+                                0.4 <span class="ms">m/s</span> | 3.0 <span class="ms">m/s</span>
+                            </div>
+                            <div class="g-sanity">
+                                <span class="g-head">Sanity:</span>
+                                
+                                <div>40%</div>
+                                
+                            </div>
+                        </div>
+                    <div class="g-data">
+                        <div class="ghost_behavior_item"><div class="dtitle"><i>Tells</i><div class="ddash"></div></div><ul><li>33% chance to give heavy breathing through spirit box when within 1m of the ghost  </li><li>Very fast hunt speed, but will slow down as it nears the targeted player</li><li>Is more visible during hunts</li></ul><div class="dtitle"><i>Behaviors</i><div class="ddash"></div></div><ul><li>Always has LOS of the player during hunts, meaning you cannot hide from a Deogen</li></ul><div class="dtitle"><i>Huntsanity</i><div class="ddash"></div></div><ul><li>Does not hunt until 40% average sanity</li></ul><div class="dtitle"><i>Huntspeed</i><div class="ddash"></div></div><ul><li>3.0m/s when far away, drops to 0.4m/s when close to the player</li></ul><div class="dtitle"><i>Evidence</i><div class="ddash"></div></div><ul><li>Guaranteed spirit box on difficulties with 2 or fewer evidences given (Nightmare, Insanity, etc.)</li></ul></div>
+                    </div>
+                </div>
+            
+                <div id="Thaye" class="g-card">
+                    <div class="g-name">Thaye</div>
+                        <div class="g-evidences"><div class="g-evi">Ghost Orbs</div><div class="g-evi">Writing</div><div class="g-evi">DOTs</div></div>
+                        <div class="g-hunt">
+                            <div class="g-speed">
+                                <span class="g-head">Speed:</span>
+                                1.0 <span class="ms">m/s</span> - 2.75 <span class="ms">m/s</span>
+                            </div>
+                            <div class="g-sanity">
+                                <span class="g-head">Sanity:</span>
+                                <div class="ghost_hunt_alt">15%</div>
+                                <div>75%</div>
+                                
+                            </div>
+                        </div>
+                    <div class="g-data">
+                        <div class="ghost_behavior_item"><div class="dtitle"><i>Tells</i><div class="ddash"></div></div><ul><li>Age response on Ouija board increases as Thaye ages</li></ul><div class="dtitle"><i>Behaviors</i><div class="ddash"></div></div><ul><li>Ghost will attempt to age every 1-2 minutes. If a player is in the same room when it attempts, it ages; otherwise, it waits 30s and attempts again</li><li>More active when younger</li></ul><div class="dtitle"><i>Huntsanity</i><div class="ddash"></div></div><ul><li>Hunts at 75% at its youngest, 15% at its oldest</li></ul><div class="dtitle"><i>Huntspeed</i><div class="ddash"></div></div><ul><li>2.75m/s at its youngest, 1.0m/s at its oldest</li><li><b>Does not speed up in line-of-sight</b></li></ul></div>
+                    </div>
+                </div>
+            </div>
+        <div class="footer2" style="padding-top: 10px;">Copyright © 2025 Ty Bayn (Zero-Network)</div>
+    </div>
+    <div class="container">
+        <div class="info">
+            <div class="options">
+                <div id="link-id">824453</div>
+                <div id="connected">(0/4)</div>
+                <div class="disconnect" onclick="disconnect_room()">X</div>
+            </div>
+            <hr>
+            <div id="difficulty">Nightmare | 2 Evidence | Long Hunts</div>
+            <div id="evidence">
+                <img id="EMF 5" class="evidence-card not_found" src="imgs/emf5-icon.png" onclick="send_evidence(this)">
+                <img id="Ultraviolet" class="evidence-card not_found" src="imgs/fingerprints-icon.png" onclick="send_evidence(this)">
+                <img id="Writing" class="evidence-card not_found" src="imgs/writing-icon.png" onclick="send_evidence(this)">
+                <img id="Freezing" class="evidence-card not_found" src="imgs/freezing-icon.png" onclick="send_evidence(this)">
+                <img id="DOTs" class="evidence-card not_found" src="imgs/dots-icon.png" onclick="send_evidence(this)">
+                <img id="Ghost Orbs" class="evidence-card not_found" src="imgs/orbs-icon.png" onclick="send_evidence(this)">
+                <img id="Spirit Box" class="evidence-card not_found" src="imgs/spirit-box-icon.png" onclick="send_evidence(this)">
+            </div>
+            <div id="ghosts" class="faded" onclick="toggle_ghosts()">[Tap to view all ghosts]</div>
+            <hr>
+            <div class="timers">
+                <div class="timer" onclick="toggle_timer();send_timer();">
+                    <div class="timer-title">Smudge</div>
+                    <div id="smudge" class="timer-value">00:00</div>
+                </div>
+                <div class="timer middle" onclick="toggle_cooldown_timer();send_cooldown_timer();">
+                    <div class="timer-title">Cooldown</div>
+                    <div id="cooldown" class="timer-value">00:00</div>
+                </div>
+                <div class="timer" onclick="toggle_hunt_timer();send_hunt_timer();">
+                    <div class="timer-title">Hunt</div>
+                    <div id="hunt" class="timer-value">00:00</div>
+                </div>
+            </div>
+        </div>
+        <div class="chat">
+            <div class="chat-window" id="chat-window">
+                <div class="message">
+                    <span class="user">[zn-server]</span>
+                    <span class="content">Welcome to the ZN-Mobile-Link!</span>
+                </div>
+            </div>
+            <form class="chat-input" onsubmit="sendMessage(event)">
+                <input type="text" id="chat-input" onfocus="scrollToBottomWithVisualViewport()" placeholder="Type a message...">
+                <button type="submit">Send</button>
+            </form>
+            <div class="footer2">Copyright © 2025 Ty Bayn (Zero-Network)</div>
+        </div>
+        
+    </div>
+
+    <script src="scripts-v1/discord-v1.js"></script>
+    <script src="scripts-v1/timer-v2.js"></script>
+    <script src="scripts-v1/link-v7.js"></script>
+    <script>
+        $(window).on('load', () => {
+            parse_url()
+            load_ghost_data()
+            getLink()
+        })
+        document.addEventListener('visibilitychange', () => {
+            if (document.visibilityState === 'visible') {
+                relink()
+            }
+        });
+    </script>
+
+
+</body></html>

@@ -1,0 +1,443 @@
+<html><head>
+        <meta charset="UTF-8">
+        <title>Difficulty Builder</title>
+        <link rel="icon" type="image/x-icon" href="http://localhost:8000/phasmophobia/static/imgs/favicon.ico">
+        <meta name="Description" content="The Phasmo Custom Difficulty Builder allows you to create and share custom difficulties for the  popular horror video game Phasmophobia.">
+        <meta name="keywords" content="phasmphobia, phasmo, phasmophobia cheat sheet, phasmo cheat sheet, phasmophobia info, phasmo info, phasmophobia guide, phasmo guide, phasmophobia help, phasmo help, phasmophobia tool, phasmo tools, phasmophobia tools, phasmo tools, phasmophobia github, phasmo github, phasmo ghosts, phasmophobia ghosts, phasmophobia 0 evidence, phasmo 0 evidence, phasmo ghost tests, phasmophobia ghost tests, phasmo tests, phasmophobia tests, phasmo maps, phasmophobia maps, phasmo github, phasmophobia github, zero network, phasmophobia custom, phasmophobia customs, phasmo custom, phasmo customs, phasmophobia difficulty, phasmo difficulty">
+        <meta name="viewport" content="user-scalable=0, width=device-width, initial-scale=1">
+
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="http://localhost:8000/phasmo-cheat-sheet/map-explorer/">
+        <meta property="og:title" content="Zero-Network | Phasmo Difficulty Builder">
+        <meta property="og:description" content="Custom Difficulty Builder for Phasmophobia!">
+        <meta property="og:image" content="https://i.imgur.com/8PJDBnm.png">
+
+        <script>
+            AbortSignal.timeout = ms => {
+                const controller = new AbortController();
+                setTimeout(() => controller.abort(), ms);
+                return controller.signal;
+            };
+        </script>
+
+        <script src="jquery/jquery-3.6.2.min.js"></script>
+        <link rel="stylesheet" href="styles-v1/styles-v3.css">
+        <link rel="stylesheet" href="styles-v1/styles-mobile-v5.css">
+    </head>
+    <body>
+        <div id="hover_info" style="display: none;">Data and Stuff</div>
+        <div id="verify_delete" style="display: none;">
+            <div class="option_box">
+                <h3>Are you sure you want to delete:</h3>
+                <div id="url-to-delete"></div>
+                <button class="cancel_button" onclick="close_delete()">Cancel</button>
+                <button class="delete_button" onclick="run_delete()">Delete</button>
+            </div>
+        </div>
+        <div id="container">
+            <div id="header">
+                <div id="title">Phasmo Custom Difficulty Builder</div>
+                <div class="discord_block">
+                    <img id="discord_avatar" src="/assets/extern/assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a6a49cf127bf92de1e2_icon_clyde_blurple_RGB.png">
+                    <div id="discord_name" style="display: none;">Link your Discord</div>
+                    <a id="discord_login" href="https://discord.com/api/oauth2/authorize?client_id=1077230568422510602&amp;redirect_uri=https%3A%2F%2Fzero-network.net%2Fanalytics%2Fdiscord-connect-internal&amp;response_type=code&amp;scope=identify">
+                        Login
+                    </a>
+                </div>
+            </div>
+            <div id="controls">
+                <div class="controls-section">
+                    <div id="saved-title" class="saved-title">Saved:</div>
+                    <select id="saved-ids" onchange="load_difficulty('saved-ids')">
+                    <option value="" disabled="">-----------------</option><option value="4614-5391-2947">Amateur</option><option value="2559-7606-8997">Intermediate</option><option value="3296-6279-3676">Professional</option><option value="6331-4569-3229">Nightmare</option><option value="6301-2384-6644">Insanity</option><option value="3709-4288-1492">Apocalypse I</option><option value="0447-9557-6774">Apocalypse II</option><option value="7581-5017-4211">Apocalypse III</option><option value="" disabled="">--- My Customs ---</option></select>
+                    <img id="delete-ids" onclick="verify_delete()" src="imgs/trash.png" style="display:none;">
+                </div>
+                <div class="controls-section">
+                    <input type="text" placeholder="XXXX-XXXX-XXXX" id="url_id_input" class="zn-input">
+                    <button onclick="load_difficulty('url_id_input');" class="zn-button">Load</button>
+                </div>
+                <div id="discord-save" class="controls-section" style="display: none;">
+                    <input type="text" placeholder="Difficulty Name" id="name_input" class="zn-input">
+                    <button onclick="save_difficulty();" class="zn-button">Save</button>
+                </div>
+            </div>
+            <div id="custom_data">
+                <div id="flash_message" style="opacity: 3.94779e-05;"><div class="dot-flashing"></div></div>
+                <div id="player">
+                    <h2 class="section_title">Player</h2>
+                    <hr>
+                    <div id="player_data" class="info">
+                <div id="p1-title" class="option_title">Starting Sanity:<img id="p1-icon" class="option-icon" src="imgs/warn.png" style="display:none;" onmouseenter="show_conflict('p1',event);" onmousemove="move_conflict(event);" onmouseout="hide_conflict();"></div>
+                <select class="option_picker increase" name="p1" id="p1" onchange="calculate_difficulty();clear_controls();">
+                
+            <option value="0">0</option>
+        
+            <option value="25">25</option>
+        
+            <option value="50">50</option>
+        
+            <option value="75">75</option>
+        
+            <option value="100" selected="selected">100</option>
+        
+                </select><br>
+            
+                <div id="p2-title" class="option_title">Sanity Pill Restoration (%):<img id="p2-icon" class="option-icon" src="imgs/warn.png" style="display:none;" onmouseenter="show_conflict('p2',event);" onmousemove="move_conflict(event);" onmouseout="hide_conflict();"></div>
+                <select class="option_picker increase" name="p2" id="p2" onchange="calculate_difficulty();clear_controls();">
+                
+            <option value="0">0</option>
+        
+            <option value="5">5</option>
+        
+            <option value="10">10</option>
+        
+            <option value="20">20</option>
+        
+            <option value="25">25</option>
+        
+            <option value="30" selected="selected">30</option>
+        
+            <option value="35">35</option>
+        
+            <option value="40">40</option>
+        
+            <option value="45">45</option>
+        
+            <option value="50">50</option>
+        
+            <option value="75">75</option>
+        
+            <option value="100">100</option>
+        
+                </select><br>
+            
+                <div id="p3-title" class="option_title">Sanity Drain Speed (%):<img id="p3-icon" class="option-icon" src="imgs/warn.png" style="display:none;" onmouseenter="show_conflict('p3',event);" onmousemove="move_conflict(event);" onmouseout="hide_conflict();"></div>
+                <select class="option_picker increase" name="p3" id="p3" onchange="calculate_difficulty();clear_controls();">
+                
+            <option value="0">0</option>
+        
+            <option value="50">50</option>
+        
+            <option value="100">100</option>
+        
+            <option value="150">150</option>
+        
+            <option value="200" selected="selected">200</option>
+        
+                </select><br>
+            
+                <div id="p4-title" class="option_title">Sprinting:<img id="p4-icon" class="option-icon" src="imgs/warn.png" style="display:none;" onmouseenter="show_conflict('p4',event);" onmousemove="move_conflict(event);" onmouseout="hide_conflict();"></div>
+                <select class="option_picker increase" name="p4" id="p4" onchange="calculate_difficulty();clear_controls();">
+                
+            <option value="Infinite">Infinite</option>
+        
+            <option value="On" selected="selected">On</option>
+        
+            <option value="Off">Off</option>
+        
+                </select><br>
+            
+                <div id="p5-title" class="option_title">Player Speed (%):<img id="p5-icon" class="option-icon" src="imgs/warn.png" style="display:none;" onmouseenter="show_conflict('p5',event);" onmousemove="move_conflict(event);" onmouseout="hide_conflict();"></div>
+                <select class="option_picker" name="p5" id="p5" onchange="calculate_difficulty();clear_controls();">
+                
+            <option value="50">50</option>
+        
+            <option value="75">75</option>
+        
+            <option value="100" selected="selected">100</option>
+        
+            <option value="125">125</option>
+        
+            <option value="150">150</option>
+        
+                </select><br>
+            
+                <div id="p6-title" class="option_title">Flashlights:<img id="p6-icon" class="option-icon" src="imgs/warn.png" style="display:none;" onmouseenter="show_conflict('p6',event);" onmousemove="move_conflict(event);" onmouseout="hide_conflict();"></div>
+                <select class="option_picker increase" name="p6" id="p6" onchange="calculate_difficulty();clear_controls();">
+                
+            <option value="On" selected="selected">On</option>
+        
+            <option value="Off">Off</option>
+        
+                </select><br>
+            
+                <div id="p7-title" class="option_title">Lose Items and Consumables:<img id="p7-icon" class="option-icon" src="imgs/warn.png" style="display:none;" onmouseenter="show_conflict('p7',event);" onmousemove="move_conflict(event);" onmouseout="hide_conflict();"></div>
+                <select class="option_picker" name="p7" id="p7" onchange="calculate_difficulty();clear_controls();">
+                
+            <option value="On" selected="selected">On</option>
+        
+            <option value="Off">Off</option>
+        
+                </select><br>
+            </div>
+                </div>
+                <div id="ghost">
+                    <h2 class="section_title">Ghost</h2>
+                    <hr>
+                    <div id="ghost_data" class="info">
+                <div id="g1-title" class="option_title">Ghost Speed (%):<img id="g1-icon" class="option-icon" src="imgs/warn.png" style="display:none;" onmouseenter="show_conflict('g1',event);" onmousemove="move_conflict(event);" onmouseout="hide_conflict();"></div>
+                <select class="option_picker" name="g1" id="g1" onchange="calculate_difficulty();clear_controls();">
+                
+            <option value="50">50</option>
+        
+            <option value="75">75</option>
+        
+            <option value="100" selected="selected">100</option>
+        
+            <option value="125">125</option>
+        
+            <option value="150">150</option>
+        
+                </select><br>
+            
+                <div id="g2-title" class="option_title">Roaming Frequency:<img id="g2-icon" class="option-icon" src="imgs/warn.png" style="display:none;" onmouseenter="show_conflict('g2',event);" onmousemove="move_conflict(event);" onmouseout="hide_conflict();"></div>
+                <select class="option_picker increase" name="g2" id="g2" onchange="calculate_difficulty();clear_controls();">
+                
+            <option value="Low">Low</option>
+        
+            <option value="Medium">Medium</option>
+        
+            <option value="High" selected="selected">High</option>
+        
+                </select><br>
+            
+                <div id="g3-title" class="option_title">Changing Favourite Room:<img id="g3-icon" class="option-icon" src="imgs/warn.png" style="display:none;" onmouseenter="show_conflict('g3',event);" onmousemove="move_conflict(event);" onmouseout="hide_conflict();"></div>
+                <select class="option_picker increase" name="g3" id="g3" onchange="calculate_difficulty();clear_controls();">
+                
+            <option value="None">None</option>
+        
+            <option value="Low" selected="selected">Low</option>
+        
+            <option value="Medium">Medium</option>
+        
+            <option value="High">High</option>
+        
+                </select><br>
+            
+                <div id="g4-title" class="option_title">Activity Level:<img id="g4-icon" class="option-icon" src="imgs/warn.png" style="display:none;" onmouseenter="show_conflict('g4',event);" onmousemove="move_conflict(event);" onmouseout="hide_conflict();"></div>
+                <select class="option_picker increase" name="g4" id="g4" onchange="calculate_difficulty();clear_controls();">
+                
+            <option value="Low" selected="selected">Low</option>
+        
+            <option value="Medium">Medium</option>
+        
+            <option value="High">High</option>
+        
+                </select><br>
+            
+                <div id="g5-title" class="option_title">Event Frequency:<img id="g5-icon" class="option-icon" src="imgs/warn.png" style="display:none;" onmouseenter="show_conflict('g5',event);" onmousemove="move_conflict(event);" onmouseout="hide_conflict();"></div>
+                <select class="option_picker" name="g5" id="g5" onchange="calculate_difficulty();clear_controls();">
+                
+            <option value="Low">Low</option>
+        
+            <option value="Medium" selected="selected">Medium</option>
+        
+            <option value="High">High</option>
+        
+                </select><br>
+            
+                <div id="g6-title" class="option_title">Friendly Ghost:<img id="g6-icon" class="option-icon" src="imgs/warn.png" style="display:none;" onmouseenter="show_conflict('g6',event);" onmousemove="move_conflict(event);" onmouseout="hide_conflict();"></div>
+                <select class="option_picker" name="g6" id="g6" onchange="calculate_difficulty();clear_controls();">
+                
+            <option value="Off" selected="selected">Off</option>
+        
+            <option value="On">On</option>
+        
+                </select><br>
+            
+                <div id="g7-title" class="option_title">Grace Period (s):<img id="g7-icon" class="option-icon" src="imgs/warn.png" style="display:none;" onmouseenter="show_conflict('g7',event);" onmousemove="move_conflict(event);" onmouseout="hide_conflict();"></div>
+                <select class="option_picker increase" name="g7" id="g7" onchange="calculate_difficulty();clear_controls();">
+                
+            <option value="0">0</option>
+        
+            <option value="1">1</option>
+        
+            <option value="2">2</option>
+        
+            <option value="3" selected="selected">3</option>
+        
+            <option value="4">4</option>
+        
+            <option value="5">5</option>
+        
+                </select><br>
+            
+                <div id="g8-title" class="option_title">Hunt Duration (s):<img id="g8-icon" class="option-icon" src="imgs/warn.png" style="display:none;" onmouseenter="show_conflict('g8',event);" onmousemove="move_conflict(event);" onmouseout="hide_conflict();"></div>
+                <select class="option_picker increase" name="g8" id="g8" onchange="calculate_difficulty();clear_controls();">
+                
+            <option value="Low">Low</option>
+        
+            <option value="Medium">Medium</option>
+        
+            <option value="High" selected="selected">High</option>
+        
+                </select><br>
+            
+                <div id="g9-title" class="option_title">Kills Extend Hunts:<img id="g9-icon" class="option-icon" src="imgs/warn.png" style="display:none;" onmouseenter="show_conflict('g9',event);" onmousemove="move_conflict(event);" onmouseout="hide_conflict();"></div>
+                <select class="option_picker" name="g9" id="g9" onchange="calculate_difficulty();clear_controls();">
+                
+            <option value="Off" selected="selected">Off</option>
+        
+            <option value="Low">Low</option>
+        
+            <option value="Medium">Medium</option>
+        
+            <option value="High">High</option>
+        
+                </select><br>
+            
+                <div id="g10-title" class="option_title">Evidence Given:<img id="g10-icon" class="option-icon" src="imgs/warn.png" style="display:none;" onmouseenter="show_conflict('g10',event);" onmousemove="move_conflict(event);" onmouseout="hide_conflict();"></div>
+                <select class="option_picker increase" name="g10" id="g10" onchange="calculate_difficulty();clear_controls();">
+                
+            <option value="0">0</option>
+        
+            <option value="1">1</option>
+        
+            <option value="2">2</option>
+        
+            <option value="3" selected="selected">3</option>
+        
+                </select><br>
+            </div>
+                </div>
+                <div id="contract">
+                    <h2 class="section_title">Contract</h2>
+                    <hr>
+                    <div id="contract_data" class="info">
+                <div id="c1-title" class="option_title">Setup Time (s):<img id="c1-icon" class="option-icon" src="imgs/warn.png" style="display:none;" onmouseenter="show_conflict('c1',event);" onmousemove="move_conflict(event);" onmouseout="hide_conflict();"></div>
+                <select class="option_picker increase" name="c1" id="c1" onchange="calculate_difficulty();clear_controls();">
+                
+            <option value="0" selected="selected">0</option>
+        
+            <option value="30">30</option>
+        
+            <option value="60">60</option>
+        
+            <option value="120">120</option>
+        
+            <option value="180">180</option>
+        
+            <option value="240">240</option>
+        
+            <option value="300">300</option>
+        
+                </select><br>
+            
+                <div id="c2-title" class="option_title">Weather:<img id="c2-icon" class="option-icon" src="imgs/warn.png" style="display:none;" onmouseenter="show_conflict('c2',event);" onmousemove="move_conflict(event);" onmouseout="hide_conflict();"></div>
+                <select class="option_picker increase" name="c2" id="c2" onchange="calculate_difficulty();clear_controls();">
+                
+            <option value="Random" selected="selected">Random</option>
+        
+            <option value="Light Rain">Light Rain</option>
+        
+            <option value="Heavy Rain">Heavy Rain</option>
+        
+            <option value="Snow">Snow</option>
+        
+            <option value="Windy">Windy</option>
+        
+            <option value="Clear">Clear</option>
+        
+            <option value="Fog">Fog</option>
+        
+            <option value="Sunrise">Sunrise</option>
+        
+                </select><br>
+            
+                <div id="c3-title" class="option_title">Doors Starting Open:<img id="c3-icon" class="option-icon" src="imgs/warn.png" style="display:none;" onmouseenter="show_conflict('c3',event);" onmousemove="move_conflict(event);" onmouseout="hide_conflict();"></div>
+                <select class="option_picker increase" name="c3" id="c3" onchange="calculate_difficulty();clear_controls();">
+                
+            <option value="None">None</option>
+        
+            <option value="Low">Low</option>
+        
+            <option value="Medium" selected="selected">Medium</option>
+        
+            <option value="High">High</option>
+        
+                </select><br>
+            
+                <div id="c4-title" class="option_title">Number of Hiding Places:<img id="c4-icon" class="option-icon" src="imgs/warn.png" style="display:none;" onmouseenter="show_conflict('c4',event);" onmousemove="move_conflict(event);" onmouseout="hide_conflict();"></div>
+                <select class="option_picker increase" name="c4" id="c4" onchange="calculate_difficulty();clear_controls();">
+                
+            <option value="None">None</option>
+        
+            <option value="Low">Low</option>
+        
+            <option value="Medium" selected="selected">Medium</option>
+        
+            <option value="High">High</option>
+        
+            <option value="Very High">Very High</option>
+        
+                </select><br>
+            
+                <div id="c5-title" class="option_title">Sanity Monitor:<img id="c5-icon" class="option-icon" src="imgs/warn.png" style="display:none;" onmouseenter="show_conflict('c5',event);" onmousemove="move_conflict(event);" onmouseout="hide_conflict();"></div>
+                <select class="option_picker increase" name="c5" id="c5" onchange="calculate_difficulty();clear_controls();">
+                
+            <option value="On" selected="selected">On</option>
+        
+            <option value="Off">Off</option>
+        
+                </select><br>
+            
+                <div id="c6-title" class="option_title">Activity Monitor:<img id="c6-icon" class="option-icon" src="imgs/warn.png" style="display:none;" onmouseenter="show_conflict('c6',event);" onmousemove="move_conflict(event);" onmouseout="hide_conflict();"></div>
+                <select class="option_picker increase" name="c6" id="c6" onchange="calculate_difficulty();clear_controls();">
+                
+            <option value="On" selected="selected">On</option>
+        
+            <option value="Off">Off</option>
+        
+                </select><br>
+            
+                <div id="c7-title" class="option_title">Fuse Box at Start of Contract:<img id="c7-icon" class="option-icon" src="imgs/warn.png" style="display:none;" onmouseenter="show_conflict('c7',event);" onmousemove="move_conflict(event);" onmouseout="hide_conflict();"></div>
+                <select class="option_picker increase" name="c7" id="c7" onchange="calculate_difficulty();clear_controls();">
+                
+            <option value="Broken">Broken</option>
+        
+            <option value="Off" selected="selected">Off</option>
+        
+            <option value="On">On</option>
+        
+                </select><br>
+            
+                <div id="c8-title" class="option_title">Cursed Possessions Quantity:<img id="c8-icon" class="option-icon" src="imgs/warn.png" style="display:none;" onmouseenter="show_conflict('c8',event);" onmousemove="move_conflict(event);" onmouseout="hide_conflict();"></div>
+                <select class="option_picker increase" name="c8" id="c8" onchange="calculate_difficulty();clear_controls();">
+                
+            <option value="0">0</option>
+        
+            <option value="1" selected="selected">1</option>
+        
+            <option value="2">2</option>
+        
+            <option value="3">3</option>
+        
+            <option value="4">4</option>
+        
+            <option value="5">5</option>
+        
+            <option value="6">6</option>
+        
+            <option value="7">7</option>
+        
+                </select><br>
+            </div>
+                </div>
+            </div>
+            <div id="multiplier">
+                <div id="multiplier-value" onmouseenter="show_global_conflict(event);" onmousemove="move_conflict(event);" onmouseout="hide_conflict();">x12.97</div>
+                <img id="apoc-icon" src="imgs/apoc2.png" style="">
+            </div>
+            <div id="copyright">© 2024-2025 Ty Bayn (Zero-Network)</div>
+            <img class="share_icon" onclick="build_url();flash_message('Link copied!');" src="imgs/share.png" title="Share Custom Difficulty">
+        </div>
+
+        <div id="debug"></div>
+
+        <script src="scripts-v1/discord-v5.js"></script>
+        <script src="scripts-v1/scripts-v8.js"></script>
+        <script>
+            $(window).on('load', load_custom)
+        </script>
+    
+</body></html>

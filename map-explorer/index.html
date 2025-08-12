@@ -1,0 +1,269 @@
+<html><head>
+        <meta charset="UTF-8">
+        <title>Map Explorer</title>
+        <link rel="icon" type="image/x-icon" href="http://localhost:8000/phasmophobia/static/imgs/favicon.ico">
+
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="http://localhost:8000/phasmo-cheat-sheet/map-explorer/">
+        <meta property="og:title" content="Zero-Network | Phasmo Map Explorer">
+        <meta property="og:description" content="The ultimate map explorer for Phasmophobia!">
+        <meta property="og:image" content="https://i.imgur.com/8PJDBnm.png">
+
+        <script src="jquery/jquery-3.6.2.min.js"></script>
+        <script src="scripts-v4/splitting.min.js"></script>
+        <link rel="stylesheet" href="styles-v4/maps-v2.css">
+        <link rel="stylesheet" href="/assets/cdn.jsdelivr.net/npm/@photo-sphere-viewer/core/index.min.css"">
+        <link rel="stylesheet" href="/assets/cdn.jsdelivr.net/npm/@photo-sphere-viewer/virtual-tour-plugin@5/index.css"">
+
+    </head>
+    <body onresize="drawSpots()">
+        <div id="incompatible" style="display: none;">
+            <img src="/assets/zero-network.net/imgs/white-icon-logo.png">
+            <h1 class="yfont white">Oops!</h1>
+            <div class="data yfont white">The Unofficial Phasmo Cheat Sheet: Map Explorer is only available for desktop!</div>
+            <div class="copyright">Copyright © 2023-2025 Ty Bayn (Zero-Network)</div>
+        </div>
+        <div id="warning" style="display: none;">
+            <img src="/assets/zero-network.net/phasmophobia/static/imgs/warn.png">
+            The selected ranges have not been verified officially, but testing from multiple sources show these values to be correct.
+        </div>
+        <div id="spot-panel" style="display: none;">
+            <img id="spot-image" src="imgs/blank.png">
+            <img id="spot-open" src="imgs/select.png">
+            <img id="spot-block" src="imgs/not.png">
+        </div>
+        <div id="spot-panel-single" style="display: none;">
+            <img id="spot-image-single" src="imgs/blank-single.png">
+            <img id="spot-single-rating" src="imgs/5-star.png">
+        </div>
+        <div id="content">
+            <div id="map-area">
+                <div id="map">
+                    <img id="cur-map" src="/assets/zero-network.net/phasmophobia/static/imgs/maps/tanglewood.png" onload="drawSpots();">
+                    <div id="placed_circles"></div>
+                    <div id="circles1" class="circles transparent"></div>
+                    <div id="circles2" class="circles transparent"></div>
+                    <div id="circles3" class="circles transparent"></div>
+                    <div id="circles4" class="circles transparent"></div>
+                    <div id="cursor1" class="cursor1" style="display: none;"></div>
+                    <div id="cursor2" class="cursor2" style="display: none;"></div>
+                    <div id="cursor3" class="cursor3" style="display: none;"></div>
+                    <div id="cursor4" class="cursor4" style="display: none;"></div>
+                    <div id="circles" class="circles"></div>
+                    <div id="flash_message"><div class="dot-flashing"></div></div>
+                    <div id="v360-viewer" style="display: none; z-index: -1;"><div class="psv-container psv--has-navbar" style="cursor: move;"><div class="psv-overlay psv--capture-event" style="display: none;"><div class="psv-overlay-image"></div><div class="psv-overlay-title"></div><div class="psv-overlay-text"></div></div><div class="psv-canvas-container" style="opacity: 1;"><canvas data-engine="three.js r179" width="300" height="150" class="psv-canvas" style="display: block; background: rgb(0, 0, 0);"></canvas></div><div class="psv-loader-container" style="display: none;"><div class="psv-loader"><svg class="psv-loader-canvas" viewBox="0 0 0 0">
+            <circle cx="0" cy="0" r="0" fill="rgba(61, 61, 61, 0.5)"></circle>
+            <path d="M 0 8 A -8 -8 0 1 1 0.0005026548242506773 7.999999984208633" fill="none" stroke="rgba(255, 255, 255, 0.7)" stroke-width="10" stroke-linecap="round"></path>
+        </svg><img class="psv-loader-image" src="imgs/loading.gif" style="max-width: 11px; max-height: 11px;"></div></div><div class="psv-navbar psv--capture-event psv-navbar--open"><div class="psv-button psv-button--hover-scale psv-zoom-button" title="Zoom out" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="psv-button-svg"><path fill="currentColor" d="M14.043 12.22a7.738 7.738 0 1 0-1.823 1.822l4.985 4.985c.503.504 1.32.504 1.822 0a1.285 1.285 0 0 0 0-1.822l-4.984-4.985zm-6.305 1.043a5.527 5.527 0 1 1 0-11.053 5.527 5.527 0 0 1 0 11.053z"></path><path fill="currentColor" d="M4.006 6.746h7.459V8.73H4.006z"></path><!--Created by Ryan Canning from the Noun Project--></svg>
+</div><div class="psv-button  psv-zoom-range" style="display: none;"><div class="psv-zoom-range-line"><div class="psv-zoom-range-handle" style="left: 0px;"></div></div></div><div class="psv-button psv-button--hover-scale psv-zoom-button" title="Zoom in" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="psv-button-svg"><path fill="currentColor" d="M14.043 12.22a7.738 7.738 0 1 0-1.823 1.822l4.985 4.985c.503.504 1.32.504 1.822 0a1.285 1.285 0 0 0 0-1.822l-4.984-4.985zm-6.305 1.043a5.527 5.527 0 1 1 0-11.053 5.527 5.527 0 0 1 0 11.053z"></path><path fill="currentColor" d="M8.728 4.009H6.744v2.737H4.006V8.73h2.738v2.736h1.984V8.73h2.737V6.746H8.728z"></path><!--Created by Ryan Canning from the Noun Project--></svg>
+</div><div class="psv-button psv-button--hover-scale psv-move-button" title="Move left" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="40 40 432 432" class="psv-button-svg"><g transform="rotate(0, 256, 256)"><path fill="currentColor" d="M425.23 210.55H227.39a5 5 0 01-3.53-8.53l56.56-56.57a45.5 45.5 0 000-64.28 45.15 45.15 0 00-32.13-13.3 45.15 45.15 0 00-32.14 13.3L41.32 256l174.83 174.83a45.15 45.15 0 0032.14 13.3 45.15 45.15 0 0032.13-13.3 45.5 45.5 0 000-64.28l-56.57-56.57a5 5 0 013.54-8.53h197.84c25.06 0 45.45-20.39 45.45-45.45s-20.4-45.45-45.45-45.45z"></path></g><!-- Created by Flatart from the Noun Project --></svg>
+</div><div class="psv-button psv-button--hover-scale psv-move-button" title="Move right" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="40 40 432 432" class="psv-button-svg"><g transform="rotate(180, 256, 256)"><path fill="currentColor" d="M425.23 210.55H227.39a5 5 0 01-3.53-8.53l56.56-56.57a45.5 45.5 0 000-64.28 45.15 45.15 0 00-32.13-13.3 45.15 45.15 0 00-32.14 13.3L41.32 256l174.83 174.83a45.15 45.15 0 0032.14 13.3 45.15 45.15 0 0032.13-13.3 45.5 45.5 0 000-64.28l-56.57-56.57a5 5 0 013.54-8.53h197.84c25.06 0 45.45-20.39 45.45-45.45s-20.4-45.45-45.45-45.45z"></path></g><!-- Created by Flatart from the Noun Project --></svg>
+</div><div class="psv-button psv-button--hover-scale psv-move-button" title="Move up" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="40 40 432 432" class="psv-button-svg"><g transform="rotate(90, 256, 256)"><path fill="currentColor" d="M425.23 210.55H227.39a5 5 0 01-3.53-8.53l56.56-56.57a45.5 45.5 0 000-64.28 45.15 45.15 0 00-32.13-13.3 45.15 45.15 0 00-32.14 13.3L41.32 256l174.83 174.83a45.15 45.15 0 0032.14 13.3 45.15 45.15 0 0032.13-13.3 45.5 45.5 0 000-64.28l-56.57-56.57a5 5 0 013.54-8.53h197.84c25.06 0 45.45-20.39 45.45-45.45s-20.4-45.45-45.45-45.45z"></path></g><!-- Created by Flatart from the Noun Project --></svg>
+</div><div class="psv-button psv-button--hover-scale psv-move-button" title="Move down" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="40 40 432 432" class="psv-button-svg"><g transform="rotate(-90, 256, 256)"><path fill="currentColor" d="M425.23 210.55H227.39a5 5 0 01-3.53-8.53l56.56-56.57a45.5 45.5 0 000-64.28 45.15 45.15 0 00-32.13-13.3 45.15 45.15 0 00-32.14 13.3L41.32 256l174.83 174.83a45.15 45.15 0 0032.14 13.3 45.15 45.15 0 0032.13-13.3 45.5 45.5 0 000-64.28l-56.57-56.57a5 5 0 013.54-8.53h197.84c25.06 0 45.45-20.39 45.45-45.45s-20.4-45.45-45.45-45.45z"></path></g><!-- Created by Flatart from the Noun Project --></svg>
+</div><a class="psv-button psv-button--hover-scale psv-download-button" title="Download" tabindex="0" href="https://file.garden/Z-9fual_RynAMoLc/Lobby%20360s/lobby.webp" target="_blank" download="lobby.webp"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="psv-button-svg"><path fill="currentColor" d="M83.3 35.6h-17V3H32.2v32.6H16.6l33.6 32.7 33-32.7z"></path><path fill="currentColor" d="M83.3 64.2v16.3H16.6V64.2H-.1v32.6H100V64.2H83.3z"></path><!--Created by Michael Zenaty from the Noun Project--></svg>
+</a><div class="psv-button psv-button--hover-scale psv-description-button" title="Description" tabindex="0" style="display: none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" class="psv-button-svg"><path fill="currentColor" d="M28.3 26.1c-1 2.6-1.9 4.8-2.6 7-2.5 7.4-5 14.7-7.2 22-1.3 4.4.5 7.2 4.3 7.8 1.3.2 2.8.2 4.2-.1 8.2-2 11.9-8.6 15.7-15.2l-2.2 2a18.8 18.8 0 0 1-7.4 5.2 2 2 0 0 1-1.6-.2c-.2-.1 0-1 0-1.4l.8-1.8L41.9 28c.5-1.4.9-3 .7-4.4-.2-2.6-3-4.4-6.3-4.4-8.8.2-15 4.5-19.5 11.8-.2.3-.2.6-.3 1.3 3.7-2.8 6.8-6.1 11.8-6.2z"></path><circle fill="currentColor" cx="39.3" cy="9.2" r="8.2"></circle><!--Created by Arafat Uddin from the Noun Project--></svg>
+</div><div class="psv-button  psv-caption" tabindex="0"><div class="psv-caption-content"></div></div><div class="psv-button psv-button--hover-scale psv-fullscreen-button" title="Fullscreen" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="psv-button-svg"><path fill="currentColor" d="M100 40H87.1V18.8h-21V6H100zM100 93.2H66V80.3h21.1v-21H100zM34 93.2H0v-34h12.9v21.1h21zM12.9 40H0V6h34v12.9H12.8z"></path><!--Created by Garrett Knoll from the Noun Project--></svg>
+</div><div class="psv-button psv-button--hover-scale psv-menu-button" title="Menu" tabindex="0" style="display: none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="10 10 80 80" class="psv-button-svg"><g fill="currentColor"><circle r="10" cx="20" cy="20"></circle><circle r="10" cx="50" cy="20"></circle><circle r="10" cx="80" cy="20"></circle><circle r="10" cx="20" cy="50"></circle><circle r="10" cx="50" cy="50"></circle><circle r="10" cx="80" cy="50"></circle><circle r="10" cx="20" cy="80"></circle><circle r="10" cx="50" cy="80"></circle><circle r="10" cx="80" cy="80"></circle></g><!-- Created by Richard Kunák from the Noun Project--></svg>
+</div></div><div class="psv-panel psv--capture-event"><div class="psv-panel-resizer"></div><div class="psv-panel-close-button" title="Close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><g fill="currentColor" transform=" translate(50, 50) rotate(45)"><rect x="-5" y="-65" width="10" height="130"></rect><rect x="-65" y="-5" width="130" height="10"></rect></g></svg></div><div class="psv-panel-content"></div></div><div class="psv-notification"><div class="psv-notification-content"></div></div><div class="psv-virtual-tour-arrows" style="overflow: hidden; width: 0px; height: 0px;"><div style="transform-origin: 0px 0px; pointer-events: none; width: 0px; height: 0px;"><div style="transform-style: preserve-3d; width: 0px; height: 0px; transform: perspective(0px) scale(1) translateZ(0px) matrix3d(1, 0, 0, 0, 0, -1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1) translate(0px, 0px);"></div></div></div></div></div>
+                    <div id="touch-pad" onpointermove="mapRadiusMove(this,event);send_mouse(this,event);" onwheel="rotate(this,event);mapRadiusMove(this,event);send_mouse(this,event);" onpointerleave="hideRadius();send_offscreen();" onclick="send_place_circle(this,event);place(this,event);"></div>
+                    <img id="v360-close" class="v360_close" style="display: none;" onclick="hidePanorama();" src="imgs/not.png" title="Close Viewer">
+                    <div id="v360-bright" class="v360_bright" style="display: none;">
+                        <img id="v360-bright-icon" class="v360_bright_icon" src="imgs/brightness.png">
+                        <input type="range" min="0" max="250" value="100" step="25" class="v360_slider" id="v360-slider" oninput="v360_filter(this)" style="background: linear-gradient(to right, white 40%, transparent 40%);">
+                    </div>
+                    <div id="v360-contrast" class="v360_contrast" style="display: none;">
+                        <img id="v360-contrast-icon" class="v360_contrast_icon" src="imgs/contrast.png">
+                        <input type="range" min="0" max="150" value="100" step="25" class="v360_slider" id="v360-contrast-slider" oninput="v360_filter(this)" style="background: linear-gradient(to right, white 66.6667%, transparent 66.6667%);">
+                    </div>
+                    <img class="share_icon" onclick="send_share_request();flash_message('Link copied!');" src="imgs/share.png" title="Share Map">
+                    <div class="map_bottom_bar">
+                        <input type="checkbox" id="official" name="show_spots" onchange="toggleSpots(this,'official');saveSettings();"><label for="show_spots" style="padding-right: 10px;">Official Hiding Spots</label>
+                        <input type="checkbox" id="unofficial" name="show_unofficial_spots" onchange="toggleSpots(this,'unofficial');saveSettings();"><label for="show_spots" style="padding-right: 10px;">Unofficial Hiding Spots</label>
+                        <input type="checkbox" id="cursed_objects" name="show_cursed_objects" onchange="toggleSpots(this,'cursed_objects');saveSettings();"><label for="show_spots" style="padding-right: 10px;">Cursed Objects</label>
+                        <input type="checkbox" id="panorama" name="show_panorama" onchange="toggleSpots(this,'panorama');saveSettings();"><label for="show_spots">360 View</label>
+                    </div>
+                </div>
+            </div>
+            <div id="menu">
+                <div class="menu_title yfont white" style="grid-row: 1;">Maps</div>
+                <div id="map-list" class="options" style="grid-row: 2; overflow: auto;"><button class="maps_button" id="edgefield" onclick="changeMap(this,'http://localhost:8000/phasmophobia/static/imgs/maps/edgefield.png');send_map('edgefield','http://localhost:8000/phasmophobia/static/imgs/maps/edgefield.png')"><div class="map_size s">S</div>42 Edgefield Road</button><button class="maps_button" id="grafton" onclick="changeMap(this,'http://localhost:8000/phasmophobia/static/imgs/maps/grafton.png');send_map('grafton','http://localhost:8000/phasmophobia/static/imgs/maps/grafton.png')"><div class="map_size s">S</div>Grafton Farmhouse</button><button class="maps_button" id="nells" onclick="changeMap(this,'http://localhost:8000/phasmophobia/static/imgs/maps/nells_placeholder.png');send_map('nells','http://localhost:8000/phasmophobia/static/imgs/maps/nells_placeholder.png')"><div class="map_size s">S</div>Nell's Diner (Coming 2025)</button><button class="maps_button" id="ridgeview" onclick="changeMap(this,'http://localhost:8000/phasmophobia/static/imgs/maps/ridgeview.png');send_map('ridgeview','http://localhost:8000/phasmophobia/static/imgs/maps/ridgeview.png')"><div class="map_size s">S</div>10 Ridgeview Court</button><button class="maps_button selected_map" id="tanglewood" onclick="changeMap(this,'/assets/zero-network.net/phasmophobia/static/imgs/maps/tanglewood.png');send_map('tanglewood','/assets/zero-network.net/phasmophobia/static/imgs/maps/tanglewood.png')"><div class="map_size s">S</div>6 Tanglewood Drive</button><button class="maps_button" id="willow" onclick="changeMap(this,'http://localhost:8000/phasmophobia/static/imgs/maps/willow.png');send_map('willow','http://localhost:8000/phasmophobia/static/imgs/maps/willow.png')"><div class="map_size s">S</div>13 Willow Street</button><button class="maps_button" id="woodwind" onclick="changeMap(this,'http://localhost:8000/phasmophobia/static/imgs/maps/woodwind.png');send_map('woodwind','http://localhost:8000/phasmophobia/static/imgs/maps/woodwind.png')"><div class="map_size s">S</div>Camp Woodwind</button><button class="maps_button" id="bleasdale" onclick="changeMap(this,'http://localhost:8000/phasmophobia/static/imgs/maps/bleasdale_new.png');send_map('bleasdale','http://localhost:8000/phasmophobia/static/imgs/maps/bleasdale_new.png')"><div class="map_size m">M</div>Bleasdale Farmhouse</button><button class="maps_button" id="maplelodge" onclick="changeMap(this,'http://localhost:8000/phasmophobia/static/imgs/maps/maplelodge.png');send_map('maplelodge','http://localhost:8000/phasmophobia/static/imgs/maps/maplelodge.png')"><div class="map_size m">M</div>Maple Lodge Campsite</button><button class="maps_button" id="pointhope" onclick="changeMap(this,'http://localhost:8000/phasmophobia/static/imgs/maps/pointhope.png');send_map('pointhope','http://localhost:8000/phasmophobia/static/imgs/maps/pointhope.png')"><div class="map_size m">M</div>Point Hope</button><button class="maps_button" id="prison" onclick="changeMap(this,'http://localhost:8000/phasmophobia/static/imgs/maps/prison.png');send_map('prison','http://localhost:8000/phasmophobia/static/imgs/maps/prison.png')"><div class="map_size m">M</div>Prison</button><button class="maps_button" id="sunnymeadows_courtyard" onclick="changeMap(this,'http://localhost:8000/phasmophobia/static/imgs/maps/sunnymeadows_courtyard.png');send_map('sunnymeadows_courtyard','http://localhost:8000/phasmophobia/static/imgs/maps/sunnymeadows_courtyard.png')"><div class="map_size m">M</div>SM Restricted - Courtyard</button><button class="maps_button" id="sunnymeadows_female" onclick="changeMap(this,'http://localhost:8000/phasmophobia/static/imgs/maps/sunnymeadows_female.png');send_map('sunnymeadows_female','http://localhost:8000/phasmophobia/static/imgs/maps/sunnymeadows_female.png')"><div class="map_size m">M</div>SM Restricted - Female Wing</button><button class="maps_button" id="sunnymeadows_hospital" onclick="changeMap(this,'http://localhost:8000/phasmophobia/static/imgs/maps/sunnymeadows_hospital.png');send_map('sunnymeadows_hospital','http://localhost:8000/phasmophobia/static/imgs/maps/sunnymeadows_hospital.png')"><div class="map_size m">M</div>SM Restricted - Hospital</button><button class="maps_button" id="sunnymeadows_male" onclick="changeMap(this,'http://localhost:8000/phasmophobia/static/imgs/maps/sunnymeadows_male.png');send_map('sunnymeadows_male','http://localhost:8000/phasmophobia/static/imgs/maps/sunnymeadows_male.png')"><div class="map_size m">M</div>SM Restricted - Male Wing</button><button class="maps_button" id="sunnymeadows_restricted" onclick="changeMap(this,'http://localhost:8000/phasmophobia/static/imgs/maps/sunnymeadows_restricted.png');send_map('sunnymeadows_restricted','http://localhost:8000/phasmophobia/static/imgs/maps/sunnymeadows_restricted.png')"><div class="map_size m">M</div>SM Restricted - Restricted</button><button class="maps_button" id="brownstone" onclick="changeMap(this,'http://localhost:8000/phasmophobia/static/imgs/maps/brownstone.png');send_map('brownstone','http://localhost:8000/phasmophobia/static/imgs/maps/brownstone.png')"><div class="map_size l">L</div>Brownstone High School</button><button class="maps_button" id="sunnymeadows" onclick="changeMap(this,'http://localhost:8000/phasmophobia/static/imgs/maps/sunnymeadows.png');send_map('sunnymeadows','http://localhost:8000/phasmophobia/static/imgs/maps/sunnymeadows.png')"><div class="map_size l">L</div>Sunny Meadows</button></div>
+                <div class="menu_title yfont white" style="grid-row: 3;">Ranges</div>
+                <div id="range-list" class="options" style="grid-row: 4;">
+                    <button class="range-option tricheck white" name="speed" onclick="dualstate(this,true,'.range-option');add_range(this,true,'.range-option');drawCircles(-3000,-3000);send_circle();" value="yokai">
+                        <div class="checkbox neutral"><span class="icon"></span></div>
+                        <div class="label"><div class="color_code" style="background-color: rgb(255,50,50);"></div>Detection <div class="note">(+Yokai)</div></div>
+                    </button>
+                    <button class="range-option tricheck white" name="speed" onclick="dualstate(this,true,'.range-option');add_range(this,true,'.range-option');drawCircles(-3000,-3000);send_circle();" value="raiju">
+                        <div class="checkbox neutral"><span class="icon"></span></div>
+                        <div class="label"><div class="color_code" style="background-color: rgb(50,125,255);"></div>Disturbance <div class="note">(+Raiju)</div></div>
+                    </button>
+                    <button class="range-option tricheck white" name="speed" onclick="dualstate(this,true,'.range-option');add_range(this,true,'.range-option');drawCircles(-3000,-3000);send_circle();" value="myling">
+                        <div class="checkbox neutral"><span class="icon"></span></div>
+                        <div class="label"><div class="color_code" style="background-color: rgb(255, 251, 0);"></div>Hunt Sounds <div class="note">(+Myling)</div></div>
+                    </button>
+                    <button class="range-option tricheck white" name="speed" onclick="dualstate(this,true,'.range-option');add_range(this,true,'.range-option');drawCircles(-3000,-3000);send_circle();" value="the_twins">
+                        <div class="checkbox neutral"><span class="icon"></span></div>
+                        <div class="label"><div class="color_code" style="background-color: rgb(255, 0, 255);"></div>Interactions <div class="note">(+The Twins)</div></div>
+                    </button>
+                    <button class="range-option tricheck white" name="speed" onclick="dualstate(this,true,'.range-option');add_range(this,true,'.range-option');drawCircles(-3000,-3000);send_circle();" value="jinn">
+                        <div class="checkbox neutral"><span class="icon"></span></div>
+                        <div class="label"><div class="color_code" style="background-color: rgb(50,255,50);"></div>Jinn (LOS)</div>
+                    </button>
+                    <button class="range-option tricheck white" name="speed" onclick="dualstate(this,true,'.range-option');add_range(this,true,'.range-option');drawCircles(-3000,-3000);send_circle();" value="music_box">
+                        <div class="checkbox neutral"><span class="icon"></span></div>
+                        <div class="label"><div class="color_code" style="background-color: rgb(150, 121, 105);"></div>Music Box</div>
+                    </button>
+                    <button class="range-option tricheck white" name="speed" onclick="dualstate(this,true,'.range-option');add_range(this,true,'.range-option');drawCircles(-3000,-3000);send_circle();" value="raiju_boost">
+                        <div class="checkbox neutral"><span class="icon"></span></div>
+                        <div class="label"><div class="color_code" style="background-color: rgb(0,255,255);"></div>Raiju (Speed Boost)</div>
+                    </button>
+                    <!-- <button class="range-option tricheck white" name="speed" onclick="dualstate(this,true,'.range-option');add_range(this,true,'.range-option');drawCircles(-3000,-3000);send_circle();" value="roams">
+                        <div class="checkbox neutral"><span class="icon"></span></div>
+                        <div class="label"><div class="color_code" style="background-color: rgb(179, 131, 255);"></div>Roaming Distance</div>
+                    </button> -->
+                    <hr>
+                    <div class="range-header white">Crucifix<div class="note">(+Demon)</div></div>
+                    <div class="range-container">
+                        <button class="range-option tricheck white" name="speed" onclick="dualstate(this,true,'.range-option');add_range(this,true,'.range-option');drawCircles(-3000,-3000);send_circle();" value="crucifix_t1">
+                            <div class="checkbox neutral"><span class="icon"></span></div>
+                            <div class="label"><div class="color_code" style="background-color: rgb(255,125,50);"></div>T1</div>
+                        </button>
+                        <button class="range-option tricheck white" name="speed" onclick="dualstate(this,true,'.range-option');add_range(this,true,'.range-option');drawCircles(-3000,-3000);send_circle();" value="crucifix_t2">
+                            <div class="checkbox neutral"><span class="icon"></span></div>
+                            <div class="label"><div class="color_code" style="background-color: rgb(255,125,50);"></div>T2</div>
+                        </button>
+                        <button class="range-option tricheck white" name="speed" onclick="dualstate(this,true,'.range-option');add_range(this,true,'.range-option');drawCircles(-3000,-3000);send_circle();" value="crucifix_t3">
+                            <div class="checkbox neutral"><span class="icon"></span></div>
+                            <div class="label"><div class="color_code" style="background-color: rgb(255,125,50);"></div>T3</div>
+                        </button>
+                    </div>
+                    <div class="range-header white">Sound Sensor<div class="note">(Full)</div></div>
+                    <div class="range-container">
+                        <button class="range-option tricheck white" name="speed" onclick="dualstate(this,true,'.range-option');add_range(this,true,'.range-option');drawCircles(-3000,-3000);send_circle();" value="sound_sensor_t1">
+                            <div class="checkbox neutral"><span class="icon"></span></div>
+                            <div class="label"><div class="color_code" style="background-color: rgb(50,255,150);"></div>T1</div>
+                        </button>
+                        <button class="range-option tricheck white" name="speed" onclick="dualstate(this,true,'.range-option');add_range(this,true,'.range-option');drawCircles(-3000,-3000);send_circle();" value="sound_sensor_t2">
+                            <div class="checkbox neutral"><span class="icon"></span></div>
+                            <div class="label"><div class="color_code" style="background-color: rgb(50,255,150);"></div>T2</div>
+                        </button>
+                        <button class="range-option tricheck white" name="speed" onclick="dualstate(this,true,'.range-option');add_range(this,true,'.range-option');drawCircles(-3000,-3000);send_circle();" value="sound_sensor_t3">
+                            <div class="checkbox neutral"><span class="icon"></span></div>
+                            <div class="label"><div class="color_code" style="background-color: rgb(50,255,150);"></div>T3</div>
+                        </button>
+                    </div>
+                    <hr>
+                    <button class="range-option tricheck white" name="speed" onclick="dualstate(this,true,'.range-option');add_range(this,true,'.range-option');drawAngles(-3000,-3000);send_circle();" value="paramic">
+                        <div class="checkbox neutral"><span class="icon"></span></div>
+                        <div class="label"><div class="color_code" style="background-color: rgb(171, 25, 255);"></div>Parabolic <div class="note">(Scroll to rotate)</div></div>
+                    </button>
+                </div>
+                <div class="menu_title yfont white" style="grid-row: 5;">Settings</div>
+                <div class="options" style="grid-row: 6;">
+                    <button id="show_labels" class="tricheck white" name="speed" onclick="dualstate(this);showLabels(this);saveSettings();" value="showlabels">
+                        <div class="checkbox neutral"><span class="icon"></span></div>
+                        <div class="label">Show Labels</div>
+                    </button>
+                    <button id="animate_labels" class="tricheck white" name="speed" onclick="dualstate(this);animateLabels(this);saveSettings();" value="animatelabels">
+                        <div class="checkbox neutral"><span class="icon"></span></div>
+                        <div class="label">Animate Labels</div>
+                    </button>
+                    <button id="show_fill" class="tricheck white" name="speed" onclick="dualstate(this);showFill(this);saveSettings();" value="showfill">
+                        <div class="checkbox neutral"><span class="icon"></span></div>
+                        <div class="label">Show Fill</div>
+                    </button>
+                </div>
+                <button id="clear" class="yfont" style="grid-row: 7;" onclick="clear_maps(); send_clear();">Clear</button>
+                <div id="copyright">
+                    Site: © 2023-2025 Ty Bayn (Zero-Network)<br>
+                    Images: © 2023-2025 Fantismal<br>
+                    (Special thanks to @nanopi : 360s)
+                </div>
+            </div>
+        </div>
+
+        
+
+        <script type="importmap">
+            {
+                "imports": {
+                    "three": "https://cdn.jsdelivr.net/npm/three/build/three.module.js",
+                    "@photo-sphere-viewer/core": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core/index.module.js",
+                    "@photo-sphere-viewer/virtual-tour-plugin": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/virtual-tour-plugin@5/index.module.js"
+                }
+            }
+        </script>
+        
+        <script type="module">
+            import { Viewer } from '@photo-sphere-viewer/core';
+            import { VirtualTourPlugin } from '@photo-sphere-viewer/virtual-tour-plugin';
+
+            window.viewer = new Viewer({
+                container: document.querySelector('#v360-viewer'),
+                panorama: 'https://file.garden/Z-9fual_RynAMoLc/Lobby%20360s/lobby.webp',
+                loadingImg: 'imgs/loading.gif', // Optional loading indicator
+                defaultYaw: 0, // Start direction
+                defaultPitch: 0,
+                plugins: [
+                    [VirtualTourPlugin,{renderMode: '3d',preload: true}]
+                ]
+            });
+
+            window.tour = window.viewer.getPlugin(VirtualTourPlugin)
+
+            window.viewer.addEventListener('position-updated', ({ position }) => {
+                const pitch = position.pitch;
+                const fadeStart = -20 * Math.PI / 180; 
+                const fadeEnd = -15 * Math.PI / 180
+                const arrows = document.getElementsByClassName('psv-virtual-tour-arrow');
+
+                for (let arrow of arrows) {
+                    let opacity;
+                    if (pitch < fadeStart) {
+                        opacity = 0.25;
+                    } else if (pitch > fadeEnd) {
+                        opacity = 0;
+                    } else {
+                        const t = (pitch - fadeStart) / (fadeEnd - fadeStart);
+                        opacity = (1 - t)*0.25;
+                    }
+
+                    arrow.style.setProperty('--arrow-opacity', opacity, "important");
+                }
+            },{passive:true});
+
+        </script>
+
+        <script src="scripts-v4/loader-v1.js"></script>
+        <script src="scripts-v4/maps-v1.js"></script>
+        <script src="scripts-v4/wslink-v1.js"></script>
+
+        <script>
+            $(window).on('load', function() {
+                mquery = window.matchMedia("screen and (pointer: coarse) and (max-device-width: 600px)")
+                if(mquery.matches){
+                    $("#incompatible").show()
+                }
+                else{
+                    if(isFirefox){
+                        $("#animate_labels").hide()
+                    }
+                    loadSettings()
+                    getMaps()
+                }
+            })
+            
+            document.addEventListener("DOMContentLoaded", function () {
+                document.querySelectorAll(".v360_slider").forEach(slider => {
+                    function updateSlider() {
+                    let percent = ((slider.value - slider.min) / (slider.max - slider.min)) * 100 + "%";
+                    slider.style.background = `linear-gradient(to right, white ${percent}, transparent ${percent})`;
+                    }
+
+                    slider.addEventListener("input", updateSlider);
+                    updateSlider(); // Initialize on load
+                });
+            },{ passive: true });
+        </script>
+    
+</body></html>
