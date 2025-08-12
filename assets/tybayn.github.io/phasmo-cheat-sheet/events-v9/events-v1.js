@@ -4,7 +4,7 @@ function uncover(elem){
 }
 
 $(window).on('load', function() {
-    fetch("https://nickfara.github.io/new-book-for-phasmophobia/assets/data/event.json", {signal: AbortSignal.timeout(6000)})
+    fetch("https://nickfara.github.io/new-book-for-phasmophobia/new-book-for-phasmophobia/assets/data/event.json", {signal: AbortSignal.timeout(6000)})
     .then(data => data.json())
     .then(data => {
         if(data['version'] != false){
