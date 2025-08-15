@@ -1,0 +1,102 @@
+[
+    {
+        "nid": 41,
+        "title": "Grafton Release & New Twitch Drops",
+        "description": "The Grafton rework is just around the corner! The Kinetic Games' Partners will be able to stream the new Grafton Aug 7-8, 2025 and it will be <b>released to the public on Aug 12, 2025</b>!\n<br><br>\nBut that is not all! There will be 2 Twitch drops to celebrate the release of the new Grafton! To get an in-game ID card and badge, be sure to tune in on following days:\n<br><br>\n<b><u>Aug 7, 2025 - Aug 8, 2025</u></b><br>\nWatch 1 hour Official Kinetic Games Partner streams to get the <b><i>animated</i></b> `Reaper` ID card and badge<br>\n<br>\n<b><u>Aug 12, 2025 - Aug 26, 2025</u></b><br>\nWatch any Phasmophobia stream with drops enabled to get the <b><i>static</i></b> `Reaper` ID card and badge<br>\n ",
+        "thumbnail": "https://file.garden/Z-9fual_RynAMoLc/News%20Thumbnails/reaper-badge.png",
+        "notes": "Note from Kinetic Games: The Drops available via Kinetic Partner streams, while able to be earned, will only appear on your account once Grafton Farmhouse has launched on August 12th.\n<br><br>\nNote from SeverelyZero: We will work as fast as possible to get new maps and data available to everyone once the new map is available.",
+        "likes": 24,
+        "dislikes": 0,
+        "start_date": "2025-08-05T10:00:00"
+    },
+    {
+        "nid": 40,
+        "title": "ZN Partnership for Mobile App",
+        "description": "We're excited to announce our partnership with <b>ThirtyPlusDev</b> to bring you the <b>PhasmoMate</b> mobile app, an 'Unofficial Phasmo Cheat Sheet' compatible app for Android and iPhone. The app will soon integrate with the Zero-Network API for always up-to-date ghost data, Journal Link compatibility, and more!\n<br><br>\nThe beta is available now for Android on the <a href=\"https://play.google.com/store/apps/details?id=com.volker.phasmo_mate&pli=1\">Google Play Store</a>. Updates and deeper integration are planned, but timelines are still TBD. The app currently uses its own backend (since we are in the early stages of the partnership), and visual changes are expected as development continues.\n<br><br>\nWe're thrilled to expand our reach and bring high-quality Phasmo tools to even more players!",
+        "thumbnail": "https://file.garden/Z-9fual_RynAMoLc/News%20Thumbnails/zn-partner.png",
+        "notes": "Note from SeverelyZero: PhasmoMate is owned and operated by ThirtyPlusDev, all ad revenue and \"pro versions\" of the app benefit ThirtyPlusDev directly. Zero-Network and ThirtyPlusDev are separate entities, as such, ThirtyPlusDev is not part of the Zero-Network. Zero-Network resources will remain ad free.",
+        "likes": 10,
+        "dislikes": 1,
+        "start_date": "2025-08-02T12:00:00"
+    },
+    {
+        "nid": 39,
+        "title": "Phasmo Twitch Drops Live",
+        "description": "Twitch drops for Phasmophobia are now live! And there is a campaign to earn a Foil \"Stream Sentinel\" Id Card and Badge live now!<br>\n<br>\nTo get the ID Card and Badge: \n<ol>\n    <li>Link Phasmo to your Twitch account through the button on the main menu in-game</li>\n    <li>Watch your favorite Official Kinetic Partners on Twitch (that has drops enabled) for 2 hours</li>\n    <li>Claim your ID Card and Badge!</li>\n</ol>\nThe Foil \"Stream Sentinel\" Id Card and Badge will be live until July 1, 2025, so don't miss your chance to grab this exclusive card!",
+        "thumbnail": "https://file.garden/Z-9fual_RynAMoLc/News%20Thumbnails/twitch_drop_thumbnail.jpg",
+        "notes": "Note from SeverelyZero: More detailed instructions can be found at <a href=\"https://www.kineticgames.co.uk/twitch-drops\" style=\"color:#ffff00;\">https://www.kineticgames.co.uk/twitch-drops</a>",
+        "likes": 31,
+        "dislikes": 5,
+        "start_date": "2025-06-24T06:00:00"
+    },
+    {
+        "nid": 38,
+        "title": "Chronicle Update is Live",
+        "description": "The Chronicle Update for Phasmophobia is live!<br>\n<br>\nThis update brings new Audio Recorder equipment and replaces the old star-rated photo system. You can now capture images, videos, and audio during your investigations!<br>\n<br>\nThere are also a ton of bug fixes, but also changes to some of the ghosts. The most notable being:\n<ul>\n    <li>Banshee can now change rooms</li>\n    <li>All ghosts can close/slam doors way more frequently</li>\n    <li>Goryo has an increased chance for DOTS</li>\n    <li>more...</li>\n</ul>\nWe hope you are as excited about this update as we are! Happy Hunting!",
+        "thumbnail": "https://file.garden/Z-9fual_RynAMoLc/News%20Thumbnails/chronicle_thumbnail.png",
+        "notes": "Note from SeverelyZero: The Zero-Network team is working hard to revalidate all the data on the Cheat Sheet for this update, so data changes and additions/removals will occur as we finalize our testing. We also plan to post a list of what actions/objects can be recorded by which equipment in the coming days.",
+        "likes": 40,
+        "dislikes": 2,
+        "start_date": "2025-06-24T05:00:00"
+    },
+    {
+        "nid": 37,
+        "title": "Difficulty Builder Customs",
+        "description": "We finally got them linked!<br>\n<br>\nFor those that use the Zero-Network <a href=\"https://zero-network.net/phasmo-cheat-sheet/difficulty-builder/\">Diffculty Builder</a>, any saved custom difficulties will now appear in the difficulty dropdown of the Cheat Sheet! Selecting it will automatically set the needed settings on the cheat sheet so that you don't have to put in all the settings manually (assuming you are Discord linked on both the Cheat Sheet and Difficulty Builder)!<br>\n<br>\nThese customs even work with the Shared Journal Link, even if your friends aren't Discord linked or don't have the same difficulty saved to their account.",
+        "thumbnail": "https://file.garden/Z-9fual_RynAMoLc/News%20Thumbnails/saved-customs.png",
+        "notes": "Note from SeverelyZero: This is a newer, experimental feature. We did do as much testing as we could, but if you have any issues please let us know on our Discord! Please note that these difficulties cannot be selected via voice commands.",
+        "likes": 33,
+        "dislikes": 0,
+        "start_date": "2025-04-22T17:00:00"
+    },
+    {
+        "nid": 36,
+        "title": "Forest Minion Run Away Modifier",
+        "description": "With the introduction of the Cursed Hollow event comes another ghost speed modifier!\n<br><br>\nWhen revealing a Forest Minion, if it \"runs away\" it will increase your sanity by 5% and <b>decrease the ghost speed by 5%</b> (non-stacking). \n<br><br>\nWe have added a new icon next to the blood moon icon, that when pressed will activate \"Forest Minion Mode\" and calculate the 5% decrease into all footstep calculations. So if the Forest Minion runs away, be sure to turn this mode on so that your speeds are correct!",
+        "thumbnail": "https://file.garden/Z-9fual_RynAMoLc/News%20Thumbnails/forest-minion-modifier.png",
+        "notes": "Note from SeverelyZero: We are still working out details from the event, if you notice anything is wrong or not working as expected please reach out to us on our discord! We have not yet determined if we will remove this icon from the site when the event ends.",
+        "likes": 54,
+        "dislikes": 6,
+        "start_date": "2025-04-17T21:10:00"
+    },
+    {
+        "nid": 35,
+        "title": "Cursed Hollow Event Live",
+        "description": "The Phasmophobia Cursed Hollow Event is now live! Complete challenges on event themed maps to earn points toward the community goals! Once completed, we will earn an ID Card and Trophy... And we now have personal objectives that give us rewards as well! Be on the lookout for a leaderboard later in the event!",
+        "thumbnail": "https://file.garden/Z-9fual_RynAMoLc/Cursed%20Hollow%202025/event_banner.png",
+        "notes": "Note from SeverelyZero: We are working as fast as we can to create resources for this event.",
+        "likes": 43,
+        "dislikes": 1,
+        "start_date": "2025-04-17T09:15:00"
+    },
+    {
+        "nid": 34,
+        "title": "New Bleasdale is Live!",
+        "description": "Bleasdale Farmhouse has been completely reworked, and is now available for everyone! This map update comes with some other notable changes, namely that both Bleasdale Farmhouse and Point Hope are now considered medium maps!",
+        "thumbnail": "https://i.imgur.com/Qka4weG.png",
+        "notes": "Note from SeverelyZero: We are working quickly to get new maps made and get the Map Explorer updated. To see the new changes, you may need to clear your cache and reload the site.",
+        "likes": 111,
+        "dislikes": 4,
+        "start_date": "2025-03-10T07:00:00"
+    },
+    {
+        "nid": 33,
+        "title": "ZN Monthly Challenge (Mar `25)",
+        "description": "The ZN Monthly Challenge for Mar 2025 has begun! Compete to get the highest score in the challenge a chance to win a 3D printed phasmo trophy of your choice (US/CA only).<br>\n<br>\nDetails of this months challenge can be found on our <a href=\"https://discord.gg/afpvC7Bf7Y\">Discord</a>!",
+        "thumbnail": "https://i.imgur.com/ymtZVE5.png",
+        "notes": "Note from SeverelyZero: This event is not affiliated with nor sponsored by Kinetic Games. Rules, details, and submissions are on our Discord. ",
+        "likes": 15,
+        "dislikes": 3,
+        "start_date": "2025-03-08T10:00:00"
+    },
+    {
+        "nid": 32,
+        "title": "ZN Monthly Challenge (Feb `25)",
+        "description": "The ZN Monthly Challenge for Feb 2025 has begun! Compete to complete the challenge first for a chance to win a 3D printed phasmo trophy of your choice (US/CA only). \n<br><br>\nDetails of this months challenge can be found on our <a href=\"https://discord.gg/afpvC7Bf7Y\">Discord</a>!",
+        "thumbnail": "https://i.imgur.com/nvmsGRm.png",
+        "notes": "Note from SeverelyZero: This event is not affiliated with nor sponsored by Kinetic Games. Rules, details, and submissions are on our Discord. ",
+        "likes": 17,
+        "dislikes": 8,
+        "start_date": "2025-02-08T10:00:00"
+    }
+]
