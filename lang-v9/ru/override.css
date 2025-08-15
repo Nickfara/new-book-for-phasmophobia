@@ -17,7 +17,7 @@
     }
 
     .data{
-        grid-template-columns: 220px auto !important;
+        grid-template-columns: 224px auto !important;
     }
 
     .label{
@@ -46,7 +46,7 @@
     }
 
     #maps_tab {
-        top: 545px !important;
+        top: 565px !important;
     }
 
     #game_mode {
