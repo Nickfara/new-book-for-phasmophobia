@@ -10,12 +10,12 @@ const lang_currency = [
 const lang_menu_widths = {
     "ru":{
         "left":"230px",
-        "width":"168px",
-        "maps":"calc(100% - 295px)",
-        "menu_bottom":"-715px",
-        "menu_bottom_custom":"-770px",
-        "menu_height":"750px",
-        "menu_height_custom":"805px"
+        "width":"240px",
+        "maps":"calc(100% - 315px)",
+        "menu_bottom":"-660px",
+        "menu_bottom_custom":"-715px",
+        "menu_height":"695px",
+        "menu_height_custom":"750px"
     },
     "en":{
         "left":"196px",
