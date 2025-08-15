@@ -195,7 +195,7 @@ function create_room(){
             "ghost_modifier":parseInt(document.getElementById("ghost_modifier_speed").value)
         }
     }
-    fetch(`https://nickfara.github.io/new-book-for-phasmophobia/znlink/create-room/${znid}`,{method:"POST",Accept:"application/json",body:JSON.stringify(outgoing_state),signal: AbortSignal.timeout(6000)})
+    fetch(`https://zero-network.net/znlink/create-room/${znid}`,{method:"POST",Accept:"application/json",body:JSON.stringify(outgoing_state),signal: AbortSignal.timeout(6000)})
     .then(response => response.json())
     .then(data => {
         var room_id = data['room_id']
@@ -215,7 +215,7 @@ function create_link(auto_link = false){
     relink_live = false
     relink_interval = null
     relink_timeout = null
-    fetch(`https://nickfara.github.io/new-book-for-phasmophobia/znlink/create-link/${znid}`,{method:"POST",Accept:"application/json",signal: AbortSignal.timeout(6000)})
+    fetch(`https://zero-network.net/znlink/create-link/${znid}`,{method:"POST",Accept:"application/json",signal: AbortSignal.timeout(6000)})
     .then(response => response.json())
     .then(data => {
         var link_id = data['link_id']
