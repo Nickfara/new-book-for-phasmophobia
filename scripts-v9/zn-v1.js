@@ -118,7 +118,7 @@ function loadAllAndConnect(){
             } catch(Error) {
                 id = false;
             }
-            fetch(`https://nickfara.github.io/new-book-for-phasmophobia/zn/?lang=${lang}${id ? '&discord_id='+id : ''}`,{headers:{Accept:"application/json"}, signal: AbortSignal.timeout(10000)})
+            fetch(`https://zero-network.net/zn/?lang=${lang}${id ? '&discord_id='+id : ''}`,{headers:{Accept:"application/json"}, signal: AbortSignal.timeout(10000)})
             .then(e=>e.json())
             .then(e => {
                 znid = e.znid
