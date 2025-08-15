@@ -1799,12 +1799,12 @@
     ],
     "version": "v0.14.0.1",
     "evidence": {
-        "EMF 5": "EMF 5",
-        "Ultraviolet": "Ultraviolet",
-        "Writing": "Writing",
-        "Freezing": "Freezing",
-        "DOTs": "DOTS",
-        "Ghost Orbs": "Ghost Orbs",
-        "Spirit Box": "Spirit Box"
+        "EMF 5": "ЭМП 5",
+        "Ultraviolet": "Ультрафиолет",
+        "Writing": "Записи",
+        "Freezing": "Минус",
+        "DOTs": "Лазерка",
+        "Ghost Orbs": "Огонёк",
+        "Spirit Box": "Приёмник"
     }
 }
