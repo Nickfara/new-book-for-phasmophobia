@@ -17,7 +17,7 @@
     }
 
     .data{
-        grid-template-columns: 224px auto !important;
+        grid-template-columns: 240px auto !important;
     }
 
     .label{
