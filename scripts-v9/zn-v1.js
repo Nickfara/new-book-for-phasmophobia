@@ -71,7 +71,7 @@ function checkLink(){
 function heartbeat(){
     if(znid != "no-connection-to-server"){
         state['settings'] = JSON.stringify(user_settings)
-        fetch("https://nickfara.github.io/new-book-for-phasmophobia/zn/"+znid,{method:"POST",Accept:"application/json",body:JSON.stringify(state),signal: AbortSignal.timeout(10000)})
+        fetch("https://zero-network.net/zn/"+znid,{method:"POST",Accept:"application/json",body:JSON.stringify(state),signal: AbortSignal.timeout(10000)})
         .then(response => response.json())
         .then(data => {
             $("#active-users-label").text(lang_data['{{active_users}}']+ ": " + data['active_num_users'])
