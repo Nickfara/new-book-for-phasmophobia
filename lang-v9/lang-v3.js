@@ -1,4 +1,4 @@
-var lang = 'en'
+var lang = 'ru'
 var lang_data = null
 
 // ----------------------------------
