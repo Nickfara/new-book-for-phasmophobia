@@ -1,4 +1,9 @@
 @font-face {
+    font-family: 'DreamsCar3';
+    src: url('../../styles-v9/fonts/dreamscar3.ttf');
+}
+
+@font-face {
     font-family: 'ZNPrimary';
     src: url('../../styles-v9/fonts/dreamscar3.ttf');
 }
