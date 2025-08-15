@@ -1,0 +1,25 @@
+{
+    "id": 6,
+    "challenge": "Do as I Command",
+    "description": "You'll have to force this ghost to give you evidence, luckily, we've found some extra items to help you out.",
+    "details": {
+        "num_evidence": 3,
+        "player_speed": 100,
+        "ghost_speed": 100,
+        "cursed_objects": [
+            "All"
+        ],
+        "friendly_ghost": "Off",
+        "cssettings": {
+            "hunt_duration": "Low",
+            "starting_sanity": 100,
+            "sanity_pill_restoration": 50,
+            "sanity_drain_speed": 100
+        }
+    },
+    "map": "Grafton Farmhouse",
+    "equipment_url": "https://file.garden/Z-9fual_RynAMoLc/weeklies/do_as_i_command.png",
+    "map_id": "grafton",
+    "difficulty_id": "7475-0336-0011",
+    "tldr": null
+}

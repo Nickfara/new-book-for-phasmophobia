@@ -1,0 +1,50 @@
+[
+    {
+        "id": 13,
+        "lang": "zh-cn",
+        "lang_option": "Chinese (Simplified) 🇨🇳",
+        "url": "zh-cn"
+    },
+    {
+        "id": 1,
+        "lang": "en",
+        "lang_option": "English 🇺🇸 / 🇬🇧 / 🇦🇺",
+        "url": "en"
+    },
+    {
+        "id": 2,
+        "lang": "fr",
+        "lang_option": "French 🇫🇷",
+        "url": "fr"
+    },
+    {
+        "id": 3,
+        "lang": "de",
+        "lang_option": "German 🇩🇪",
+        "url": "de"
+    },
+    {
+        "id": 10,
+        "lang": "ko",
+        "lang_option": "Korean 🇰🇷",
+        "url": "ko"
+    },
+    {
+        "id": 7,
+        "lang": "pt-br",
+        "lang_option": "Portuguese 🇧🇷",
+        "url": "pt-br"
+    },
+    {
+        "id": 12,
+        "lang": "es",
+        "lang_option": "Spanish 🇲🇽 / 🇪🇸",
+        "url": "es"
+    },
+    {
+        "id": 11,
+        "lang": "tr",
+        "lang_option": "Turkish 🇹🇷",
+        "url": "tr"
+    }
+]
