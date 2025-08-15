@@ -109,22 +109,22 @@ function loadLanguage(){
 function load_voice(){
     timer_snd = [
         new Audio(`assets/finish.mp3`),
-        new Audio(`lang-v9/${lang}/new-book-for-phasmophobia/assets/1.mp3`),
-        new Audio(`lang-v9/${lang}/new-book-for-phasmophobia/assets/2.mp3`),
-        new Audio(`lang-v9/${lang}/new-book-for-phasmophobia/assets/3.mp3`),
-        new Audio(`lang-v9/${lang}/new-book-for-phasmophobia/assets/4.mp3`),
-        new Audio(`lang-v9/${lang}/new-book-for-phasmophobia/assets/5.mp3`),
-        new Audio(`lang-v9/${lang}/new-book-for-phasmophobia/assets/spirit_smudge.mp3`),
-        new Audio(`lang-v9/${lang}/new-book-for-phasmophobia/assets/standard_smudge.mp3`),
-        new Audio(`lang-v9/${lang}/new-book-for-phasmophobia/assets/demon_smudge.mp3`),
-        new Audio(`lang-v9/${lang}/new-book-for-phasmophobia/assets/demon_cooldown.mp3`),
-        new Audio(`lang-v9/${lang}/new-book-for-phasmophobia/assets/standard_cooldown.mp3`),
-        new Audio(`lang-v9/${lang}/new-book-for-phasmophobia/assets/standard_hunt.mp3`),
-        new Audio(`lang-v9/${lang}/new-book-for-phasmophobia/assets/cursed_hunt.mp3`),
+        new Audio(`lang-v9/${lang}/assets/1.mp3`),
+        new Audio(`lang-v9/${lang}/assets/2.mp3`),
+        new Audio(`lang-v9/${lang}/assets/3.mp3`),
+        new Audio(`lang-v9/${lang}/assets/4.mp3`),
+        new Audio(`lang-v9/${lang}/assets/5.mp3`),
+        new Audio(`lang-v9/${lang}/assets/spirit_smudge.mp3`),
+        new Audio(`lang-v9/${lang}/assets/standard_smudge.mp3`),
+        new Audio(`lang-v9/${lang}/assets/demon_smudge.mp3`),
+        new Audio(`lang-v9/${lang}/assets/demon_cooldown.mp3`),
+        new Audio(`lang-v9/${lang}/assets/standard_cooldown.mp3`),
+        new Audio(`lang-v9/${lang}/assets/standard_hunt.mp3`),
+        new Audio(`lang-v9/${lang}/assets/cursed_hunt.mp3`),
         new Audio('assets/start.mp3'),
         new Audio('assets/stop.mp3'),
-        new Audio(`lang-v9/${lang}/new-book-for-phasmophobia/assets/sound_cooldown.mp3`),
-        new Audio(`lang-v9/${lang}/new-book-for-phasmophobia/assets/myling_cooldown.mp3`)];
+        new Audio(`lang-v9/${lang}/assets/sound_cooldown.mp3`),
+        new Audio(`lang-v9/${lang}/assets/myling_cooldown.mp3`)];
     timer_snd[0].preload = 'auto';
     timer_snd[1].preload = 'auto';
     timer_snd[2].preload = 'auto';
