@@ -2,7 +2,7 @@
     "ghosts": [
         {
             "ghost": "Spirit",
-            "name": "Spirit",
+            "name": "Дух",
             "min_speed": 1.7,
             "max_speed": null,
             "alt_speed": null,
@@ -13,14 +13,14 @@
             "hunt_sanity_high": "50%",
             "evidence": [
                 "EMF 5",
-                "Spirit Box",
-                "Writing"
+                "Спиртная коробка",
+                "Письмо"
             ],
             "nightmare_evidence": null,
             "wiki": {
                 "tells": [
                     {
-                        "data": "Will wait 180s after being incensed before attempting to hunt again, instead of the standard 90s",
+                        "data": "Будет ждать 180 секунд, после обкуривания, прежде чем начать охоту, вместо стандартных 90",
                         "is_0_evi": true,
                         "include_on_card": true
                     }
@@ -33,7 +33,7 @@
                 "confirmation_tests": [
                     {
                         "type": "Tell",
-                        "data": "After smudging the ghost initially, wait 150s - 170s and smudge the ghost again (starting a new smudge timer). If the ghost hunts within 60s of the second smudge (earliest a Demon could hunt), it is a Spirit. Note: this test can fail if the ghost is not actually smudged the second time.",
+                        "data": "После первого обкуривания призрака подождите 150 - 170 секунд и снова обкурите призрака (запустив новый таймер обкура). Если призрак начал охоту в течение 60 секунд после второго обкуривания (самое раннее, когда может охотиться демон), это дух. Примечание: этот тест может не сработать, если призрак на самом деле не обкурится во второй раз».",
                         "definitive": true,
                         "image": null
                     }
@@ -41,7 +41,7 @@
                 "elimination_tests": [
                     {
                         "type": "Ability",
-                        "data": "Start a timer as soon as the ghost has been smudged. If the ghost hunts before 180s, it is <i>not</i> a Spirit",
+                        "data": "Начните таймер, как только призрак был смазан. Если призрак охотится до 180 -х годов, это не </i> дух",
                         "image": null
                     }
                 ]
@@ -49,7 +49,7 @@
         },
         {
             "ghost": "Wraith",
-            "name": "Wraith",
+            "name": "Мираж",
             "min_speed": 1.7,
             "max_speed": null,
             "alt_speed": null,
@@ -60,19 +60,19 @@
             "hunt_sanity_high": "50%",
             "evidence": [
                 "EMF 5",
-                "Spirit Box",
-                "DOTs"
+                "Спиртная коробка",
+                "Точки"
             ],
             "nightmare_evidence": null,
             "wiki": {
                 "tells": [
                     {
-                        "data": "Will not touch nor interact with salt in any way",
+                        "data": "Никогда не наступает в соль",
                         "is_0_evi": true,
                         "include_on_card": true
                     },
                     {
-                        "data": "Will not be slowed down by tier 3 salt during a hunt",
+                        "data": "Замедление от соли 3-го уровня во время охоты не действует",
                         "is_0_evi": true,
                         "include_on_card": true
                     }
@@ -80,12 +80,12 @@
                 "behaviors": [],
                 "abilities": [
                     {
-                        "data": "Can teleport to a random player, leaving EMF 2 or EMF 5 at the their new location",
+                        "data": "Может телепортироваться к случайному игроку, оставляя ЭМП2 или ЭМП5 на его новом месте",
                         "is_0_evi": false,
                         "include_on_card": true
                     },
                     {
-                        "data": "Can teleport to a random player, leaving EMF 2 at the their new location",
+                        "data": "Может телепортироваться с случайным игроком, оставив EMF 2 в их новом месте",
                         "note": "Wraith is the only ghost that can teleport to a player outside of an event",
                         "is_0_evi": true,
                         "include_on_card": false
@@ -97,19 +97,19 @@
                 "confirmation_tests": [
                     {
                         "type": "Tell",
-                        "data": "If you see the ghost walk through a salt pile during an event or hunt without disturbing it, it is a Wraith",
+                        "data": "Если вы видите призрак, прогуливаясь по солевой куче во время события или охотится, не беспокоя, это призрак",
                         "definitive": true,
                         "image": "https://i.imgur.com/zQl77Fd.gif"
                     },
                     {
                         "type": "Tell",
-                        "data": "Place salt in a line directly below a Tier 1 or Tier 2 motion sensor, ensuring that the salt covers the entirety of the laser line. If the motion sensor activates but the salt is undisturbed, it's a Wraith",
+                        "data": "Поместите соль в линию непосредственно под датчиком движения уровня 1 или уровня 2, гарантируя, что соль покрывает всю лазерную линию. Если датчик движения активируется, но соль нетронута, это призрак",
                         "definitive": true,
                         "image": "https://i.imgur.com/iN6cFJn.gif"
                     },
                     {
                         "type": "Ability",
-                        "data": "If while investigating you get a EMF 2 without any interaction near you, it may have been a Wraith using its ability to teleport",
+                        "data": "Если при расследовании вы получите EMF 2 без какого -либо взаимодействия рядом с вами, это могло быть призраком, используя его способность телепортироваться",
                         "definitive": false,
                         "image": null
                     }
@@ -117,7 +117,7 @@
                 "elimination_tests": [
                     {
                         "type": "Tell",
-                        "data": "If salt is disturbed by the ghost in any way, it is <i>not</i> a Wraith",
+                        "data": "Если призрак каким -либо образом нарушает соль, это не </i> призрак",
                         "image": null
                     }
                 ]
@@ -125,7 +125,7 @@
         },
         {
             "ghost": "Phantom",
-            "name": "Phantom",
+            "name": "Фантом",
             "min_speed": 1.7,
             "max_speed": null,
             "alt_speed": null,
@@ -135,30 +135,30 @@
             "hunt_sanity_low": "50%",
             "hunt_sanity_high": "50%",
             "evidence": [
-                "Spirit Box",
-                "Ultraviolet",
-                "DOTs"
+                "Спиртная коробка",
+                "Ультрафиолетовый",
+                "Точки"
             ],
             "nightmare_evidence": null,
             "wiki": {
                 "tells": [
                     {
-                        "data": "Will not appear in \"Ghost\" photos or \"Ghost\" videos (will still appear in \"Translucent Ghost\", \"Shadow Ghost\", and \"DOTS Ghost\" videos)",
+                        "data": "Не будет отображаться на фотографиях \"Призрака\" или видео \"Призрака\" (по-прежнему будет отображаться в видео: \"Полупрозрачного призрака\", \"Теневого призрака\" и \"Лазерного призрака\")",
                         "is_0_evi": true,
                         "include_on_card": true
                     },
                     {
-                        "data": "Taking a photo or video of the ghost will cause the ghost to disappear (including DOTS state)",
+                        "data": "Фото или видеосъёмка призрака, во время ивента, а так же в лазерной проекции, мгновенно приведёт к его исчезновению",
                         "is_0_evi": true,
                         "include_on_card": true
                     },
                     {
-                        "data": "Less visible during hunts",
+                        "data": "Менее заметен во время охоты (на долго пропадает, во время мерцания, при охоте)",
                         "is_0_evi": true,
                         "include_on_card": true
                     },
                     {
-                        "data": "Player will lose 0.5% sanity /s while in heartbeat range of the ghost during hunts and events",
+                        "data": "Игрок теряет 0.5% рассудка в секунду, во время ивента или охоты, если находится в зоне действия призрака.",
                         "is_0_evi": true,
                         "include_on_card": true
                     }
@@ -166,7 +166,7 @@
                 "behaviors": [],
                 "abilities": [
                     {
-                        "data": "Can roam toward a random player, leaving EMF 2 at the location where it wanders to",
+                        "data": "Может перемещаться к случайному игроку, оставляя ЭМП2 в том месте, куда он переместился",
                         "is_0_evi": true,
                         "include_on_card": true
                     }
@@ -177,25 +177,25 @@
                 "confirmation_tests": [
                     {
                         "type": "Tell",
-                        "data": "Take a photo of the ghost during an event or while the ghost is visible in DOTS. If the ghost disappears (but the event sounds continue) and the ghost does not appear in the \"Ghost\" photo in the journal, it is a Phantom",
+                        "data": "Сфотографируйте призрака во время события или пока призрак виден в точках. Если призрак исчезает (но звуки события продолжаются), а призрак не появляется на фотографии «Призрак» в журнале, это призрак",
                         "definitive": true,
                         "image": "https://file.garden/Z-9fual_RynAMoLc/wiki/0-evidence/phantom-picture-test-1.gif"
                     },
                     {
                         "type": "Tell",
-                        "data": "Take a video of the ghost during an event or while the ghost is visible in DOTS. If the ghost disappears (but the event sounds continue) and the video is a \"Ghost\" type video, it is a Phantom<br><br>Note: The Phantom will only not show in the film strip if it is in its full form (\"Ghost\" video). It will still appear in \"Translucent Ghost\", \"Shadow Ghost\", and \"DOTS Ghost\" videos.",
+                        "data": "Снимайте видео призрака во время события или пока призрак видна в точках. Если призрак исчезает (но звуки события продолжаются), а видео представляет собой видео «Призрак», это фантом <br> <br> Примечание: Призрак не будет показывать только в фильме, если он находится в полной форме (видео «Призрак»). Он все еще будет появляться в видео «Прозрачный призрак», «Призрак тени» и «Dots Ghost».",
                         "definitive": true,
                         "image": "https://file.garden/Z-9fual_RynAMoLc/wiki/0-evidence/phantom-video-test-1.gif"
                     },
                     {
                         "type": "Tell",
-                        "data": "Watch the ghost during a hunt, if the ghost seems nearly invisible during the hunt, it is a Phantom",
+                        "data": "Следите за призраком во время охоты, если призрак кажется почти невидимым во время охоты, это призрак",
                         "definitive": true,
                         "image": "https://i.imgur.com/MaFsZCO.gif"
                     },
                     {
                         "type": "Ability",
-                        "data": "If while investigating you get a EMF 2 without any interaction near you, it may have been a Phantom using its ability to roam",
+                        "data": "Если при расследовании вы получаете EMF 2 без какого -либо взаимодействия рядом с вами, это могло быть фантом, используя его способность бродить",
                         "definitive": false,
                         "image": null
                     }
@@ -203,12 +203,12 @@
                 "elimination_tests": [
                     {
                         "type": "Tell",
-                        "data": "If the ghost appears in a \"Ghost\" photo in the journal, it is <i>not</i> a Phantom",
+                        "data": "Если призрак появляется на фотографии «призрака» в журнале, это не </i> Phantom",
                         "image": null
                     },
                     {
                         "type": "Tell",
-                        "data": "If the ghost has normal or increased blinking during a hunt, it is <i>not</i> a Phantom",
+                        "data": "Если у призрака нормальное или увеличение мигания во время охоты, это не </i> Phantom",
                         "image": null
                     }
                 ]
@@ -216,7 +216,7 @@
         },
         {
             "ghost": "Poltergeist",
-            "name": "Poltergeist",
+            "name": "Полтер'гей'ст",
             "min_speed": 1.7,
             "max_speed": null,
             "alt_speed": null,
@@ -226,34 +226,34 @@
             "hunt_sanity_low": "50%",
             "hunt_sanity_high": "50%",
             "evidence": [
-                "Spirit Box",
-                "Ultraviolet",
-                "Writing"
+                "Спиртная коробка",
+                "Ультрафиолетовый",
+                "Письмо"
             ],
             "nightmare_evidence": null,
             "wiki": {
                 "tells": [
                     {
-                        "data": "During hunts, Poltergeists will throw an item every 0.5s with an increased force",
+                        "data": "Во время охоты, полтергейст бросает предметы каждые 0.5сек, с увеличенной силой",
                         "is_0_evi": true,
                         "include_on_card": true
                     }
                 ],
                 "behaviors": [
                     {
-                        "data": "Has a higher chance to throw & interact with objects",
+                        "data": "Имеет более высокий шанс бросать предметы и взаимодействовать с ними",
                         "is_0_evi": true,
                         "include_on_card": true
                     },
                     {
-                        "data": "Can throw objects faster and further",
+                        "data": "Может бросать предметы быстрее и дальше",
                         "is_0_evi": true,
                         "include_on_card": true
                     }
                 ],
                 "abilities": [
                     {
-                        "data": "Poltergeist Explosion: will throw multiple objects at the same time, decreasing nearby player sanity by 2% per item thrown. There are 4 types of poltergeist throws (<span class=\"wiki-link\" onclick=\"openWikiPath('0-evidence.0-evidence-poltergeist')\">See examples</span>)",
+                        "data": "Взрыв Полтергейста: выбросит несколько объектов одновременно, уменьшая близлежащее здравомыслие игрока на 2% на выбранный элемент. Существует 4 типа бросков Poltergeist (<span class = \"wiki-link\" onclick = \"openwikipath ('0-evidence.0-evidence-poltergeist')\"> см. Примеры </span>)",
                         "is_0_evi": true,
                         "include_on_card": true
                     }
@@ -264,13 +264,13 @@
                 "confirmation_tests": [
                     {
                         "type": "Tell",
-                        "data": "Place multiple objects in a row on the floor where the ghost is likely to walk over during a hunt. If all items are thrown and at a large distance, it is a Poltergeist",
+                        "data": "Поместите несколько объектов подряд на пол, где призрак, вероятно, пройдет во время охоты. Если все предметы брошены и на большом расстоянии, это полтергейст",
                         "definitive": true,
                         "image": "https://i.imgur.com/DcU40pi.gif"
                     },
                     {
                         "type": "Ability",
-                        "data": "Poltergeist Explosion: Place multiple objects close together (not on top of each other) in a \"pile\" in the ghost room. If all or many of the items get thrown at the same time, it is a Poltergeist",
+                        "data": "Взрыв Полтергейста: поместите несколько объектов близко друг к другу (не друг на друга) в «кучу» в комнате призрака. Если все или многие предметы бросаются одновременно, это полтергейст",
                         "definitive": true,
                         "image": [
                             "https://file.garden/Z-9fual_RynAMoLc/wiki/0-evidence/poltergeist-throw-1.gif",
@@ -285,7 +285,7 @@
         },
         {
             "ghost": "Banshee",
-            "name": "Banshee",
+            "name": "Банши",
             "min_speed": 1.7,
             "max_speed": null,
             "alt_speed": null,
@@ -295,56 +295,56 @@
             "hunt_sanity_low": "12%",
             "hunt_sanity_high": "87%",
             "evidence": [
-                "Ultraviolet",
-                "Ghost Orbs",
-                "DOTs"
+                "Ультрафиолетовый",
+                "Призрачные шары",
+                "Точки"
             ],
             "nightmare_evidence": null,
             "wiki": {
                 "tells": [
                     {
-                        "data": "33% chance to give 1 of 20 unique screams through the parabolic microphone / sound recorder. <i>Examples:</i><br>(<span class=\"sound\" onClick=\"playSound('https://zero-network.net/phasmophobia/static/assets/banshee_scream_new_1.mp3')\"> 1 :🔊</span> | <span class=\"sound\" onClick=\"playSound('https://zero-network.net/phasmophobia/static/assets/banshee_scream_new_2.mp3')\"> 2 :🔊</span> | <span class=\"sound\" onClick=\"playSound('https://zero-network.net/phasmophobia/static/assets/banshee_scream_new_3.mp3')\"> 3: 🔊</span> | <span class=\"sound\" onClick=\"playSound('https://zero-network.net/phasmophobia/static/assets/banshee_scream_new_4.mp3')\"> 4 :🔊</span>)",
+                        "data": "33% шанс дать 1 из 20 уникальных криков через параболический микрофон / звуковой рекордер. <i> Примеры: </i> <br> (<span class = \"sound\" onclick = \"playsound ('https://zero-network.net/phasmophobia/static/assets/banshee_scream_new_1.mp3')\"> 1: 🔊 </span> <pan = \"звук\" onclick = \"playsound ('https://zero-network.net/phasmophobia/static/assets/banshee_scream_new_2.mp3')\"> 2: 🔊 </span> | onclick = \"playsound ('https://zero-network.net/phasmophobia/static/assets/banshee_scream_new_3.mp3')\"> 3: 🔊 </span> | onclick = \"playsound ('https://zero-network.net/phasmophobia/static/assets/banshee_scream_new_4.mp3')\"> 4: 🔊 </span>)",
                         "is_0_evi": true,
                         "include_on_card": true
                     },
                     {
-                        "data": "Hunts based on target's sanity instead of average sanity",
+                        "data": "Охота зависит от рассудка жертвы, а не от среднего рассудка.",
                         "is_0_evi": true,
                         "include_on_card": true
                     },
                     {
-                        "data": "Will only pursue its target during a hunt (if the target is inside)",
+                        "data": "Будет преследовать только свою жертву во время охоты (если цель находится внутри здания)",
                         "is_0_evi": true,
                         "include_on_card": true
                     },
                     {
-                        "data": "Target loses 15% sanity if they touch the ghost during a singing ghost event (standard drain is 10%)",
+                        "data": "Цель теряет 15% рассудка, если прикоснуться к призраку во время ивента с поющим призраком (стандартное истощение составляет 10%)",
                         "is_0_evi": true,
                         "include_on_card": true
                     }
                 ],
                 "behaviors": [
                     {
-                        "data": "Prefers singing ghost events",
+                        "data": "Предпочитает ивенты с поющим призраком",
                         "is_0_evi": true,
                         "include_on_card": true
                     },
                     {
-                        "data": "Will attempt to roam toward their target while in DOTS state",
+                        "data": "Будут пытаться перемещаться к своей цели, находясь в лазерной проекции",
                         "is_0_evi": false,
                         "include_on_card": true
                     }
                 ],
                 "abilities": [
                     {
-                        "data": "66% chance to stalk/roam to its target (if inside) without leaving EMF (cannot stalk between floors except for single room basements)",
+                        "data": "С вероятностью 66% ходит к своей жертве (если цель внутри) не давая ЭМП (может перемещаться между этажами, за исключением подвалов с одной комнатой)",
                         "is_0_evi": true,
                         "include_on_card": true
                     }
                 ],
                 "hunt_sanity": [
                     {
-                        "data": "Hunts when target's sanity is 50% or lower (even if target is outside), meaning it can hunt as early as 87% (or as late as 12%) average sanity in certain conditions",
+                        "data": "Охотится, когда рассудок жертвы составляет 50% или ниже (даже если цель находится снаружи), то есть она может охотиться до 87% среднего рассудка (или до 12%) среднего здравомыслия при определенных условиях",
                         "include_on_card": true
                     }
                 ],
@@ -353,19 +353,19 @@
                 "confirmation_tests": [
                     {
                         "type": "Tell",
-                        "data": "Listen to the ghost using a parabolic microphone, if you hear the unique scream, it is a Banshee",
+                        "data": "Слушайте призрака с помощью параболического микрофона, если вы слышите уникальный крик, это Банши",
                         "definitive": true,
                         "image": null
                     },
                     {
                         "type": "Tell",
-                        "data": "In multiplayer, have everyone be inside when the ghost hunts. If the ghost does not pursue non-target players or non-target players are able to touch the ghost without dying, it is a Banshee",
+                        "data": "В мультиплеере, когда призрак охотится, все должны находиться внутри. Если призрак не преследует игроков (не являющихся мишенями) или если игроки (не являющиеся мишенями), могут прикоснуться к призраку, не умирая, это Банши",
                         "definitive": true,
                         "image": null
                     },
                     {
                         "type": "Ability",
-                        "data": "Place motion sensors around the map. Use those to determine if the ghost is wandering often toward one of the players. If so, it could be a Banshee",
+                        "data": "Разместите датчики движения по карте. Используйте их, чтобы определить, часто ли призрак блуждает к одному из игроков. Если это так, то это может быть банши",
                         "definitive": false,
                         "image": null
                     }
@@ -375,7 +375,7 @@
         },
         {
             "ghost": "Jinn",
-            "name": "Jinn",
+            "name": "Джинн",
             "min_speed": 1.7,
             "max_speed": 2.5,
             "alt_speed": null,
@@ -386,33 +386,33 @@
             "hunt_sanity_high": "50%",
             "evidence": [
                 "EMF 5",
-                "Ultraviolet",
-                "Freezing"
+                "Ультрафиолетовый",
+                "Замораживание"
             ],
             "nightmare_evidence": null,
             "wiki": {
                 "tells": [
                     {
-                        "data": "With the breaker on, the Jinn will speed up during a hunt if a player is in LOS and further than 3m away",
+                        "data": "С включенным генератором джинн будет ускоряться во время охоты, если игрок находится в зоне прямой видимости и на расстоянии более 3 метров (Или менее 3 метров, так и не понял перевод) ",
                         "is_0_evi": true,
                         "include_on_card": true
                     }
                 ],
                 "behaviors": [
                     {
-                        "data": "The Jinn cannot directly turn off the breaker",
+                        "data": "Джинн никогда напрямую не выключает генератор",
                         "is_0_evi": true,
                         "include_on_card": true
                     }
                 ],
                 "abilities": [
                     {
-                        "data": "With the breaker on, can drop a nearby player's sanity by 25%, with EMF 2 or EMF 5 at the breaker",
+                        "data": "При включенном генераторе может снизить рассудок ближайшего игрока на 25%, показав ЭМП2 или ЭМП5 в районе генератора",
                         "is_0_evi": false,
                         "include_on_card": true
                     },
                     {
-                        "data": "With the breaker on, can drop nearby players' sanity by 25%, with EMF 2 at the breaker",
+                        "data": "С включенным выключателем может сбросить здравомыслие близлежащих игроков на 25%, с EMF 2 в The Breaker",
                         "is_0_evi": true,
                         "include_on_card": false
                     }
@@ -420,7 +420,7 @@
                 "hunt_sanity": [],
                 "hunt_speed": [
                     {
-                        "data": "2.5m/s when breaker is on, has LOS, and is further than 3m from the seen player, 1.7m/s otherwise",
+                        "data": "2,5м/с при включенном генераторе, если имеет прямую видимость с игроком и находится дальше 3м (Или меньше, опять хуй знает) от видимого игрока, в противном случае 1,7 м/с",
                         "include_on_card": true
                     }
                 ],
@@ -428,7 +428,7 @@
                 "confirmation_tests": [
                     {
                         "type": "Tell",
-                        "data": "During a hunt (with the breaker on) stand more than 3m away from the ghost. If the ghost speeds up from 1.7m/s to 2.5m/s when it sees you, and then slows back down once its within 3m of you, it is a Jinn (be aware of active electronics as to not confuse the Raiju speed up)",
+                        "data": "Во время охоты (с включенным генератором) стойте на расстоянии более 3м (Или меньше, снова хуй знает) от призрака. Если призрак ускоряется с 1,7 м/с до 2,5 м/с, когда видит вас, а затем замедляется обратно, как только оказывается в пределах 3 м от вас, это джинн (остерегайтесь активной электроники, чтобы не перепутать ускорение Райдзю)",
                         "definitive": true,
                         "image": null
                     }
@@ -436,7 +436,7 @@
                 "elimination_tests": [
                     {
                         "type": "Behavior",
-                        "data": "If the breaker gets turned off directly by the ghost, it is <i>not</i> a Jinn",
+                        "data": "Если выключатель отключается непосредственно призраком, это <i> не </i> jinn",
                         "image": null
                     }
                 ]
@@ -444,7 +444,7 @@
         },
         {
             "ghost": "Mare",
-            "name": "Mare",
+            "name": "шМара",
             "min_speed": 1.7,
             "max_speed": null,
             "alt_speed": null,
@@ -454,46 +454,46 @@
             "hunt_sanity_low": "40%",
             "hunt_sanity_high": "60%",
             "evidence": [
-                "Spirit Box",
-                "Ghost Orbs",
-                "Writing"
+                "Спиртная коробка",
+                "Призрачные шары",
+                "Письмо"
             ],
             "nightmare_evidence": null,
             "wiki": {
                 "tells": [
                     {
-                        "data": "Won't hunt until 40% average sanity when light switch in its current room is in the on position (regardless of breaker state), 60% average sanity if light switch is in the off position or if the lights are broken (regardless of light switch state)",
+                        "data": "Не будет охотиться свыше 40% среднего рассудка, когда выключатель света в его текущей комнате находится в включенном положении (независимо от состояния генератора), свыше 60% среднего рассудка, если выключатель находится в выключенном положении или если свет сломан (независимо от состояния генератора)",
                         "is_0_evi": true,
                         "include_on_card": true
                     }
                 ],
                 "behaviors": [
                     {
-                        "data": "Will wander more if the lights are on in its current room",
+                        "data": "Будет больше бродить, если в его нынешней комнате будет гореть свет",
                         "is_0_evi": true,
                         "include_on_card": true
                     },
                     {
-                        "data": "Prefers turning off lights and light bursting events",
+                        "data": "Предпочитает выключать свет и делать ивенты с взрывом лампочек",
                         "is_0_evi": true,
                         "include_on_card": true
                     },
                     {
-                        "data": "Cannot turn on lights (including TVs and computers, excluding motion activated lights)",
+                        "data": "Никогда не включает свет (включая телевизоры и компьютеры, за исключением ламп, активируемых движением)",
                         "is_0_evi": true,
                         "include_on_card": true
                     }
                 ],
                 "abilities": [
                     {
-                        "data": "Can immediately turn off a light switch (or lamp) that a player has turned on within 4m of the ghost",
+                        "data": "Может мгновенно выключить выключатель света (или лампу), который игрок включил в пределах 4м от призрака",
                         "is_0_evi": true,
                         "include_on_card": true
                     }
                 ],
                 "hunt_sanity": [
                     {
-                        "data": "60% when lights are off in the ghost's current room, 40% when on",
+                        "data": "60% при выключенном свете в текущей комнате призрака, 40% при включенном",
                         "include_on_card": true
                     }
                 ],
@@ -502,7 +502,7 @@
                 "confirmation_tests": [
                     {
                         "type": "Ability",
-                        "data": "Every 10s, each player can bait the Mare ability by flicking a light switch or lamp on and seeing if the ghost will immediately turn it off (once per player per lightswitch). If it does, it could be a Mare. To ensure quicker testing, try placing motion sensors below the light switches to know where the ghost is in relation to them. As a note, a Mare cannot use its ability in a room with shattered lights. (Be aware that other ghosts can appear to do this by coincidence, its best to get the ability multiple times)",
+                        "data": "Каждые 10 сек. каждый игрок может спровоцировать способность мары, щелкнув выключателем света или лампой и посмотрев, выключит ли призрак ее мгновенно (по одному разу на игрока за один выключатель). Если это так, то это может быть мара. Чтобы ускорить тестирование, попробуйте разместить датчики движения под выключателями света, чтобы знать, где находится призрак по отношению к нему. Следует отметить, что мара не может использовать свои способности в комнате с разбитыми лампами. (Имейте в виду, что другие призраки могут сделать это случайно, лучше всего повторить несколько раз)",
                         "definitive": false,
                         "image": null
                     }
@@ -510,7 +510,7 @@
                 "elimination_tests": [
                     {
                         "type": "Behavior",
-                        "data": "If a ghost turns on a light switch, it is <i>not</i> a Mare",
+                        "data": "Если призрак включает выключатель света, это <i> не </i> кобыла",
                         "image": null
                     }
                 ]
@@ -518,7 +518,7 @@
         },
         {
             "ghost": "Revenant",
-            "name": "Revenant",
+            "name": "Ревенант",
             "min_speed": 1.0,
             "max_speed": 3.0,
             "alt_speed": null,
@@ -528,15 +528,15 @@
             "hunt_sanity_low": "50%",
             "hunt_sanity_high": "50%",
             "evidence": [
-                "Ghost Orbs",
-                "Writing",
-                "Freezing"
+                "Призрачные шары",
+                "Письмо",
+                "Замораживание"
             ],
             "nightmare_evidence": null,
             "wiki": {
                 "tells": [
                     {
-                        "data": "During a hunt, a Revenant will be slow (1.0m/s) until it detects a player (voice, active electronic equipment, or LOS) where it will immediately speed up to 3.0m/s and remain at that speed until it reaches the players last known location where it will gradually slow back down",
+                        "data": "Во время охоты Ревенант будет медленным (1,0м/с) до тех пор, пока не обнаружит игрока (голос, активное электронное оборудование или прямая видимость), после чего он немедленно разогнется до 3,0м/с и останется на этой скорости, пока не достигнет последнего известного места игрока, где он постепенно замедлится обратно.",
                         "is_0_evi": true,
                         "include_on_card": true
                     }
@@ -546,7 +546,7 @@
                 "hunt_sanity": [],
                 "hunt_speed": [
                     {
-                        "data": "3.0m/s while player is detected, 1.0m/s otherwise",
+                        "data": "3,0м/с при обнаружении игрока, 1,0м/с в противном случае",
                         "include_on_card": true
                     }
                 ],
@@ -554,7 +554,7 @@
                 "confirmation_tests": [
                     {
                         "type": "Tell",
-                        "data": "During a hunt, listen to the speed of the ghost. If its is slow, but speeds up fast when you allow it to detect you, and then slows down, it is a Revenant. (Will be faster than Jinn and Raiju, see ghost cards for example speeds)",
+                        "data": "Во время охоты прислушивайтесь к скорости призрака. Если он медленный, но быстро ускоряется, когда вы позволяете ему обнаружить вас, а затем замедляется, то это Ревенант. (Будет быстрее, чем Джинн и Райджу, см. призрачные карты для скорости)",
                         "definitive": true,
                         "image": null
                     }
@@ -562,7 +562,7 @@
                 "elimination_tests": [
                     {
                         "type": "Tell",
-                        "data": "During a hunt, listen to the speed of the ghost. If it is not 1.0m/s or 3.0m/s, it is <i>not</i> a Revenant",
+                        "data": "Во время охоты послушайте скорость призрака. Если это не 1,0 м/с или 3,0 м/с, это <i> не </i> a Revenant",
                         "image": null
                     }
                 ]
@@ -570,7 +570,7 @@
         },
         {
             "ghost": "Shade",
-            "name": "Shade",
+            "name": "Тень",
             "min_speed": 1.7,
             "max_speed": null,
             "alt_speed": null,
@@ -581,56 +581,56 @@
             "hunt_sanity_high": "35%",
             "evidence": [
                 "EMF 5",
-                "Writing",
-                "Freezing"
+                "Письмо",
+                "Замораживание"
             ],
             "nightmare_evidence": null,
             "wiki": {
                 "tells": [
                     {
-                        "data": "Only ghost that can appear as a shadow ghost model on summoning circle, music box, and monkey paw events",
+                        "data": "Единственный призрак, который может появиться в качестве модели теневого призрака в событиях «Круг призыва», «Музыкальная шкатулка» и «Лапа обезьяны»",
                         "is_0_evi": true,
                         "include_on_card": true
                     },
                     {
-                        "data": "Cannot perform singing ghost events <img class='wiki-link' src='https://zero-network.net/phasmophobia/static/imgs/warn.png' height='15' style='margin-bottom: -3px; width: 15px !important;' onclick='showWiki()'>",
+                        "data": "Не может выполнять пение призрачных событий <img class = 'Wiki-Link' src = 'https: //zero-network.net/phasmophobia/static/imgs/warn.png' height = '15 'style =' margin-bottom: -3px; Ширина: 15px! Важно; onclick = 'showwiki ()'>",
                         "is_0_evi": true,
                         "include_on_card": true
                     }
                 ],
                 "behaviors": [
                     {
-                        "data": "Prefers shadow ghost model during events",
+                        "data": "Предпочитает модель теневого призрака во время ивентов",
                         "is_0_evi": true,
                         "include_on_card": true
                     },
                     {
-                        "data": "Will not hunt if in the same room as a player",
+                        "data": "Не начнёт охоту, если находится в одной комнате с игроком",
                         "is_0_evi": true,
                         "include_on_card": true
                     },
                     {
-                        "data": "Will not do events in the same room as a player (but can start an event outside of the room and teleport to the player)",
+                        "data": "Не будет давать госты в одной комнате с игроком (но может начать ивент за пределами комнаты и телепортироваться к игроку)",
                         "is_0_evi": true,
                         "include_on_card": true
                     },
                     {
-                        "data": "Will not do interactions that result in EMF 2, EMF 3, or EMF 5 while in the same room as the player, including ghost writing and blowing out flames (can step just outside of the room and interact with things in the room)",
+                        "data": "Не будет выполнять взаимодействия, которые приводят к EMF 2, EMF 3 или EMF 5, находясь в одной комнате с игроком, включая написание призраков и задувание пламени (может выйти прямо из комнаты и взаимодействовать с вещами в комнате)",
                         "is_0_evi": false,
                         "include_on_card": true
                     },
                     {
-                        "data": "Will not do interactions that result in EMF 2 or EMF 3 while in the same room as the player, including blowing out flames (can step just outside of the room and interact with things in the room)",
+                        "data": "Не будет выполнять взаимодействия, которые приводят к ЭМП2 или ЭМП3, находясь в одной комнате с игроком, включая задувание свечи (может выйти прямо из комнаты и взаимодействовать с вещами в комнате)",
                         "is_0_evi": true,
                         "include_on_card": false
                     },
                     {
-                        "data": "Does more ghost events at a lower average sanity (cannot do ghost events at 100% sanity)",
+                        "data": "Делает больше ивентов с призраками при более низком среднем рассудке (не может делать ивенты с призраками при 100% рассудка)",
                         "is_0_evi": true,
                         "include_on_card": true
                     },
                     {
-                        "data": "Will not blow out firelights while hunting if in the same room as the player (beware of actual or buggy room boundaries) <img class='wiki-link' src='https://zero-network.net/phasmophobia/static/imgs/warn.png' height='15' style='margin-bottom: -3px; width: 15px !important;' onclick='showWiki()'>",
+                        "data": "Не будет взорвать огонь во время охоты, если в той же комнате, что и у игрока (остерегайтесь фактических или баггических границ комнаты) <img class = 'Wiki-link' src = 'https: //zero-network.net/phasmophobia/static/imgs/warn.png' height = '15 'style =' margin-bottom: -3px; Ширина: 15px! Важно; onclick = 'showwiki ()'>",
                         "is_0_evi": true,
                         "include_on_card": true
                     }
@@ -638,7 +638,7 @@
                 "abilities": [],
                 "hunt_sanity": [
                     {
-                        "data": "Does not hunt until 35% average sanity",
+                        "data": "Не охотится свыше 35% среднего рассудка",
                         "include_on_card": true
                     }
                 ],
@@ -647,19 +647,19 @@
                 "confirmation_tests": [
                     {
                         "type": "Tell",
-                        "data": "If you have the summoning circle, light it, and if the ghost is a shadow model, it is a Shade (this will also work with music box and monkey paw events) ",
+                        "data": "Если у вас есть круг призыва, зажгите его, а если призрак является теневой моделью, то это тень (это также будет работать с событиями с музыкальной шкатулкой и обезьяньей лапой)",
                         "definitive": true,
                         "image": "https://i.imgur.com/32ioC8x.gif"
                     },
                     {
                         "type": "Behavior",
-                        "data": "Once the ghost room is known, place a crucifix covering the entire room and place motion sensors at all entrances to the room. Pay attention to where the ghost is using the motion sensors. If the ghost does nothing while in the room (while you are in the room as well), it could be a Shade",
+                        "data": "Как только комната с призраками будет известна, поместите распятие, закрывающее всю комнату, и разместите датчики движения у всех входов в комнату. Обратите внимание на то, где находится призрак с помощью датчиков движения. Если призрак ничего не делает, находясь в комнате (пока вы тоже находитесь в комнате), это может быть тень",
                         "definitive": false,
                         "image": null
                     },
                     {
                         "type": "Behavior",
-                        "data": "Place multiple lit firelights in a room away from any room boundary. Loop the ghost or keep the ghost in place, ensuring the ghost is in the same room as you while hunting (beware of bugged room boundaries). If after multiple hunts the ghost has not extinguished any firelights while hunting in the same room as you, it could be a Shade <img class='wiki-link' src='https://zero-network.net/phasmophobia/static/imgs/warn.png' height='15' style='margin-bottom: -3px; width: 15px !important;'>",
+                        "data": "Поместите несколько зажженных огненных матчей в комнату вдали от любой границы комнаты. Зацикливайте призрака или держите призрака на месте, гарантируя, что призрак находится в той же комнате, что и вы при охоте (остерегайтесь границ разборочных комнат). Если после нескольких охоты призрак не погасил никаких огневых магнитов во время охоты в одной комнате, что и вы, это может быть тень <img class = 'Wiki-link' src = 'https: //zero-network.net/phasmophobia/static/imgs/warn.png' height = '15 'style =' margin-lestom: -3px; Ширина: 15px! Важно; '>",
                         "definitive": false,
                         "image": null
                     }
@@ -667,32 +667,32 @@
                 "elimination_tests": [
                     {
                         "type": "Tell",
-                        "data": "If the ghost performs a singing ghost event, it is <i>not</i> a Shade <img class='wiki-link' src='https://zero-network.net/phasmophobia/static/imgs/warn.png' height='15' style='margin-bottom: -3px; width: 15px !important;' onclick='showWiki()'>",
+                        "data": "Если призрак выполняет пение призрачного события, это <i> не </i> a Shade <img class = 'Wiki-link' src = 'https: //zero-network.net/phasmophobia/static/imgs/warn.png' height = '15 'style =' margin-bothom: -3px; Ширина: 15px! Важно; onclick = 'showwiki ()'>",
                         "image": null
                     },
                     {
                         "type": "Behavior",
-                        "data": "If the ghost does any interaction or event resulting in EMF 2, 3, or 4 in the same room as a player, it is <i>not</i> a Shade",
+                        "data": "Если призрак делает какое -либо взаимодействие или событие, в результате чего EMF 2, 3 или 4 в той же комнате, что и игрок, это <i> не </i> оттенок",
                         "image": null
                     },
                     {
                         "type": "Behavior",
-                        "data": "If the ghost attempts to hunt or hunts in the same room as a player, it is <i>not</i> a Shade",
+                        "data": "Если призрак пытается охотиться или охотиться в той же комнате, что и игрок, это не </i> оттенок",
                         "image": null
                     },
                     {
                         "type": "Behavior",
-                        "data": "If the ghost attempts to hunt above 35% average sanity, it is <i>not</i> a Shade",
+                        "data": "Если призрак пытается охотиться на среднее здравомыслие на 35%, это не </i> оттенок",
                         "image": null
                     },
                     {
                         "type": "Behavior",
-                        "data": "If the ghost does an event while average sanity is at 100%, it is <i>not</i> a Shade",
+                        "data": "Если призрак совершает событие, в то время как среднее здравомыслие составляет 100%, это не </i> оттенок",
                         "image": null
                     },
                     {
                         "type": "Behavior",
-                        "data": "During a hunt, if the ghost blows out a firelight while in the same room as you (be aware of actual or bugged room boundaries), it is <i>not</i> a Shade <img class='wiki-link' src='https://zero-network.net/phasmophobia/static/imgs/warn.png' height='15' style='margin-bottom: -3px; width: 15px !important;'>",
+                        "data": "Во время охоты, если призрак взрывает огонь, в той же комнате, что и вы (будьте в курсе фактических или ошибки комнаты), это <i> не </i> a Shade <img class = 'Wiki-link' src = 'https: //zero-network.net/phasmophia/static/imgs/warn. -3px; Ширина: 15px! Важно; '>",
                         "image": "https://i.imgur.com/eiD84Tx.gif"
                     }
                 ]
@@ -700,7 +700,7 @@
         },
         {
             "ghost": "Demon",
-            "name": "Demon",
+            "name": "Димон",
             "min_speed": 1.7,
             "max_speed": null,
             "alt_speed": null,
@@ -710,41 +710,41 @@
             "hunt_sanity_low": "70%",
             "hunt_sanity_high": "100%",
             "evidence": [
-                "Ultraviolet",
-                "Writing",
-                "Freezing"
+                "Ультрафиолетовый",
+                "Письмо",
+                "Замораживание"
             ],
             "nightmare_evidence": null,
             "wiki": {
                 "tells": [
                     {
-                        "data": "Can hunt 60s after being smudged instead of the standard 90s",
+                        "data": "Может охотиться спустя 60 секунд после обкуривания вместо стандартных 90",
                         "is_0_evi": true,
                         "include_on_card": true
                     },
                     {
-                        "data": "Can hunt 20s after the previous hunt has ended or ghost has used a crucifix instead of the standard 25s",
+                        "data": "Может охотиться через 20 секунд после окончания предыдущей охоты или если призрак сжёг распятие, вместо стандартных 25",
                         "is_0_evi": true,
                         "include_on_card": true
                     }
                 ],
                 "behaviors": [
                     {
-                        "data": "Crucifix range is increased by 50% per tier (4.5m, 6m, 7.5m respectively)",
+                        "data": "Дальность действия Распятия увеличена на 50% на каждый уровень (4,5м, 6м, 7,5м соответственно)",
                         "is_0_evi": true,
                         "include_on_card": true
                     }
                 ],
                 "abilities": [
                     {
-                        "data": "Can hunt at any sanity",
+                        "data": "Может охотиться при любом рассудке",
                         "is_0_evi": true,
                         "include_on_card": true
                     }
                 ],
                 "hunt_sanity": [
                     {
-                        "data": "Ability to hunt at any sanity, hunts normally at 70%",
+                        "data": "Способность охотиться при любом рассудке, нормально охотится на 70%",
                         "include_on_card": true
                     }
                 ],
@@ -753,19 +753,19 @@
                 "confirmation_tests": [
                     {
                         "type": "Tell",
-                        "data": "Start a timer after the ghost has been smudged. If it hunts again before 90s, it is a Demon",
+                        "data": "Запустите таймер после того, как призрак будет смазан. Если он снова охотится до 90-х годов, это демон",
                         "definitive": true,
                         "image": null
                     },
                     {
                         "type": "Tell",
-                        "data": "Start a timer after a hunt ends or after a crucifix has been used. If it hunts again before 25s, it is a Demon",
+                        "data": "Запускайте таймер после окончания охоты или после того, как было использовано распятие. Если он снова охотится до 25 секунд, это демон",
                         "definitive": true,
                         "image": null
                     },
                     {
                         "type": "Ability",
-                        "data": "If a ghost hunts above 80% sanity, no one player's sanity is below 50%, and no candles have been lit, it is a Demon (If on Sunny Meadows, it is possible for an Onryo to hunt early since the Chapel candles are already lit)",
+                        "data": "Если дух охотится выше 80% здравомыслия, ни один из игроков не опускается ниже 50%, и ни одна свеча не была зажжена, это демон (если на Санни Медоуз, Онрё может охотиться раньше, так как свечи в часовне уже зажжены).",
                         "definitive": true,
                         "image": null
                     }
@@ -775,7 +775,7 @@
         },
         {
             "ghost": "Yurei",
-            "name": "Yurei",
+            "name": "Юрка",
             "min_speed": 1.7,
             "max_speed": null,
             "alt_speed": null,
@@ -785,34 +785,34 @@
             "hunt_sanity_low": "50%",
             "hunt_sanity_high": "50%",
             "evidence": [
-                "Ghost Orbs",
-                "Freezing",
-                "DOTs"
+                "Призрачные шары",
+                "Замораживание",
+                "Точки"
             ],
             "nightmare_evidence": null,
             "wiki": {
                 "tells": [
                     {
-                        "data": "Only ghost that can close or interact with an exit door outside of a hunt/event",
+                        "data": "Единственный призрак, который может закрыть или взаимодействовать с выходной дверью вне охоты/ивента",
                         "is_0_evi": true,
                         "include_on_card": true
                     },
                     {
-                        "data": "Must fully open / shut a door when doing door interactions (outside of a hunt)",
+                        "data": "Может только полностью открывать/закрывать дверь при взаимодействии с ней (вне охоты)",
                         "is_0_evi": true,
                         "include_on_card": true
                     }
                 ],
                 "behaviors": [
                     {
-                        "data": "Incensing the ghost will force the ghost into 'favorite room state' for the duration of the incense effect (90s)",
+                        "data": "Обкуривание призрака заставит его перейти в «Любимую комнату» на время действия эффекта благовония (90 секунд)",
                         "is_0_evi": true,
                         "include_on_card": true
                     }
                 ],
                 "abilities": [
                     {
-                        "data": "Can shut a door and drop sanity of nearby players by 15% if a door is in the room",
+                        "data": "Может закрыть дверь и снизить рассудок ближайших игроков на 15%, если в комнате есть дверь",
                         "is_0_evi": true,
                         "include_on_card": true
                     }
@@ -824,7 +824,7 @@
                 "elimination_tests": [
                     {
                         "type": "Tell",
-                        "data": "If at any point the ghost interacts with a door (outside of a hunt) and the door does not fully open / shut, it is <i>not</i> a Yurei",
+                        "data": "Если в какой -либо момент призрак взаимодействует с дверью (за пределами охоты), а дверь не полностью открыта / закрыта, это <i> не < / i> a yurie",
                         "image": "https://file.garden/Z-9fual_RynAMoLc/wiki/0-evidence/yurei-door-test.gif"
                     }
                 ]
@@ -832,7 +832,7 @@
         },
         {
             "ghost": "Oni",
-            "name": "Oni",
+            "name": "Они",
             "min_speed": 1.7,
             "max_speed": null,
             "alt_speed": null,
@@ -843,36 +843,36 @@
             "hunt_sanity_high": "50%",
             "evidence": [
                 "EMF 5",
-                "Freezing",
-                "DOTs"
+                "Замораживание",
+                "Точки"
             ],
             "nightmare_evidence": null,
             "wiki": {
                 "tells": [
                     {
-                        "data": "Drains 20% sanity during events (instead of the standard 10%)",
+                        "data": "Понижает 20% рассудка во время ивентов (вместо стандартных 10%)",
                         "is_0_evi": true,
                         "include_on_card": true
                     },
                     {
-                        "data": "Will <i>not</i> do \"Ghost Mist\" event",
+                        "data": "Будет <i> не </i> сделать \"Ghost Mist\"",
                         "is_0_evi": true,
                         "include_on_card": true
                     },
                     {
-                        "data": "Blinks more frequently during hunts, making them more visible",
+                        "data": "Дольше виден во время охоты",
                         "is_0_evi": true,
                         "include_on_card": true
                     }
                 ],
                 "behaviors": [
                     {
-                        "data": "More active around multiple people",
+                        "data": "Более активен в обществе нескольких человек",
                         "is_0_evi": true,
                         "include_on_card": true
                     },
                     {
-                        "data": "More likely to appear as full ghost model during events",
+                        "data": "Чаще появляется в качестве полной призрачной модели во время ивентов",
                         "is_0_evi": true,
                         "include_on_card": true
                     }
@@ -884,13 +884,13 @@
                 "confirmation_tests": [
                     {
                         "type": "Tell",
-                        "data": "Watch the ghost during a hunt, if the ghost is more visible during the hunt, it is an Oni",
+                        "data": "Наблюдайте за призраком во время охоты, если призрак более заметен во время охоты, это Они",
                         "definitive": true,
                         "image": "https://i.imgur.com/4f2N5D8.gif"
                     },
                     {
                         "type": "Ability",
-                        "data": "If sanity monitor is enabled, check sanity after a ghost event. If it dropped 20% instead of 10%, it is an Oni",
+                        "data": "Если монитор рассудка включен, проверьте рассудок после гост ивента. Если он упал на 20% вместо 10%, это Они",
                         "definitive": true,
                         "image": null
                     }
@@ -898,7 +898,7 @@
                 "elimination_tests": [
                     {
                         "type": "Tell",
-                        "data": "If you ever get a \"Ghost Mist\" event, it is <i>not</i> an Oni",
+                        "data": "Если вы когда -нибудь получите событие \"Ghost Mist\", это <i> не </i> oni",
                         "image": "https://i.imgur.com/mhXTcLs.gif"
                     }
                 ]
@@ -906,7 +906,7 @@
         },
         {
             "ghost": "Yokai",
-            "name": "Yokai",
+            "name": "Ёкай",
             "min_speed": 1.7,
             "max_speed": null,
             "alt_speed": null,
@@ -916,36 +916,36 @@
             "hunt_sanity_low": "50%",
             "hunt_sanity_high": "80%",
             "evidence": [
-                "Spirit Box",
-                "Ghost Orbs",
-                "DOTs"
+                "Спиртная коробка",
+                "Призрачные шары",
+                "Точки"
             ],
             "nightmare_evidence": null,
             "wiki": {
                 "tells": [
                     {
-                        "data": "Hearing/detection distance is 2.5m and less during hunts",
+                        "data": "Расстояние слышимости/обнаружения составляет 2,5м и меньше во время охоты",
                         "is_0_evi": true,
                         "include_on_card": true
                     }
                 ],
                 "behaviors": [
                     {
-                        "data": "More active when talking near it",
+                        "data": "Активнее, когда разговариваешь рядом с ним",
                         "is_0_evi": true,
                         "include_on_card": true
                     }
                 ],
                 "abilities": [
                     {
-                        "data": "Talking in the same room as a Yokai can cause it to hunt up to 80% average sanity",
+                        "data": "Разговор в одной комнате с Ёкаем может привести к тому, что начнётся охота, при рассудке ниже 80%",
                         "is_0_evi": true,
                         "include_on_card": true
                     }
                 ],
                 "hunt_sanity": [
                     {
-                        "data": "Can hunt up to 80% sanity when talking in the same room as it, hunts normally at 50%",
+                        "data": "Может охотиться при рассудке ниже 80%, если рядом с ним разговаривать. Обычно охотится при 50%",
                         "include_on_card": true
                     }
                 ],
@@ -954,7 +954,7 @@
                 "confirmation_tests": [
                     {
                         "type": "Tell",
-                        "data": "During a hunt, speak (or key up global chat) while at a distance where a normal ghost could hear you but a Yokai could not and see if the ghost comes to you. If it doesn't detect you, it is a Yokai",
+                        "data": "Во время охоты говорите (или общайтесь в чате) на расстоянии, где обычный призрак может вас услышать, но не может сделать ёкай, и посмотрите, подходит ли призрак к вам. Если он вас не обнаруживает, это ёкай",
                         "definitive": true,
                         "image": null
                     }
@@ -962,7 +962,7 @@
                 "elimination_tests": [
                     {
                         "type": "Tell",
-                        "data": "During a hunt, speak (or key up global chat) while at a distance where a normal ghost could hear you but a Yokai could not and see if the ghost comes to you. If it does detect you, it is <i>not</i> a Yokai",
+                        "data": "Во время охоты говорите (или зайдите в глобальный чат), находясь на расстоянии, когда обычный призрак может услышать вас, но йокай не мог и посмотреть, придет ли призрак к вам. Если это обнаруживает вас, это <i> не </i> yokai",
                         "image": null
                     }
                 ]
@@ -970,7 +970,7 @@
         },
         {
             "ghost": "Hantu",
-            "name": "Hantu",
+            "name": "Ханту",
             "min_speed": 1.4,
             "max_speed": 2.7,
             "alt_speed": null,
@@ -980,30 +980,30 @@
             "hunt_sanity_low": "50%",
             "hunt_sanity_high": "50%",
             "evidence": [
-                "Ultraviolet",
-                "Ghost Orbs",
-                "Freezing"
+                "Ультрафиолетовый",
+                "Призрачные шары",
+                "Замораживание"
             ],
             "nightmare_evidence": "Freezing",
             "wiki": {
                 "tells": [
                     {
-                        "data": "Will have visible freezing breath during hunts when the breaker is off/broken",
+                        "data": "Будет иметь видимое пар изо рта во время охоты, когда генератор выключен/сломан",
                         "is_0_evi": true,
                         "include_on_card": true
                     },
                     {
-                        "data": "Cannot turn on the breaker",
+                        "data": "Не может включить генератор",
                         "is_0_evi": true,
                         "include_on_card": true
                     },
                     {
-                        "data": "More likely to turn off the breaker",
+                        "data": "С большей вероятностью выключит генератор",
                         "is_0_evi": true,
                         "include_on_card": true
                     },
                     {
-                        "data": "Is faster in colder rooms during hunts",
+                        "data": "Быстрее в более холодных помещениях во время охоты",
                         "is_0_evi": true,
                         "include_on_card": true
                     }
@@ -1013,30 +1013,30 @@
                 "hunt_sanity": [],
                 "hunt_speed": [
                     {
-                        "data": "Faster in colder temperatures",
+                        "data": "Быстрее при низких температурах",
                         "include_on_card": true
                     },
                     {
-                        "data": "<b>Does not speed up in line-of-sight</b>",
+                        "data": "<b> не ускоряется в пределах зрения </b>",
                         "include_on_card": true
                     }
                 ],
                 "evidence": [
                     {
-                        "data": "Guaranteed freezing on difficulties with 2 or fewer evidences given (Nightmare, Insanity, etc.)",
+                        "data": "Гарантированный минус на сложностях при наличии 2х или менее доказательств (Кошмар, Безумие и т.д.)",
                         "include_on_card": true
                     }
                 ],
                 "confirmation_tests": [
                     {
                         "type": "Tell",
-                        "data": "Ensure the breaker is off/broken, then watch the ghost while it hunts. If you see visible breath from the ghost, it is a Hantu",
+                        "data": "Убедитесь, что генератор выключен/сломан, затем наблюдайте за призраком, пока он охотится. Если вы видите пар изо рта призрака, это Ханту",
                         "definitive": true,
                         "image": "https://i.imgur.com/Zu61kbo.gif"
                     },
                     {
                         "type": "Tell",
-                        "data": "During a hunt if the ghost seems to change speeds randomly without being influenced by equipment or the player, it is a Hantu",
+                        "data": "Если во время охоты кажется, что призрак меняет скорость случайным образом, не подвергаясь влиянию снаряжения или игрока, это ханту",
                         "definitive": true,
                         "image": null
                     }
@@ -1044,17 +1044,17 @@
                 "elimination_tests": [
                     {
                         "type": "Tell",
-                        "data": "While the breaker is off or broken, if you do not see visible breath, it is <i>not</i> a Hantu",
+                        "data": "В то время как выключатель выключен или сломлен, если вы не видите видимого дыхания, это <i> не </i> hantu",
                         "image": null
                     },
                     {
                         "type": "Tell",
-                        "data": "If the ghost turns on the breaker, it is <i>not</i> a Hantu",
+                        "data": "Если призрак включает выключатель, это <i> не </i> hantu",
                         "image": null
                     },
                     {
                         "type": "Tell",
-                        "data": "If the ghost speeds up in LOS, it is <i>not</i> a Hantu",
+                        "data": "Если призрак ускоряется в Лос, это <i> не </i> hantu",
                         "image": null
                     }
                 ]
@@ -1062,7 +1062,7 @@
         },
         {
             "ghost": "Goryo",
-            "name": "Goryo",
+            "name": "Горё",
             "min_speed": 1.7,
             "max_speed": null,
             "alt_speed": null,
@@ -1073,31 +1073,31 @@
             "hunt_sanity_high": "50%",
             "evidence": [
                 "EMF 5",
-                "Ultraviolet",
-                "DOTs"
+                "Ультрафиолетовый",
+                "Точки"
             ],
             "nightmare_evidence": "DOTs",
             "wiki": {
                 "tells": [
                     {
-                        "data": "DOTS only appear on video camera and will not show if a player is in the same room (DOTS state can start outside of room and enter a player's room)",
+                        "data": "Лазерка отображается только на видеокамере и не отображается, если игрок находится в той же комнате (Ларезка может проявиться за пределами комнаты и зайти в комнату к игроку).",
                         "is_0_evi": false,
                         "include_on_card": true
                     }
                 ],
                 "behaviors": [
                     {
-                        "data": "Cannot change favorite rooms",
+                        "data": "Не может поменять любимую комнату",
                         "is_0_evi": true,
                         "include_on_card": true
                     },
                     {
-                        "data": "Does not wander from its room often",
+                        "data": "Не часто выходит из своей комнаты",
                         "is_0_evi": true,
                         "include_on_card": true
                     },
                     {
-                        "data": "Will enter DOTS state more frequently than other ghosts <img class='wiki-link' src='https://zero-network.net/phasmophobia/static/imgs/bug.png' height='15' style='margin-bottom: -3px; width: 15px !important;' onclick='showWiki()'>",
+                        "data": "Входить в точки состоятся чаще, чем другие призраки <img class = 'wiki-link' src = 'https: //zero-network.net/phasmophobia/static/imgs/bug.png' height = '15 'style =' margin-bottom: -3px; Ширина: 15px! Важно; onclick = 'showwiki ()'>",
                         "is_0_evi": false,
                         "include_on_card": true
                     }
@@ -1107,7 +1107,7 @@
                 "hunt_speed": [],
                 "evidence": [
                     {
-                        "data": "Guaranteed DOTS on difficulties with 2 or fewer evidences given (Nightmare, Insanity, etc.)",
+                        "data": "Гарантированная лазерная проекция на сложностях с 2мя или менее доказательствами (Кошмар, Безумие и т.д.)",
                         "include_on_card": true
                     }
                 ],
@@ -1115,7 +1115,7 @@
                 "elimination_tests": [
                     {
                         "type": "Tell",
-                        "data": "If the ghost changes its favorite room, it is <i>not</i> a Goryo",
+                        "data": "Если призрак меняет свою любимую комнату, это <i> не </i> a goryo",
                         "image": null
                     }
                 ]
@@ -1123,7 +1123,7 @@
         },
         {
             "ghost": "Myling",
-            "name": "Myling",
+            "name": "Мюлинг",
             "min_speed": 1.7,
             "max_speed": null,
             "alt_speed": null,
@@ -1134,19 +1134,19 @@
             "hunt_sanity_high": "50%",
             "evidence": [
                 "EMF 5",
-                "Ultraviolet",
-                "Writing"
+                "Ультрафиолетовый",
+                "Письмо"
             ],
             "nightmare_evidence": null,
             "wiki": {
                 "tells": [
                     {
-                        "data": "Footsteps and vocals cannot be heard more than 12m away during hunts (normal is 20m)",
+                        "data": "Шаги и голос не слышны на расстоянии более 12м во время охоты (норма - 20м)",
                         "is_0_evi": true,
                         "include_on_card": true
                     },
                     {
-                        "data": "Makes sounds through the parabolic microphone / sound recorder more frequently than other ghosts",
+                        "data": "Издает звуки через параболический микрофон / диктофон чаще других призраков",
                         "is_0_evi": true,
                         "include_on_card": true
                     }
@@ -1159,13 +1159,13 @@
                 "confirmation_tests": [
                     {
                         "type": "Tell",
-                        "data": "During a hunt, if you cannot hear the ghost between 12m and 20m away, it is a Myling",
+                        "data": "Во время охоты, если вы не слышите призрака на расстоянии от 12 до 20 метров, это Мюлинг",
                         "definitive": true,
                         "image": null
                     },
                     {
                         "type": "Tell",
-                        "data": "If the ghost makes two paranormal sounds through the parabolic microphone or sound recorder in under 80s of each other, it is a Myling",
+                        "data": "Если призрак издает два паранормальных звука через параболический микрофон или диктофон с разницей менее 80 секунд, то это Мюлинг",
                         "definitive": true,
                         "image": null
                     }
@@ -1173,7 +1173,7 @@
                 "elimination_tests": [
                     {
                         "type": "Tell",
-                        "data": "If you can hear the ghost between 12m and 20m away during a hunt, it is <i>not</i> a Myling",
+                        "data": "Если вы услышите призрак между 12 млн. До 20 м во время охоты, это <i> не </i> myling",
                         "image": null
                     }
                 ]
@@ -1181,7 +1181,7 @@
         },
         {
             "ghost": "Onryo",
-            "name": "Onryo",
+            "name": "Онрё",
             "min_speed": 1.7,
             "max_speed": null,
             "alt_speed": null,
@@ -1191,32 +1191,32 @@
             "hunt_sanity_low": "40%",
             "hunt_sanity_high": "100%",
             "evidence": [
-                "Spirit Box",
-                "Ghost Orbs",
-                "Freezing"
+                "Спиртная коробка",
+                "Призрачные шары",
+                "Замораживание"
             ],
             "nightmare_evidence": null,
             "wiki": {
                 "tells": [
                     {
-                        "data": "Will attempt to hunt at any sanity after extinguishing every 3rd flame",
+                        "data": "Будет пытаться охотиться при любом рассудке после того, как погасит каждое 3-е пламя",
                         "is_0_evi": true,
                         "include_on_card": true
                     },
                     {
-                        "data": "Cannot light fire sources",
+                        "data": "Не может зажигать источники огня",
                         "is_0_evi": true,
                         "include_on_card": true
                     }
                 ],
                 "behaviors": [
                     {
-                        "data": "Flames act like crucifixes, will blow out a flame if it tries to hunt (within 4m). Ghost prioritizes flames over crucifixes when preventing hunts",
+                        "data": "Пламя действует как распятие. Задувает пламя, если пытается охотиться (в пределах 4 метров). Призрак отдает предпочтение пламени, а не распятиям, когда пытается начать охоту",
                         "is_0_evi": true,
                         "include_on_card": true
                     },
                     {
-                        "data": "More likely to extinguish a flame, the more players that are dead",
+                        "data": "Чем больше вероятность погаснет пламя, тем больше мертвых игроков",
                         "is_0_evi": true,
                         "include_on_card": true
                     }
@@ -1224,7 +1224,7 @@
                 "abilities": [],
                 "hunt_sanity": [
                     {
-                        "data": "Can hunt at any sanity using its ability, hunts normally at 60%, can't hunt until 40% when near lit firelights",
+                        "data": "Может охотиться при любом рассудке, используя свою способность. Обычно охотится на 60%. Не может охотиться свыше 40% при близком расположении источников огня",
                         "include_on_card": true
                     }
                 ],
@@ -1233,19 +1233,19 @@
                 "confirmation_tests": [
                     {
                         "type": "Tell",
-                        "data": "If the ghost blows out the same firelight twice within 20s, it is an Onryo <img class='wiki-link' src='https://zero-network.net/phasmophobia/static/imgs/warn.png' height='15' style='margin-bottom: -3px; width: 15px !important;'>",
+                        "data": "Если призрак дважды выдувает один и тот же огнестойкость в течение 20-х годов, это onryo <img class = 'wiki-link' src = 'https: //zero-network.net/phasmophobia/static/imgs/warn.png' height = '15 'style =' margin-bottom: -3px; Ширина: 15px! Важно; '>",
                         "definitive": true,
                         "image": null
                     },
                     {
                         "type": "Tell",
-                        "data": "If sanity is above 75%: Place a candle (or 3 candles) on top of a Tier 1 or Tier 2 crucifix. If after the candle has been extinguished 3 times (or all 3 candles have been extinguished) the crucifix is used after 1 to 6 seconds, it could be an Onryo.<br><br><i>Note: An active setup timer or smudge timer will cancel the hunt attempt. If a flame is used to prevent a hunt, it will reset the counter and count as the first blowout. Be sure to wait 6 seconds after a candle blowout to allow the ghost to use its ability before lighting the candle(s) again.</i>",
+                        "data": "Если здравомыслие превышает 75%: поместите свечу (или 3 свечи) поверх распятия уровня 1 или уровня 2. Если после того, как свеча была погашена 3 раза (или все 3 свечи были погашены), распятие используется через 1-6 секунд, это может быть Onryo. Если пламя используется для предотвращения охоты, оно сбросит счетчик и считается первым выбросом. Обязательно подождите через 6 секунд после выброса свечей, чтобы призрак использовал свою способность, прежде чем снова зажечь свечу (ы). </I>",
                         "definitive": false,
                         "image": "https://i.imgur.com/u0siVNc.gif"
                     },
                     {
                         "type": "Tell",
-                        "data": "If sanity is below 35%: Place a candle or many candles in the ghost room and keep them constantly lit. If the ghost has not hunted or used a crucifix after an extended period of time, it could be an Onryo",
+                        "data": "Если здравомыслие ниже 35%: Поставьте свечу или много свечей в комнате с призраками и держите их постоянно горящими. Если призрак не охотился или не использовал распятие в течение длительного периода времени, это может быть Онрё",
                         "definitive": false,
                         "image": null
                     }
@@ -1253,12 +1253,12 @@
                 "elimination_tests": [
                     {
                         "type": "Tell",
-                        "data": "If the ghost lights a fire source, it is <i>not</i> an Onryo",
+                        "data": "Если призрак зажигает источник огня, это <i> не </i> onryo",
                         "image": null
                     },
                     {
                         "type": "Tell",
-                        "data": "Place a candle on top of a crucifix (be aware that the range of the Tier 3 crucifix has a larger range than the candle does for preventing an Onryo hunt, you may need multiple candles to get coverage). If the crucifix is used while the candle is still lit, it is <i>not</i> an Onryo",
+                        "data": "Поместите свечу на вершину распятия (имейте в виду, что дальность действия распятия 3-го уровня имеет больший диапазон, чем у свечи, чтобы предотвратить охоту на Онрё, вам может понадобиться несколько свечей, чтобы получить покрытие). Если распятие используется, когда свеча еще горит, это <i>не</i> Онрё",
                         "image": "https://i.imgur.com/jAsFDVn.gif"
                     }
                 ]
@@ -1266,7 +1266,7 @@
         },
         {
             "ghost": "The Twins",
-            "name": "The Twins",
+            "name": "Близнецы",
             "min_speed": 1.5,
             "max_speed": 1.9,
             "alt_speed": null,
@@ -1277,26 +1277,26 @@
             "hunt_sanity_high": "50%",
             "evidence": [
                 "EMF 5",
-                "Spirit Box",
-                "Freezing"
+                "Спиртная коробка",
+                "Замораживание"
             ],
             "nightmare_evidence": null,
             "wiki": {
                 "tells": [
                     {
-                        "data": "Can do 2 interactions at the same time, one within its standard radius (2.12m, 4.24m on large maps) and the other within its extended radius (8.48m, 16.97m on large maps) <img class='wiki-link' src='https://zero-network.net/phasmophobia/static/imgs/warn.png' height='15' style='margin-bottom: -3px; width: 15px !important;' onclick='openWikiPath(\"ghost-data.interaction-range\")'>",
+                        "data": "Может выполнять 2 взаимодействия одновременно, одно в его стандартном радиусе (2,12 млн., 4,24 м на больших картах) и другой в его расширенном радиусе (8,48 м, 16,97 м на больших картах) <Img class = 'Wiki-' Src = 'https: //zero-network.net/phasmophia/stary/imgs/warn.png' ‘hiews '‘ height-' height- 'height-' height- 'hieght ’-hiege’-hiege- ’-hieghtry ‘network.net/phasmophabia/Stary/warn. style = 'margin -bottom: -3px; Ширина: 15px! Важно; onclick = 'openwikipath (\"Ghost-data.interaction-range\")'>",
                         "is_0_evi": true,
                         "include_on_card": true
                     },
                     {
-                        "data": "Ghost speed during hunts will be either 1.5m/s or 1.9m/s",
+                        "data": "Скорость призрака во время охоты будет составлять либо 1,5м/с, либо 1,9м/с",
                         "is_0_evi": true,
                         "include_on_card": true
                     }
                 ],
                 "behaviors": [
                     {
-                        "data": "Triggering motion sensors, stepping in salt, and spirit box responses only occur at its physical location",
+                        "data": "Датчики движения, следы в соли и радиоприёмнику срабатывают только возле основного близнеца",
                         "is_0_evi": false,
                         "include_on_card": true
                     }
@@ -1305,7 +1305,7 @@
                 "hunt_sanity": [],
                 "hunt_speed": [
                     {
-                        "data": "1.5m/s when hunting from its standard range, 1.9m/s when hunting from its extended range",
+                        "data": "1,5м/с при охоте со стандартного диапазона, 1,9м/с при охоте с расширенного диапазона",
                         "include_on_card": true
                     }
                 ],
@@ -1313,13 +1313,13 @@
                 "confirmation_tests": [
                     {
                         "type": "Tell",
-                        "data": "If the ghost alternates between 1.5m/s and 1.9m/s speed between hunts, it is The Twins",
+                        "data": "Если призрак меняет скорость от 1,5 м/с до 1,9 м/с между охотами, то это Близнецы",
                         "definitive": true,
                         "image": null
                     },
                     {
                         "type": "Tell",
-                        "data": "If there are interactions far away from the ghost room frequently, it could be The Twins",
+                        "data": "Если часто происходят взаимодействия вдали от комнаты призрака, это могут быть близнецы",
                         "definitive": false,
                         "image": null
                     }
@@ -1329,7 +1329,7 @@
         },
         {
             "ghost": "Raiju",
-            "name": "Raiju",
+            "name": "Райдзю",
             "min_speed": 1.7,
             "max_speed": 2.5,
             "alt_speed": null,
@@ -1340,24 +1340,24 @@
             "hunt_sanity_high": "65%",
             "evidence": [
                 "EMF 5",
-                "Ghost Orbs",
-                "DOTs"
+                "Призрачные шары",
+                "Точки"
             ],
             "nightmare_evidence": null,
             "wiki": {
                 "tells": [
                     {
-                        "data": "During events and hunts, causes electronic disturbance at a 15m range instead of 10m",
+                        "data": "Во время гост ивентов и охоты вызывает электронные помехи на расстоянии 15м вместо 10",
                         "is_0_evi": true,
                         "include_on_card": true
                     },
                     {
-                        "data": "Increased speed near active electronic equipment while hunting",
+                        "data": "Увеличена скорость вблизи активного электронного оборудования во время охоты",
                         "is_0_evi": true,
                         "include_on_card": true
                     },
                     {
-                        "data": "Can hunt at 65% when near active electronic equipment",
+                        "data": "Может охотиться при 65% рассудка при нахождении рядом с активным электронным оборудованием",
                         "is_0_evi": true,
                         "include_on_card": false
                     }
@@ -1366,13 +1366,13 @@
                 "abilities": [],
                 "hunt_sanity": [
                     {
-                        "data": "Can hunt at 65% sanity near active player equipment",
+                        "data": "Может охотиться при 65% рассудка рядом с активным оборудованием игрока",
                         "include_on_card": true
                     }
                 ],
                 "hunt_speed": [
                     {
-                        "data": "2.5m/s near active player equipment, 1.7m/s otherwise",
+                        "data": "2,5м/с рядом с активным оборудованием игрока, в противном случае 1,7м/с",
                         "include_on_card": true
                     }
                 ],
@@ -1380,19 +1380,19 @@
                 "confirmation_tests": [
                     {
                         "type": "Tell",
-                        "data": "Place active electronics near the ghost room. Then, during a hunt, hide and listen for the ghost to walk near the electronics. If the ghost is fast while walking near them, but slows down further away from them, it is a Raiju",
+                        "data": "Разместите активную электронику рядом с комнатой призраков. Затем, во время охоты, спрячьтесь и прислушайтесь, когда призрак будет ходить рядом с электроникой. Если призрак быстро идет рядом с ними, но замедляется дальше от них, это Райджу",
                         "definitive": true,
                         "image": null
                     },
                     {
                         "type": "Tell",
-                        "data": "While the ghost is hunting and is nearby, turn on and off a piece of electronic equipment (held or on the ground, you won't give your position away if its on the ground). If the ghost's speed increases and decreases in relation to the equipment, it is a Raiju",
+                        "data": "Пока призрак охотится и находится поблизости, включайте и выключайте электронное оборудование (удерживаемое или лежащее на земле, вы не выдадите свое местоположение, если оно находится на земле). Если скорость призрака увеличивается и уменьшается по отношению к оборудованию, это райджу",
                         "definitive": true,
                         "image": null
                     },
                     {
                         "type": "Tell",
-                        "data": "If the ghost hunts early between 50% - 65%, it could be a Raiju",
+                        "data": "Если призрак охотится на ранних стадиях от 50% до 65%, это может быть Райдзу",
                         "definitive": false,
                         "image": null
                     }
@@ -1400,7 +1400,7 @@
                 "elimination_tests": [
                     {
                         "type": "Tell",
-                        "data": "If the ghost does not speed up near electronics during a hunt, it is <i>not</i> a Raiju",
+                        "data": "Если призрак не ускоряется возле электроники во время охоты, это <i> не </i> raiju",
                         "image": null
                     }
                 ]
@@ -1408,7 +1408,7 @@
         },
         {
             "ghost": "Obake",
-            "name": "Obake",
+            "name": "Окакэ",
             "min_speed": 1.7,
             "max_speed": null,
             "alt_speed": null,
@@ -1419,24 +1419,24 @@
             "hunt_sanity_high": "50%",
             "evidence": [
                 "EMF 5",
-                "Ultraviolet",
-                "Ghost Orbs"
+                "Ультрафиолетовый",
+                "Призрачные шары"
             ],
             "nightmare_evidence": "Ultraviolet",
             "wiki": {
                 "tells": [
                     {
-                        "data": "Special 6 fingered fingerprints (<span class=\"wiki-link\" onclick='openWikiPath(\"ghost-data.obake-fingerprints\")'>Open 'Guides' tab</span>)",
+                        "data": "Специальные 6 отпечаток пальцев (<span class = \"wiki-link\" onclick = 'openwikipath (\"Ghost-data.obake-fingerprints\")'> Open 'Guides' tab </span>)",
                         "is_0_evi": false,
                         "include_on_card": true
                     },
                     {
-                        "data": "Has a 25% chance to not leave ultraviolet evidence (including footprints)",
+                        "data": "С вероятностью 25% не оставляет ультрафиолетовых следов (включая следы)",
                         "is_0_evi": false,
                         "include_on_card": true
                     },
                     {
-                        "data": "Will change models for a single blink during hunts at least once per standard length hunt (<span class=\"wiki-link\" onclick='openWikiPath(\"ghost-data.obake-blinking\")'>See deeper explanation</span>)",
+                        "data": "Будет изменять модели для одного мигания во время охоты, по крайней мере, один раз на стандартную охоту на длину (<span class = \"wiki-link\" onclick = 'openwikipath (\"Ghost-data.obake-malling\")'> См. Более глубокое объяснение </span>)",
                         "is_0_evi": true,
                         "include_on_card": true
                     }
@@ -1444,7 +1444,7 @@
                 "behaviors": [],
                 "abilities": [
                     {
-                        "data": "Can make fingerprints disappear twice as fast",
+                        "data": "Отпечатки пальцев могут исчезнуть в 2 раза быстрее",
                         "is_0_evi": false,
                         "include_on_card": true
                     }
@@ -1453,20 +1453,20 @@
                 "hunt_speed": [],
                 "evidence": [
                     {
-                        "data": "Guaranteed ultraviolet on difficulties with 2 or fewer evidences given (Nightmare, Insanity, etc.)",
+                        "data": "Гарантированный ультрафиолет на сложностях с 2 или менее доказательствами (Кошмар, Безумие и т.д.)",
                         "include_on_card": true
                     }
                 ],
                 "confirmation_tests": [
                     {
                         "type": "Tell",
-                        "data": "Find a location where you can loop the ghost while being able to see the model at all times. If while looping the ghost during a hunt you see the model change for a single blink, it is an Obake",
+                        "data": "Найдите место, где вы можете зациклить призрака, имея возможность постоянно видеть модель. Если во время петли призрака во время охоты вы видите, как модель меняется на один миг, это Обаке",
                         "definitive": true,
                         "image": "https://i.imgur.com/dK9jV8S.gif"
                     },
                     {
                         "type": "Tell",
-                        "data": "Place a single pile of salt near the ghost. If after stepping in the salt, during the sequence of audible footsteps, you hear a missed step (e.g. <i>step... [  ]... step...</i> instead of <i>step... step... step...</i>), it is an Obake <img class='wiki-link' src='https://zero-network.net/phasmophobia/static/imgs/warn.png' height='15' style='margin-bottom: -3px; width: 15px !important;'>",
+                        "data": "Поместите одну кучу соли возле призрака. Если после входа в соль, во время последовательности звуковых шагов, вы слышите пропущенный шаг (например, <i> шаг ... [] ... шаг ... </i> вместо <i> шага ... шаг ... шаг ... </i>), это obake <img class = 'wiki-' src = 'https: //zero-nethobr высота = '15 'style =' margin -bottom: -3px; Ширина: 15px! Важно; '>",
                         "definitive": true,
                         "image": null
                     }
@@ -1476,7 +1476,7 @@
         },
         {
             "ghost": "The Mimic",
-            "name": "The Mimic",
+            "name": "Мимик",
             "min_speed": 1.7,
             "max_speed": null,
             "alt_speed": null,
@@ -1486,15 +1486,15 @@
             "hunt_sanity_low": "12%",
             "hunt_sanity_high": "100%",
             "evidence": [
-                "Spirit Box",
-                "Ultraviolet",
-                "Freezing"
+                "Спиртная коробка",
+                "Ультрафиолетовый",
+                "Замораживание"
             ],
             "nightmare_evidence": null,
             "wiki": {
                 "tells": [
                     {
-                        "data": "Will always show Ghost Orbs as an additional evidence, even on 0 evidence",
+                        "data": "Всегда будет показывать призрачные сферы в качестве дополнительного доказательства, даже при 0 доказательствах",
                         "is_0_evi": true,
                         "include_on_card": true
                     }
@@ -1502,20 +1502,20 @@
                 "behaviors": [],
                 "abilities": [
                     {
-                        "data": "Mimics a different ghost every 30 - 120 seconds, taking on all behaviors, tells, and abilities of that ghost (excluding evidence), leading to inconsistent behavior",
+                        "data": "Каждые 30–120 секунд имитирует нового призрака, перенимая все формы поведения, признаки и способности этого призрака (за исключением улик), что приводит к непоследовательному поведению",
                         "is_0_evi": true,
                         "include_on_card": true
                     }
                 ],
                 "hunt_sanity": [
                     {
-                        "data": "Copies behavior of currently mimicked ghost",
+                        "data": "Копирует поведение текущего имитируемого призрака",
                         "include_on_card": true
                     }
                 ],
                 "hunt_speed": [
                     {
-                        "data": "Copies speed of currently mimicked ghost",
+                        "data": "Копирует скорость текущего имитируемого призрака",
                         "include_on_card": true
                     }
                 ],
@@ -1523,13 +1523,13 @@
                 "confirmation_tests": [
                     {
                         "type": "Tell",
-                        "data": "In 0 evidence, check the ghost's favorite room for Ghost Orbs. If there are Ghost Orbs, it is The Mimic",
+                        "data": "В 0 доказательств проверьте любимую комнату призрака на наличие призрачных сфер. Если они есть, то это Мимик",
                         "definitive": true,
                         "image": null
                     },
                     {
                         "type": "Ability",
-                        "data": "Pay attention to the ghost behavior each hunt. If the behavior changes wildly between hunts (it appears to be a different ghost each time), it is The Mimic",
+                        "data": "Обращайте внимание на поведение призраков на каждой охоте. Если поведение сильно меняется между охотами (каждый раз кажется, что это новый призрак), то это Мимик",
                         "definitive": true,
                         "image": null
                     }
@@ -1537,7 +1537,7 @@
                 "elimination_tests": [
                     {
                         "type": "Tell",
-                        "data": "Check the ghost's favorite room for Ghost Orbs. If there are <i>no</i> Ghost Orbs, it is <i>not</i> The Mimic",
+                        "data": "Проверьте любимую комнату призрака для призрачных шаров. Если есть <i> нет </i> Ghost Serbs, это <i> не </i> имит",
                         "image": null
                     }
                 ]
@@ -1545,7 +1545,7 @@
         },
         {
             "ghost": "Moroi",
-            "name": "Moroi",
+            "name": "геМорой",
             "min_speed": 1.5,
             "max_speed": 2.25,
             "alt_speed": 3.71,
@@ -1555,32 +1555,32 @@
             "hunt_sanity_low": "50%",
             "hunt_sanity_high": "50%",
             "evidence": [
-                "Spirit Box",
-                "Writing",
-                "Freezing"
+                "Спиртная коробка",
+                "Письмо",
+                "Замораживание"
             ],
             "nightmare_evidence": "Spirit Box",
             "wiki": {
                 "tells": [
                     {
-                        "data": "Places a curse on player when heard through spirit box, parabolic microphone, or sound recorder, which causes sanity to passively drain twice as fast (even in a lit room)",
+                        "data": "Накладывает проклятие на игрока, когда его слышат через радиоприёмник, параболический микрофон или диктофон. Из-за чего рассудок садится в два раза быстрее (даже в освещенной комнате)",
                         "is_0_evi": false,
                         "include_on_card": true
                     },
                     {
-                        "data": "Places a curse on player when heard through parabolic microphone, curse drops sanity 2x as fast",
+                        "data": "Накладывает проклятие на игрока, когда его слышат через параболический микрофон, проклятие садит рассудок в 2 раза быстрее",
                         "is_0_evi": true,
                         "include_on_card": false
                     },
                     {
-                        "data": "Incense blindness duration during hunts is increased from 5s to 7s <img class='wiki-link' src='https://zero-network.net/phasmophobia/static/imgs/warn.png' height='15' style='margin-bottom: -3px; width: 15px !important;' onclick='showWiki()'>",
+                        "data": "Продолжительность слепоты благовоний во время охоты увеличивается с 5S до 7S <img class = 'Wiki-link' src = 'https: //zero-network.net/phasmophobia/static/imgs/warn.png' height = '15 'style =' margin-bottom: -3px; Ширина: 15px! Важно; onclick = 'showwiki ()'>",
                         "is_0_evi": true,
                         "include_on_card": true
                     }
                 ],
                 "behaviors": [
                     {
-                        "data": "Faster when average sanity is lower, can reach a speed of 3.71 m/s when in LOS",
+                        "data": "Быстрее при низком среднем рассудке, может развивать скорость 3,71м/с при нахождении в прямой видимости",
                         "is_0_evi": true,
                         "include_on_card": false
                     }
@@ -1589,44 +1589,44 @@
                 "hunt_sanity": [],
                 "hunt_speed": [
                     {
-                        "data": "Faster when average sanity is lower, can reach a speed of 3.71 m/s when in LOS",
+                        "data": "Быстрее при низком среднем рассудке, может развивать скорость 3,71м/с при нахождении в прямой видимости",
                         "include_on_card": true
                     }
                 ],
                 "evidence": [
                     {
-                        "data": "Guaranteed spirit box on difficulties with 2 or fewer evidences given (Nightmare, Insanity, etc.)",
+                        "data": "Гарантированный радиоприёмник на уровнях сложности с 2 или менее доказательствами (Кошмар, Безумие и т.д.)",
                         "include_on_card": true
                     }
                 ],
                 "confirmation_tests": [
                     {
                         "type": "Tell",
-                        "data": "If you observe an increase in speed between hunts with LOS speed up, it is a Moroi",
+                        "data": "Если вы наблюдаете увеличение скорости между охотами с увеличением скорости при прямой видимости, то это морой",
                         "definitive": true,
                         "image": null
                     },
                     {
                         "type": "Tell",
-                        "data": "After smudging a ghost during hunt, if it takes more than 5s to return to you (assuming it can still detect you), it is a Moroi",
+                        "data": "После того, как вы обкурили призрака во время охоты, если ему требуется более 5 секунд, чтобы вернуться к вам (при условии, что он все еще может вас обнаружить), это Морой",
                         "definitive": true,
                         "image": null
                     },
                     {
                         "type": "Tell",
-                        "data": "If after hearing a whisper on the parabolic microphone / sound recorder you are unable to stop passive sanity drain by standing in a (small) lit room, it is a Moroi",
+                        "data": "Если после того, как вы услышали шепот в параболический микрофон / диктофон, вы не в состоянии остановить пассивное истощение рассудка, стоя в (маленькой) освещенной комнате, это Морой",
                         "definitive": true,
                         "image": null
                     },
                     {
                         "type": "Behavior",
-                        "data": "Once your average sanity is below 40%, take sanity medication during a hunt. If the ghost's speed decreases afterward, it is a Moroi",
+                        "data": "Как только средний рассудок упадет ниже 40%, примите успокоительное во время охоты. Если после этого скорость призрака уменьшается, это Морой",
                         "definitive": true,
                         "image": null
                     },
                     {
                         "type": "Behavior",
-                        "data": "If after hearing a whisper on the parabolic microphone / sound recorder a player's sanity seems to decrease more quickly, it could be a Moroi",
+                        "data": "Если после того, как вы услышали шепот в параболический микрофон / диктофон, рассудок игрока снижается быстрее, это может быть Морой",
                         "definitive": false,
                         "image": null
                     }
@@ -1636,7 +1636,7 @@
         },
         {
             "ghost": "Deogen",
-            "name": "Deogen",
+            "name": "Деоген",
             "min_speed": 0.4,
             "max_speed": 3.0,
             "alt_speed": null,
@@ -1646,32 +1646,32 @@
             "hunt_sanity_low": "40%",
             "hunt_sanity_high": "40%",
             "evidence": [
-                "Spirit Box",
-                "Writing",
-                "DOTs"
+                "Спиртная коробка",
+                "Письмо",
+                "Точки"
             ],
             "nightmare_evidence": "Spirit Box",
             "wiki": {
                 "tells": [
                     {
-                        "data": "33% chance to give heavy breathing through spirit box when within 1m of the ghost  <span class=\"sound\" onClick=\"playSound('https://zero-network.net/phasmophobia/static/assets/deogen_breathing.mp3')\">🔊</span>",
+                        "data": "33% шанс дать тяжелое дыхание через Spirit Box, когда в пределах 1 м от призрака <span class = \"sound\" onclick = \"playsound ('https://zero-network.net/phasmophobia/static/assets/deogen_breathing.mp3')\"> 🔊 </span>",
                         "is_0_evi": false,
                         "include_on_card": true
                     },
                     {
-                        "data": "Very fast hunt speed, but will slow down as it nears the targeted player",
+                        "data": "Очень высокая скорость охоты, но будет замедляться по мере приближения к целевому игроку",
                         "is_0_evi": true,
                         "include_on_card": true
                     },
                     {
-                        "data": "Is more visible during hunts",
+                        "data": "Более заметен во время охоты",
                         "is_0_evi": true,
                         "include_on_card": true
                     }
                 ],
                 "behaviors": [
                     {
-                        "data": "Always has LOS of the player during hunts, meaning you cannot hide from a Deogen",
+                        "data": "Всегда знает местоположение игрока во время охоты. Что означает, что вы не можете спрятаться от Деогена",
                         "is_0_evi": true,
                         "include_on_card": true
                     }
@@ -1679,26 +1679,26 @@
                 "abilities": [],
                 "hunt_sanity": [
                     {
-                        "data": "Does not hunt until 40% average sanity",
+                        "data": "Не охотится свыше 40% среднего рассудка",
                         "include_on_card": true
                     }
                 ],
                 "hunt_speed": [
                     {
-                        "data": "3.0m/s when far away, drops to 0.4m/s when close to the player",
+                        "data": "3,0м/с на большом расстоянии, снижается до 0,4 м/с возле игрока",
                         "include_on_card": true
                     }
                 ],
                 "evidence": [
                     {
-                        "data": "Guaranteed spirit box on difficulties with 2 or fewer evidences given (Nightmare, Insanity, etc.)",
+                        "data": "Гарантированный радиоприёмник на уровнях сложности с 2 или менее доказательствами (Кошмар, Безумие и т.д.)",
                         "include_on_card": true
                     }
                 ],
                 "confirmation_tests": [
                     {
                         "type": "Tell",
-                        "data": "If during a hunt you hear the ghost speeding toward you but then slow down significantly when near you, its a Deogen",
+                        "data": "Если во время охоты вы слышите, как призрак мчится к вам, но затем значительно замедляется рядом с вами, это Деоген",
                         "definitive": true,
                         "image": null
                     }
@@ -1706,7 +1706,7 @@
                 "elimination_tests": [
                     {
                         "type": "Behavior",
-                        "data": "If the ghost attempts to hunt above 40% average sanity, it is <i>not</i> a Deogen",
+                        "data": "Если призрак пытается охотиться за более 40% среднего здравомыслия, это <i> не </i> deogen",
                         "image": null
                     }
                 ]
@@ -1714,7 +1714,7 @@
         },
         {
             "ghost": "Thaye",
-            "name": "Thaye",
+            "name": "Тайэ",
             "min_speed": 1.0,
             "max_speed": 2.75,
             "alt_speed": null,
@@ -1724,27 +1724,27 @@
             "hunt_sanity_low": "15%",
             "hunt_sanity_high": "75%",
             "evidence": [
-                "Ghost Orbs",
-                "Writing",
-                "DOTs"
+                "Призрачные шары",
+                "Письмо",
+                "Точки"
             ],
             "nightmare_evidence": null,
             "wiki": {
                 "tells": [
                     {
-                        "data": "Age response on Ouija board increases as Thaye ages",
+                        "data": "Ответ про возраст на доске Уиджди увеличивается по мере старения Тайе",
                         "is_0_evi": true,
                         "include_on_card": true
                     }
                 ],
                 "behaviors": [
                     {
-                        "data": "Ghost will attempt to age every 1-2 minutes. If a player is in the same room when it attempts, it ages; otherwise, it waits 30s and attempts again",
+                        "data": "Призрак будет пытаться состариться каждые 1-2 минуты. Если игрок находится в той же комнате, когда он пытается это сделать, он стареет; В противном случае он ждет 30с и пытается снова",
                         "is_0_evi": true,
                         "include_on_card": true
                     },
                     {
-                        "data": "More active when younger",
+                        "data": "Более активный, когда моложе",
                         "is_0_evi": true,
                         "include_on_card": true
                     }
@@ -1752,17 +1752,17 @@
                 "abilities": [],
                 "hunt_sanity": [
                     {
-                        "data": "Hunts at 75% at its youngest, 15% at its oldest",
+                        "data": "Охотится на 75% пока молодой, 15% когда старый",
                         "include_on_card": true
                     }
                 ],
                 "hunt_speed": [
                     {
-                        "data": "2.75m/s at its youngest, 1.0m/s at its oldest",
+                        "data": "2,75м/с у самого молодого, 1,0м/с у самого старого",
                         "include_on_card": true
                     },
                     {
-                        "data": "<b>Does not speed up in line-of-sight</b>",
+                        "data": "<b> не ускоряется в пределах зрения </b>",
                         "include_on_card": true
                     }
                 ],
@@ -1770,19 +1770,19 @@
                 "confirmation_tests": [
                     {
                         "type": "Tell",
-                        "data": "If you have a Ouija Board, ask for the ghost's age. After some time, ask the question again. If the number given increases, it is a Thaye",
+                        "data": "Если у вас есть доска для спиритических сеансов, спросите возраст призрака. Через некоторое время задайте вопрос еще раз. Если указанное число увеличивается, то это Тхайе",
                         "definitive": true,
                         "image": "https://i.imgur.com/o9Qxnfq.gif"
                     },
                     {
                         "type": "Tell",
-                        "data": "If the speed decreases each hunt and the ghost has no LOS, it is a Thaye",
+                        "data": "Если скорость уменьшается с каждой охотой и призрак не ускоряется при прямой видимости, то это Тайе",
                         "definitive": true,
                         "image": null
                     },
                     {
                         "type": "Tell",
-                        "data": "During a hunt, if the ghost does not speed up in LOS, it could be a Thaye",
+                        "data": "Во время охоты, если призрак не ускоряется при прямой видимости, это может быть Тайэ",
                         "definitive": false,
                         "image": null
                     }
@@ -1790,7 +1790,7 @@
                 "elimination_tests": [
                     {
                         "type": "Tell",
-                        "data": "During a hunt, if a ghost does speed up with LOS, it is <i>not</i> a Thaye",
+                        "data": "Во время охоты, если призрак ускоряется с LOS, это не </i> a thaye",
                         "image": null
                     }
                 ]
