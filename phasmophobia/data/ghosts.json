@@ -303,7 +303,7 @@
             "wiki": {
                 "tells": [
                     {
-                        "data": "33% шанс дать 1 из 20 уникальных криков через параболический микрофон / звуковой рекордер. <i> Примеры: </i> <br> (<span class = \"sound\" onclick = \"playsound ('https://zero-network.net/phasmophobia/static/assets/banshee_scream_new_1.mp3')\"> 1: 🔊 </span> <pan = \"звук\" onclick = \"playsound ('https://zero-network.net/phasmophobia/static/assets/banshee_scream_new_2.mp3')\"> 2: 🔊 </span> | onclick = \"playsound ('https://zero-network.net/phasmophobia/static/assets/banshee_scream_new_3.mp3')\"> 3: 🔊 </span> | onclick = \"playsound ('https://zero-network.net/phasmophobia/static/assets/banshee_scream_new_4.mp3')\"> 4: 🔊 </span>)",
+                        "data": "33% шанс дать 1 из 20 уникальных криков через параболический микрофон / звуковой рекордер. <i>Примеры:</i><br>(<span class=\"sound\" onClick=\"playSound('https://zero-network.net/phasmophobia/static/assets/banshee_scream_new_1.mp3')\"> 1 :🔊</span> | <span class=\"sound\" onClick=\"playSound('https://zero-network.net/phasmophobia/static/assets/banshee_scream_new_2.mp3')\"> 2 :🔊</span> | <span class=\"sound\" onClick=\"playSound('https://zero-network.net/phasmophobia/static/assets/banshee_scream_new_3.mp3')\"> 3: 🔊</span> | <span class=\"sound\" onClick=\"playSound('https://zero-network.net/phasmophobia/static/assets/banshee_scream_new_4.mp3')\"> 4 :🔊</span>)",
                         "is_0_evi": true,
                         "include_on_card": true
                     },
