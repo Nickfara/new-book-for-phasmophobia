@@ -1,4 +1,11 @@
 [
+	{
+        "id": 14,
+        "lang": "ru",
+        "lang_option": "Русский ru",
+        "url": "ru"
+    },
+
     {
         "id": 13,
         "lang": "zh-cn",
