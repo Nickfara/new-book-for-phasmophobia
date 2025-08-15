@@ -9,7 +9,7 @@ const lang_currency = [
 
 const lang_menu_widths = {
     "ru":{
-        "left":"196px",
+        "left":"230px",
         "width":"168px",
         "maps":"calc(100% - 295px)",
         "menu_bottom":"-715px",
