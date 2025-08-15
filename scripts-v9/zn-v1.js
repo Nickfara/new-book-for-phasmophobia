@@ -161,7 +161,7 @@ function loadAllAndConnect(){
             lang = 'en'
         }
         try{
-            fetch(`https://nickfara.github.io/new-book-for-phasmophobia/phasmophobia/data/ghosts.json`, {cache: 'default', signal: AbortSignal.timeout(10000)})
+            fetch(`https://nickfara.github.io/new-book-for-phasmophobia/phasmophobia/data/ghosts.json?lang=${lang}`, {cache: 'default', signal: AbortSignal.timeout(10000)})
             .then(data => data.json())
             .then(data => {
 
