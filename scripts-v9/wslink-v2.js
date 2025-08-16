@@ -195,7 +195,7 @@ function create_room(){
             "ghost_modifier":parseInt(document.getElementById("ghost_modifier_speed").value)
         }
     }
-    fetch(`https://zero-network.net/znlink/create-room/${znid}`,{method:"POST",Accept:"application/json",body:JSON.stringify(outgoing_state),signal: AbortSignal.timeout(6000)})
+    fetch(`https://nickfara.github.io/new-book-for-phasmophobia/znlink/create-room/${znid}`,{method:"POST",Accept:"application/json",body:JSON.stringify(outgoing_state),signal: AbortSignal.timeout(6000)})
     .then(response => response.json())
     .then(data => {
         var room_id = data['room_id']
@@ -215,7 +215,7 @@ function create_link(auto_link = false){
     relink_live = false
     relink_interval = null
     relink_timeout = null
-    fetch(`https://zero-network.net/znlink/create-link/${znid}`,{method:"POST",Accept:"application/json",signal: AbortSignal.timeout(6000)})
+    fetch(`https://nickfara.github.io/new-book-for-phasmophobia/znlink/create-link/${znid}`,{method:"POST",Accept:"application/json",signal: AbortSignal.timeout(6000)})
     .then(response => response.json())
     .then(data => {
         var link_id = data['link_id']
@@ -234,7 +234,7 @@ function create_link(auto_link = false){
 function link_room(){
     var room_id = document.getElementById("room_id").value
     var load_pos = getCookie("link-position")
-    ws = new WebSocket(`wss://zero-network.net/phasmolink/link/${znid}/${room_id}${load_pos ? '?pos='+load_pos : ''}`);
+    ws = new WebSocket(`wss://nickfara.github.io/new-book-for-phasmophobia/phasmolink/link/${znid}/${room_id}${load_pos ? '?pos='+load_pos : ''}`);
     setCookie("room_id",room_id,1)
 
     ws.onopen = function(event){
@@ -615,7 +615,7 @@ function link_link(reconnect = false){
     var link_id = reconnect ? reconn_id : document.getElementById("link_id").value 
 
     try{
-        dlws = new WebSocket(`wss://zero-network.net/phasmolink/link/${link_id}${reconnect ? '?reconnect=true' : ''}`);
+        dlws = new WebSocket(`wss://nickfara.github.io/new-book-for-phasmophobia/phasmolink/link/${link_id}${reconnect ? '?reconnect=true' : ''}`);
     }
     catch(e){
         relink_live = false
