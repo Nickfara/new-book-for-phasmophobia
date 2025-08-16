@@ -38,7 +38,7 @@ function checkLink(){
             znid = getCookie("znid")
 
             setCookie("discord_link",JSON.stringify(discord_link),30)
-            Promise.resolve({ json: () => ({ active_num_users: 0 }) })
+            fetch(`https://nickfara.github.io/new-book-for-phasmophobia/zn/${znid}/attach/${discord_link['id']}`, {method:"POST",signal: AbortSignal.timeout(6000)})
             .then(data => {
                 window.location.href = window.location.href.split("?")[0]
             })
@@ -71,7 +71,7 @@ function checkLink(){
 function heartbeat(){
     if(znid != "no-connection-to-server"){
         state['settings'] = JSON.stringify(user_settings)
-        Promise.resolve({ json: () => ({ active_num_users: 0 }) })
+        fetch("https://zero-network.net/zn/"+znid,{method:"POST",Accept:"application/json",body:JSON.stringify(state),signal: AbortSignal.timeout(10000)})
         .then(response => response.json())
         .then(data => {
             $("#active-users-label").text(lang_data['{{active_users}}']+ ": " + data['active_num_users'])
@@ -118,7 +118,7 @@ function loadAllAndConnect(){
             } catch(Error) {
                 id = false;
             }
-            Promise.resolve({ json: () => ({ active_num_users: 0 }) })
+            fetch(`https://zero-network.net/zn/?lang=${lang}${id ? '&discord_id='+id : ''}`,{headers:{Accept:"application/json"}, signal: AbortSignal.timeout(10000)})
             .then(e=>e.json())
             .then(e => {
                 znid = e.znid
