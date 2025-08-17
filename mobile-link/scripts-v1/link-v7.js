@@ -211,7 +211,7 @@ function startlink(link_id=null){
     document.getElementById("error").innerText = ""
     var room_id = link_id == null ? document.getElementById("journal-link-id").value : link_id
     document.getElementById("link-id").innerText = room_id
-    ws = new WebSocket(`wss://zero-network.net/phasmolink/link/znml/${room_id}?ml=true`);
+    ws = new WebSocket(`wss://nickfara.github.io/new-book-for-phasmophobia/phasmolink/link/znml/${room_id}?ml=true`);
 
     ws.onopen = function(event){
         hasLink = true;
@@ -372,8 +372,8 @@ function startlink(link_id=null){
     .then(response => response.json())
     .then(data => {
         var link_id = data['link_id']
-        dlwshost = new WebSocket(`wss://zero-network.net/phasmolink/link/${link_id}`);
-        dlws = new WebSocket(`wss://zero-network.net/phasmolink/link/${link_id}`);
+        dlwshost = new WebSocket(`wss://nickfara.github.io/new-book-for-phasmophobia/phasmolink/link/${link_id}`);
+        dlws = new WebSocket(`wss://nickfara.github.io/new-book-for-phasmophobia/phasmolink/link/${link_id}`);
 
         dlws.onopen = function(event){
             hasDLLink = true;

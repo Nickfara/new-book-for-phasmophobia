@@ -2,7 +2,7 @@
     {
         "id": 2,
         "div_id": "edgefield",
-        "file_url": "https://zero-network.net/phasmophobia/static/imgs/maps/edgefield.png",
+        "file_url": "https://nickfara.github.io/new-book-for-phasmophobia/phasmophobia/static/imgs/maps/edgefield.png",
         "size": "S",
         "name": "42 Edgefield Road",
         "extra": ""
@@ -10,7 +10,7 @@
     {
         "id": 4,
         "div_id": "grafton",
-        "file_url": "https://zero-network.net/phasmophobia/static/imgs/maps/grafton_new.png",
+        "file_url": "https://nickfara.github.io/new-book-for-phasmophobia/phasmophobia/static/imgs/maps/grafton_new.png",
         "size": "S",
         "name": "Grafton Farmhouse",
         "extra": ""
@@ -18,7 +18,7 @@
     {
         "id": 19,
         "div_id": "nells",
-        "file_url": "https://zero-network.net/phasmophobia/static/imgs/maps/nells_placeholder.png",
+        "file_url": "https://nickfara.github.io/new-book-for-phasmophobia/phasmophobia/static/imgs/maps/nells_placeholder.png",
         "size": "S",
         "name": "Nell's Diner (Coming 2025)",
         "extra": ""
@@ -26,7 +26,7 @@
     {
         "id": 3,
         "div_id": "ridgeview",
-        "file_url": "https://zero-network.net/phasmophobia/static/imgs/maps/ridgeview.png",
+        "file_url": "https://nickfara.github.io/new-book-for-phasmophobia/phasmophobia/static/imgs/maps/ridgeview.png",
         "size": "S",
         "name": "10 Ridgeview Court",
         "extra": ""
@@ -34,7 +34,7 @@
     {
         "id": 1,
         "div_id": "tanglewood",
-        "file_url": "https://zero-network.net/phasmophobia/static/imgs/maps/tanglewood.png",
+        "file_url": "https://nickfara.github.io/new-book-for-phasmophobia/phasmophobia/static/imgs/maps/tanglewood.png",
         "size": "S",
         "name": "6 Tanglewood Drive",
         "extra": ""
@@ -42,7 +42,7 @@
     {
         "id": 5,
         "div_id": "willow",
-        "file_url": "https://zero-network.net/phasmophobia/static/imgs/maps/willow.png",
+        "file_url": "https://nickfara.github.io/new-book-for-phasmophobia/phasmophobia/static/imgs/maps/willow.png",
         "size": "S",
         "name": "13 Willow Street",
         "extra": ""
@@ -50,7 +50,7 @@
     {
         "id": 16,
         "div_id": "woodwind",
-        "file_url": "https://zero-network.net/phasmophobia/static/imgs/maps/woodwind.png",
+        "file_url": "https://nickfara.github.io/new-book-for-phasmophobia/phasmophobia/static/imgs/maps/woodwind.png",
         "size": "S",
         "name": "Camp Woodwind",
         "extra": ""
@@ -58,7 +58,7 @@
     {
         "id": 7,
         "div_id": "bleasdale",
-        "file_url": "https://zero-network.net/phasmophobia/static/imgs/maps/bleasdale_new.png",
+        "file_url": "https://nickfara.github.io/new-book-for-phasmophobia/phasmophobia/static/imgs/maps/bleasdale_new.png",
         "size": "M",
         "name": "Bleasdale Farmhouse",
         "extra": ""
@@ -66,7 +66,7 @@
     {
         "id": 15,
         "div_id": "maplelodge",
-        "file_url": "https://zero-network.net/phasmophobia/static/imgs/maps/maplelodge.png",
+        "file_url": "https://nickfara.github.io/new-book-for-phasmophobia/phasmophobia/static/imgs/maps/maplelodge.png",
         "size": "M",
         "name": "Maple Lodge Campsite",
         "extra": ""
@@ -74,7 +74,7 @@
     {
         "id": 17,
         "div_id": "pointhope",
-        "file_url": "https://zero-network.net/phasmophobia/static/imgs/maps/pointhope.png",
+        "file_url": "https://nickfara.github.io/new-book-for-phasmophobia/phasmophobia/static/imgs/maps/pointhope.png",
         "size": "M",
         "name": "Point Hope",
         "extra": ""
@@ -82,7 +82,7 @@
     {
         "id": 14,
         "div_id": "prison",
-        "file_url": "https://zero-network.net/phasmophobia/static/imgs/maps/prison.png",
+        "file_url": "https://nickfara.github.io/new-book-for-phasmophobia/phasmophobia/static/imgs/maps/prison.png",
         "size": "M",
         "name": "Prison",
         "extra": ""
@@ -90,7 +90,7 @@
     {
         "id": 9,
         "div_id": "sunnymeadows_courtyard",
-        "file_url": "https://zero-network.net/phasmophobia/static/imgs/maps/sunnymeadows_courtyard.png",
+        "file_url": "https://nickfara.github.io/new-book-for-phasmophobia/phasmophobia/static/imgs/maps/sunnymeadows_courtyard.png",
         "size": "M",
         "name": "SM Restricted - Courtyard",
         "extra": ""
@@ -98,7 +98,7 @@
     {
         "id": 11,
         "div_id": "sunnymeadows_female",
-        "file_url": "https://zero-network.net/phasmophobia/static/imgs/maps/sunnymeadows_female.png",
+        "file_url": "https://nickfara.github.io/new-book-for-phasmophobia/phasmophobia/static/imgs/maps/sunnymeadows_female.png",
         "size": "M",
         "name": "SM Restricted - Female Wing",
         "extra": ""
@@ -106,7 +106,7 @@
     {
         "id": 12,
         "div_id": "sunnymeadows_hospital",
-        "file_url": "https://zero-network.net/phasmophobia/static/imgs/maps/sunnymeadows_hospital.png",
+        "file_url": "https://nickfara.github.io/new-book-for-phasmophobia/phasmophobia/static/imgs/maps/sunnymeadows_hospital.png",
         "size": "M",
         "name": "SM Restricted - Hospital",
         "extra": ""
@@ -114,7 +114,7 @@
     {
         "id": 10,
         "div_id": "sunnymeadows_male",
-        "file_url": "https://zero-network.net/phasmophobia/static/imgs/maps/sunnymeadows_male.png",
+        "file_url": "https://nickfara.github.io/new-book-for-phasmophobia/phasmophobia/static/imgs/maps/sunnymeadows_male.png",
         "size": "M",
         "name": "SM Restricted - Male Wing",
         "extra": ""
@@ -122,7 +122,7 @@
     {
         "id": 13,
         "div_id": "sunnymeadows_restricted",
-        "file_url": "https://zero-network.net/phasmophobia/static/imgs/maps/sunnymeadows_restricted.png",
+        "file_url": "https://nickfara.github.io/new-book-for-phasmophobia/phasmophobia/static/imgs/maps/sunnymeadows_restricted.png",
         "size": "M",
         "name": "SM Restricted - Restricted",
         "extra": ""
@@ -130,7 +130,7 @@
     {
         "id": 6,
         "div_id": "brownstone",
-        "file_url": "https://zero-network.net/phasmophobia/static/imgs/maps/brownstone.png",
+        "file_url": "https://nickfara.github.io/new-book-for-phasmophobia/phasmophobia/static/imgs/maps/brownstone.png",
         "size": "L",
         "name": "Brownstone High School",
         "extra": ""
@@ -138,7 +138,7 @@
     {
         "id": 8,
         "div_id": "sunnymeadows",
-        "file_url": "https://zero-network.net/phasmophobia/static/imgs/maps/sunnymeadows.png",
+        "file_url": "https://nickfara.github.io/new-book-for-phasmophobia/phasmophobia/static/imgs/maps/sunnymeadows.png",
         "size": "L",
         "name": "Sunny Meadows",
         "extra": ""
