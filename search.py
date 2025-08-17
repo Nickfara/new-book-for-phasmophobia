@@ -23,7 +23,7 @@ def search_in_files(root_dir, search_text, output_file):
 
 if __name__ == "__main__":
     root_directory = "./"   # стартовая папка
-    search_string = "nickfara.github.io/new-book-for-phasmophobia/phasmophobia/static/imgs/warn.png"  # текст для поиска
+    search_string = "phasmaphobia"  # текст для поиска
     output_filename = "search_results.txt"
 
     search_in_files(root_directory, search_string, output_filename)
