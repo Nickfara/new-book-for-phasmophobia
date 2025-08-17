@@ -593,7 +593,7 @@
                         "include_on_card": true
                     },
                     {
-                        "data": "Не может выполнять пение призрачных событий <img class = 'Wiki-Link' src = 'https: //nickfara.github.io/new-book-for-phasmophobia/phasmophobia/static/imgs/warn.png' height = '15 'style =' margin-bottom: -3px; Ширина: 15px! Важно; onclick = 'showwiki ()'>",
+                        "data": "Не может выполнять пение призрачных событий <img class = 'Wiki-Link' src = '/phasmophobia/static/imgs/warn.png' height = '15 'style =' margin-bottom: -3px; Ширина: 15px! Важно; onclick = 'showwiki ()'>",
                         "is_0_evi": true,
                         "include_on_card": true
                     }
@@ -630,7 +630,7 @@
                         "include_on_card": true
                     },
                     {
-                        "data": "Не будет взорвать огонь во время охоты, если в той же комнате, что и у игрока (остерегайтесь фактических или баггических границ комнаты) <img class = 'Wiki-link' src = 'https: //nickfara.github.io/new-book-for-phasmophobia/phasmophobia/static/imgs/warn.png' height = '15 'style =' margin-bottom: -3px; Ширина: 15px! Важно; onclick = 'showwiki ()'>",
+                        "data": "Не будет взорвать огонь во время охоты, если в той же комнате, что и у игрока (остерегайтесь фактических или баггических границ комнаты) <img class = 'Wiki-link' src = '/phasmophobia/static/imgs/warn.png' height = '15 'style =' margin-bottom: -3px; Ширина: 15px! Важно; onclick = 'showwiki ()'>",
                         "is_0_evi": true,
                         "include_on_card": true
                     }
@@ -659,7 +659,7 @@
                     },
                     {
                         "type": "Behavior",
-                        "data": "Поместите несколько зажженных огненных матчей в комнату вдали от любой границы комнаты. Зацикливайте призрака или держите призрака на месте, гарантируя, что призрак находится в той же комнате, что и вы при охоте (остерегайтесь границ разборочных комнат). Если после нескольких охоты призрак не погасил никаких огневых магнитов во время охоты в одной комнате, что и вы, это может быть тень <img class = 'Wiki-link' src = 'https: //nickfara.github.io/new-book-for-phasmophobia/phasmophobia/static/imgs/warn.png' height = '15 'style =' margin-lestom: -3px; Ширина: 15px! Важно; '>",
+                        "data": "Поместите несколько зажженных огненных матчей в комнату вдали от любой границы комнаты. Зацикливайте призрака или держите призрака на месте, гарантируя, что призрак находится в той же комнате, что и вы при охоте (остерегайтесь границ разборочных комнат). Если после нескольких охоты призрак не погасил никаких огневых магнитов во время охоты в одной комнате, что и вы, это может быть тень <img class = 'Wiki-link' src = '/phasmophobia/static/imgs/warn.png' height = '15 'style =' margin-lestom: -3px; Ширина: 15px! Важно; '>",
                         "definitive": false,
                         "image": null
                     }
@@ -667,7 +667,7 @@
                 "elimination_tests": [
                     {
                         "type": "Tell",
-                        "data": "Если призрак выполняет пение призрачного события, это <i> не </i> a Shade <img class = 'Wiki-link' src = 'https: //nickfara.github.io/new-book-for-phasmophobia/phasmophobia/static/imgs/warn.png' height = '15 'style =' margin-bothom: -3px; Ширина: 15px! Важно; onclick = 'showwiki ()'>",
+                        "data": "Если призрак выполняет пение призрачного события, это <i> не </i> a Shade <img class = 'Wiki-link' src = '/phasmophobia/static/imgs/warn.png' height = '15 'style =' margin-bothom: -3px; Ширина: 15px! Важно; onclick = 'showwiki ()'>",
                         "image": null
                     },
                     {
@@ -692,7 +692,7 @@
                     },
                     {
                         "type": "Behavior",
-                        "data": "Во время охоты, если призрак взрывает огонь, в той же комнате, что и вы (будьте в курсе фактических или ошибки комнаты), это <i> не </i> a Shade <img class = 'Wiki-link' src = 'https: //nickfara.github.io/new-book-for-phasmophobia/phasmophia/static/imgs/warn. -3px; Ширина: 15px! Важно; '>",
+                        "data": "Во время охоты, если призрак взрывает огонь, в той же комнате, что и вы (будьте в курсе фактических или ошибки комнаты), это <i> не </i> a Shade <img class = 'Wiki-link' src = '/phasmophia/static/imgs/warn. -3px; Ширина: 15px! Важно; '>",
                         "image": "https://i.imgur.com/eiD84Tx.gif"
                     }
                 ]
@@ -1097,7 +1097,7 @@
                         "include_on_card": true
                     },
                     {
-                        "data": "Входить в точки состоятся чаще, чем другие призраки <img class = 'wiki-link' src = 'https: //nickfara.github.io/new-book-for-phasmophobia/phasmophobia/static/imgs/bug.png' height = '15 'style =' margin-bottom: -3px; Ширина: 15px! Важно; onclick = 'showwiki ()'>",
+                        "data": "Входить в точки состоятся чаще, чем другие призраки <img class = 'wiki-link' src = '/phasmophobia/static/imgs/bug.png' height = '15 'style =' margin-bottom: -3px; Ширина: 15px! Важно; onclick = 'showwiki ()'>",
                         "is_0_evi": false,
                         "include_on_card": true
                     }
@@ -1233,7 +1233,7 @@
                 "confirmation_tests": [
                     {
                         "type": "Tell",
-                        "data": "Если призрак дважды выдувает один и тот же огнестойкость в течение 20-х годов, это onryo <img class = 'wiki-link' src = 'https: //nickfara.github.io/new-book-for-phasmophobia/phasmophobia/static/imgs/warn.png' height = '15 'style =' margin-bottom: -3px; Ширина: 15px! Важно; '>",
+                        "data": "Если призрак дважды выдувает один и тот же огнестойкость в течение 20-х годов, это onryo <img class = 'wiki-link' src = '/phasmophobia/static/imgs/warn.png' height = '15 'style =' margin-bottom: -3px; Ширина: 15px! Важно; '>",
                         "definitive": true,
                         "image": null
                     },
@@ -1284,7 +1284,7 @@
             "wiki": {
                 "tells": [
                     {
-                        "data": "Может выполнять 2 взаимодействия одновременно, одно в его стандартном радиусе (2,12 млн., 4,24 м на больших картах) и другой в его расширенном радиусе (8,48 м, 16,97 м на больших картах) <Img class = 'Wiki-' Src = 'https: //nickfara.github.io/new-book-for-phasmophobia/phasmophia/stary/imgs/warn.png' ‘hiews '‘ height-' height- 'height-' height- 'hieght ’-hiege’-hiege- ’-hieghtry ‘network.net/phasmophabia/Stary/warn. style = 'margin -bottom: -3px; Ширина: 15px! Важно; onclick = 'openwikipath (\"Ghost-data.interaction-range\")'>",
+                        "data": "Может выполнять 2 взаимодействия одновременно, одно в его стандартном радиусе (2,12 млн., 4,24 м на больших картах) и другой в его расширенном радиусе (8,48 м, 16,97 м на больших картах) <Img class = 'Wiki-' Src = '/phasmophia/stary/imgs/warn.png' ‘hiews '‘ height-' height- 'height-' height- 'hieght ’-hiege’-hiege- ’-hieghtry ‘network.net/phasmophabia/Stary/warn. style = 'margin -bottom: -3px; Ширина: 15px! Важно; onclick = 'openwikipath (\"Ghost-data.interaction-range\")'>",
                         "is_0_evi": true,
                         "include_on_card": true
                     },
@@ -1573,7 +1573,7 @@
                         "include_on_card": false
                     },
                     {
-                        "data": "Продолжительность слепоты благовоний во время охоты увеличивается с 5S до 7S <img class = 'Wiki-link' src = 'https: //nickfara.github.io/new-book-for-phasmophobia/phasmophobia/static/imgs/warn.png' height = '15 'style =' margin-bottom: -3px; Ширина: 15px! Важно; onclick = 'showwiki ()'>",
+                        "data": "Продолжительность слепоты благовоний во время охоты увеличивается с 5S до 7S <img class = 'Wiki-link' src = '/phasmophobia/static/imgs/warn.png' height = '15 'style =' margin-bottom: -3px; Ширина: 15px! Важно; onclick = 'showwiki ()'>",
                         "is_0_evi": true,
                         "include_on_card": true
                     }
