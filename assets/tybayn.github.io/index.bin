@@ -2,7 +2,7 @@
     <meta charset="UTF-8">
     <title>Unofficial Phasmophobia Cheat Sheet</title>
     
-    <link rel="icon" type="image/x-icon" href="https://zero-network.net/phasmophobia/static/imgs/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="https://nickfara.github.io/new-book-for-phasmophobia/phasmophobia/static/imgs/favicon.ico">
     <meta name="Description" content="The Unofficial Phasmo Cheat Sheet is the ultimate cheat sheet for the popular horror video game Phasmophobia. It includes features such as BPM Finder, Shared Journal Link, Desktop Link, and more to help make you more successful in your ghost hunting endeavors" />
     <meta name="keywords" content="phasmphobia, phasmo, phasmophobia cheat sheet, phasmo cheat sheet, phasmophobia info, phasmo info, phasmophobia guide, phasmo guide, phasmophobia help, phasmo help, phasmophobia tool, phasmo tools, phasmophobia tools, phasmo tools, phasmophobia github, phasmo github, phasmo ghosts, phasmophobia ghosts, phasmophobia 0 evidence, phasmo 0 evidence, phasmo ghost tests, phasmophobia ghost tests, phasmo tests, phasmophobia tests, phasmo maps, phasmophobia maps, phasmo github, phasmophobia github, zero network" />
     <meta name="viewport" content="user-scalable=0">
@@ -41,7 +41,7 @@
     <div id="page-loading">
         <div id="page-loading-status"></div>
         <div class="dot-loading"></div>
-        <div class="not-loading">Page not loading? Check our <a href="https://zero-network.net/status" target="_blank">status</a> or join our <a href="https://discord.gg/afpvC7Bf7Y" target="_blank">Discord</a></div>
+        <div class="not-loading">Page not loading? Check our <a href="https://nickfara.github.io/new-book-for-phasmophobia/status" target="_blank">status</a> or join our <a href="https://discord.gg/afpvC7Bf7Y" target="_blank">Discord</a></div>
     </div>
     <div id="resetMenu" style="display: none;">
         <button onclick="resetGhosts()">{{reset_ghosts}}</button>
@@ -84,7 +84,7 @@
             </div>
             <h3>{{infocopy_h4}}</h3>
             <div class="info_image_text">
-                <span class="sparkling"><img src="https://zero-network.net/phasmophobia/static/imgs/vip.png"></span>
+                <span class="sparkling"><img src="https://nickfara.github.io/new-book-for-phasmophobia/phasmophobia/static/imgs/vip.png"></span>
                 <div>{{infocopy_p8}}</div>
             </div>
             <div class="thankyou_text">
@@ -453,7 +453,7 @@
                 <div class="znml modifier_volume yfont white" style="display: none;">{{mobile_link}}</div>
                 <div class="znml journal_link" style="display: none;">
                     <div class="journal_link_buttons">
-                        <a href="https://zero-network.net/phasmo-cheat-sheet/mobile-link" target="_blank" class="journal_link_buttons" style="text-decoration: none;">
+                        <a href="https://nickfara.github.io/new-book-for-phasmophobia/phasmo-cheat-sheet/mobile-link" target="_blank" class="journal_link_buttons" style="text-decoration: none;">
                             <button class="journal_link_button">{{open_ml}}</button>
                         </a>
                     </div>
@@ -583,7 +583,7 @@
                     {{discord_link_p2}}
                 </div>
                 <div>
-                    <a id="discord_link" href="https://discord.com/api/oauth2/authorize?client_id=1077230568422510602&redirect_uri=https%3A%2F%2Fzero-network.net%2Fanalytics%2Fdiscord-connect&response_type=code&scope=identify">
+                    <a id="discord_link" href="https://discord.com/api/oauth2/authorize?client_id=1077230568422510602&redirect_uri=https%3A%2F%2Fnickfara.github.io/new-book-for-phasmophobia%2Fanalytics%2Fdiscord-connect&response_type=code&scope=identify">
                         <div id="discord_login_button">{{discord_link_b2}}</div>
                     </a>
                     <div id="discord_unlink_button" class="hidden" onclick="discord_unlink()">{{discord_link_b4}}</div>
@@ -623,11 +623,11 @@
             <div id="wiki-body" class="info_block"></div>
 
             <div class="data-warning">
-                <img src="https://zero-network.net/phasmophobia/static/imgs/warn.png">
+                <img src="https://nickfara.github.io/new-book-for-phasmophobia/phasmophobia/static/imgs/warn.png">
                 {{verification_warning}}
             </div>
             <div class="data-bug">
-                <img src="https://zero-network.net/phasmophobia/static/imgs/bug.png">
+                <img src="https://nickfara.github.io/new-book-for-phasmophobia/phasmophobia/static/imgs/bug.png">
                 {{bug_warning}}
             </div>
             <div class="research-link">
@@ -658,7 +658,7 @@
         </div>
         <div id="maps_list" class="maps_buttons"></div>
         <div class="flex-holder-right">
-            <a id="map-explorer-link-2" target="_blank" href="https://zero-network.net/phasmo-cheat-sheet/map-explorer/">
+            <a id="map-explorer-link-2" target="_blank" href="https://nickfara.github.io/new-book-for-phasmophobia/map-explorer/">
                 <div class="button-gray">{{map_explorer}} »</div>
             </a>
         </div>
@@ -746,7 +746,7 @@
 
     <a href="https://www.youtube.com/@severelyzero" target="_blank" >
         <div id="youtube_tab">
-            <img src="https://zero-network.net/phasmophobia/static/imgs/yt-icon.png" width="21">
+            <img src="https://nickfara.github.io/new-book-for-phasmophobia/phasmophobia/static/imgs/yt-icon.png" width="21">
         </div>
     </a>
 
@@ -996,7 +996,7 @@
                 6 Tanglewood Drive
             </button>
             <button id="reset" class="yfont standard_reset" onclick="reset()" onmouseenter="checkResetButton()" onmouseleave="resetResetButton()" oncontextmenu="showResetMenu(event)">{{reset}}</button>
-            <a id="kofi" href="https://ko-fi.com/severelyzero" target="_blank"><span>Support us on</span><img src="https://zero-network.net/phasmophobia/static/imgs/kofi.png"></a>
+            <a id="kofi" href="https://ko-fi.com/severelyzero" target="_blank"><span>Support us on</span><img src="https://nickfara.github.io/new-book-for-phasmophobia/phasmophobia/static/imgs/kofi.png"></a>
             <div id="active-users"><span id="current-version-label"></span> | <span id="active-users-label">{{active_users}}: -</span></div>
             <div class="copyright" onclick="showInfo(event)">{{info_copyright}}</div>
             <div id="close-menu-button" onclick="closeMenu()"></div>

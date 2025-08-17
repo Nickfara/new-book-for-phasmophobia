@@ -3,7 +3,7 @@ var ws = null;
 var first_message = true;
 
 function link(id,pos){
-    ws = new WebSocket(`wss://zero-network.net/phasmolink/melink/${id}/${pos}`);
+    ws = new WebSocket(`wss://nickfara.github.io/new-book-for-phasmophobia/phasmolink/melink/${id}/${pos}`);
 
     ws.onopen = function(event){
         console.log('Connected')
