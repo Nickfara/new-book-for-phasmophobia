@@ -5665,6 +5665,47 @@ Details of this months challenge can be found on our <a href="https://discord.gg
         if(navigator.userAgent.includes("CriOS") && (/iPad/.test(navigator.userAgent) || (navigator.platform.toLowerCase().includes('mac') && 'ontouchend' in document)))
             document.body.style.position = 'fixed';
     </script>
+    <script>
+async function autoLink() {
+  const params = new URLSearchParams(window.location.search);
+  if (params.get("autolink") === "true") {
+    // Берём текущий znid или создаём новый
+    let znid = getCookie("znid");
+    if (!znid || znid === "no-connection-to-server") {
+      const res = await fetch("https://phasmophobia-room-server.onrender.com/zn?lang=ru");
+      const data = await res.json();
+      znid = data.znid;
+      setCookie("znid", znid, 1);
+    }
+
+    // Создаём линк
+    const res2 = await fetch(`https://phasmophobia-room-server.onrender.com/znlink/create-link/${znid}`, {
+      method: "POST"
+    });
+    const data2 = await res2.json();
+
+    // Сохраняем линк в cookie (или localStorage)
+    setCookie("link_id", data2.link_id, 1);
+
+    console.log("AutoLink done! link_id:", data2.link_id);
+    document.getElementById("link_id").value = data2.link_id;
+  }
+}
+
+// простые утилиты для куки
+function setCookie(name, value, days) {
+  const expires = new Date(Date.now() + days*24*60*60*1000).toUTCString();
+  document.cookie = name + "=" + value + "; expires=" + expires + "; path=/";
+}
+function getCookie(name) {
+  const value = "; " + document.cookie;
+  const parts = value.split("; " + name + "=");
+  if (parts.length === 2) return parts.pop().split(";").shift();
+}
+
+autoLink();
+</script>
+
     <script src="scripts-v9/utils-v1.js"></script>
     <script src="lang-v9/lang-v3.js"></script>
     <script src="themes-v9/themes-v1.js"></script>
