@@ -348,7 +348,7 @@ function link_room(){
                     send_ml_state()
                 }
                 if (incoming_state['action'].toUpperCase() == "EVIDENCE"){
-                    if(!$(document.getElementById(incoming_state['evidence']).querySelector(".checkbox")).hasClass("block")){
+                    if(!$(document.getElementById(incoming_state['evidence']).querySelector("#checkbox")).hasClass("block")){
                         tristate(document.getElementById(incoming_state['evidence']))
                     }
                 }
@@ -861,7 +861,7 @@ function link_link(reconnect = false){
                 }
 
                 if (incoming_state['action'].toUpperCase() == "EVIDENCE"){
-                    if(!$(document.getElementById(incoming_state['evidence']).querySelector(".checkbox")).hasClass("block")){
+                    if(!$(document.getElementById(incoming_state['evidence']).querySelector("#checkbox")).hasClass("block")){
                         tristate(document.getElementById(incoming_state['evidence']))
                     }
                 }
