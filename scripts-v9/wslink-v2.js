@@ -348,6 +348,22 @@ function link_room(){
                     send_ml_state()
                 }
                 if (incoming_state['action'].toUpperCase() == "EVIDENCE"){
+                    console.log("Incoming evidence:", incoming_state['evidence']);
+                    const elem = document.getElementById(incoming_state['evidence']);
+
+                    if (!elem) {
+                        console.error("❌ Нет элемента с таким id:", incoming_state['evidence']);
+                    } else {
+                        const checkbox = elem.querySelector("#checkbox");
+                        if (!checkbox) {
+                            console.error("❌ Нет #checkbox внутри:", incoming_state['evidence']);
+                        } else {
+                            console.log("✔ Найден элемент:", incoming_state['evidence']);
+                            if (!$(checkbox).hasClass("block")) {
+                                tristate(elem);
+                            }
+                        }
+                    }
                     if(!$(document.getElementById(incoming_state['evidence']).querySelector("#checkbox")).hasClass("block")){
                         tristate(document.getElementById(incoming_state['evidence']))
                     }
@@ -861,6 +877,22 @@ function link_link(reconnect = false){
                 }
 
                 if (incoming_state['action'].toUpperCase() == "EVIDENCE"){
+                    console.log("Incoming evidence:", incoming_state['evidence']);
+                    const elem = document.getElementById(incoming_state['evidence']);
+
+                    if (!elem) {
+                        console.error("❌ Нет элемента с таким id:", incoming_state['evidence']);
+                    } else {
+                        const checkbox = elem.querySelector("#checkbox");
+                        if (!checkbox) {
+                            console.error("❌ Нет #checkbox внутри:", incoming_state['evidence']);
+                        } else {
+                            console.log("✔ Найден элемент:", incoming_state['evidence']);
+                            if (!$(checkbox).hasClass("block")) {
+                                tristate(elem);
+                            }
+                        }
+                    }
                     if(!$(document.getElementById(incoming_state['evidence']).querySelector("#checkbox")).hasClass("block")){
                         tristate(document.getElementById(incoming_state['evidence']))
                     }
